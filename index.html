@@ -59,8 +59,13 @@
     }
   }
   </script>
+  <link rel="icon" href="images/bei-batumi-logo.jpeg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="images/bei-batumi-logo.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="images/batumi-real.png" as="image" fetchpriority="high">
 
   <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -315,7 +320,7 @@
   }
   .wa-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
   @media(min-width:720px){ .wa-inner { flex-direction:row; justify-content:space-between; text-align:left; } }
-  .wa-txt h3 { font-size: 1.18rem; font-weight: 800; }
+  .wa-txt h2 { font-size: 1.18rem; font-weight: 800; }
   .wa-txt p  { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 4px; }
   .wa-right { display: flex; flex-direction: column; align-items: center; gap: 8px; }
   .wa-btn {
@@ -460,7 +465,7 @@
   .brochure-modal { background: linear-gradient(145deg, rgba(6,39,70,.98), rgba(3,29,53,.98)); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; transform: scale(.92) translateY(16px); transition: transform .32s cubic-bezier(.22,1,.36,1); }
   .brochure-backdrop.open .brochure-modal { transform: scale(1) translateY(0); }
   .brochure-modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 16px; }
-  .brochure-modal-head h3 { font-size: 1.25rem; font-weight: 900; }
+  .brochure-modal-head h2 { font-size: 1.25rem; font-weight: 900; }
   .brochure-close { background: none; border: none; color: rgba(255,255,255,.45); cursor: pointer; font-size: 22px; line-height: 1; padding: 2px 4px; flex-shrink: 0; transition: color .2s; }
   .brochure-close:hover { color: #fff; }
   .brochure-modal > p { color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 22px; line-height: 1.6; }
@@ -486,6 +491,7 @@
   <div class="loader-inner">
     <div class="loader-logo-wrap">
       <img src="images/bei-batumi-logo.jpeg" alt="BEI Batumi"
+           width="80" height="80"
            onerror="this.parentNode.style.background='linear-gradient(135deg,#0A4D8C,#17BEBB)'">
     </div>
     <div class="loader-name">Vivre en Géorgie</div>
@@ -500,6 +506,7 @@
     <a href="#hero" class="logo" onclick="closeDrawer()">
       <div class="logo-img">
         <img src="images/bei-batumi-logo.jpeg" alt="BEI Batumi Expat Invest"
+             width="44" height="44" fetchpriority="high"
              onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
       </div>
       <div class="logo-text">
@@ -532,6 +539,7 @@
     <a href="#hero" class="logo" onclick="closeDrawer()">
       <div class="logo-img">
         <img src="images/bei-batumi-logo.jpeg" alt="Logo"
+             width="44" height="44" loading="lazy"
              onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
       </div>
       <div class="logo-text">
@@ -553,7 +561,7 @@
     <a href="blog.html" class="drawer-link"><span class="icon">📝</span> <span data-i18n="nav_blog">Blog</span></a>
   </nav>
   <div class="lang-switcher">
-    <div class="lang-label" data-i18n="lang_label">Langue</div>
+    <label class="lang-label" for="lang-select" data-i18n="lang_label">Langue</label>
     <select class="lang-select" id="lang-select" onchange="switchLang(this.value)">
       <option value="fr">Français (FR)</option>
       <option value="en">English (EN)</option>
@@ -570,6 +578,8 @@
     <span data-i18n="brochure_btn">Obtenir la brochure</span>
   </button>
 </aside>
+
+<main id="main-content">
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -640,7 +650,7 @@
 <section class="wa-bar">
   <div class="wa-inner">
     <div class="wa-txt">
-      <h3 data-i18n="wa_h3">💬 Parlons de votre projet !</h3>
+      <h2 data-i18n="wa_h3">💬 Parlons de votre projet !</h2>
       <p data-i18n="wa_p">Échangeons gratuitement sur WhatsApp. Réponse sous 24h garantie.</p>
     </div>
     <div class="wa-right">
@@ -696,10 +706,10 @@
 
 <!-- BROCHURE MODAL -->
 <div class="brochure-backdrop" id="brochure-backdrop" onclick="if(event.target===this)closeBrochureModal()">
-  <div class="brochure-modal">
+  <div class="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-title">
     <div class="brochure-modal-head">
-      <h3 data-i18n="brochure_title">Recevoir notre brochure</h3>
-      <button class="brochure-close" onclick="closeBrochureModal()">✕</button>
+      <h2 id="brochure-title" data-i18n="brochure_title">Recevoir notre brochure</h2>
+      <button class="brochure-close" aria-label="Fermer" onclick="closeBrochureModal()">✕</button>
     </div>
     <p data-i18n="brochure_desc">Sélectionnez les domaines qui vous intéressent — choix multiple possible.</p>
     <div class="brochure-options">
@@ -775,6 +785,8 @@
   </div>
 </div>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="site-footer" id="contact">
   <div class="footer-top">
@@ -782,6 +794,7 @@
       <div class="footer-logo">
         <div class="f-logo-img">
           <img src="images/bei-batumi-logo.jpeg" alt="Logo"
+               width="44" height="44" loading="lazy"
                onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
         </div>
         <div>
