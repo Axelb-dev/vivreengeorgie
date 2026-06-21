@@ -246,8 +246,28 @@ footer a { color: var(--teal); text-decoration: none; }
     .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
     .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
     .brochure-send:disabled { opacity: .38; cursor: default; }
+      /* GEO Lead Box */
+    .art-lead { background: rgba(23,190,187,.07); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 0 0 36px; }
+    .art-lead p { color: rgba(255,255,255,.88); font-size: .97rem; line-height: 1.7; margin: 0; }
+    .art-lead strong { color: var(--teal); font-weight: 700; }
   </style>
-</head>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Comment ouvrir un compte bancaire en Géorgie",
+    "description": "Guide étape par étape pour ouvrir un compte bancaire géorgien en tant qu'étranger, à TBC Bank ou Bank of Georgia.",
+    "totalTime": "PT72H",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": "0" },
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Choisir la banque", "text": "TBC Bank est plus orientée digital (app Space). Bank of Georgia a un réseau d'agences plus dense. Les deux acceptent les non-résidents." },
+      { "@type": "HowToStep", "position": 2, "name": "Rassembler les documents", "text": "Passeport en cours de validité obligatoire. Justificatif d'activité ou de revenus recommandé (contrat, Kbis, relevé étranger)." },
+      { "@type": "HowToStep", "position": 3, "name": "Se rendre en agence ou ouvrir en ligne", "text": "TBC permet l'ouverture via l'app Space. Bank of Georgia nécessite un passage en agence pour les non-résidents." },
+      { "@type": "HowToStep", "position": 4, "name": "Valider son identité", "text": "Présentez votre passeport. Entretien possible en anglais dans toutes les grandes agences." },
+      { "@type": "HowToStep", "position": 5, "name": "Recevoir la carte et activer les virements SWIFT", "text": "La carte est délivrée sous 1 à 3 jours. Activez les virements SWIFT pour les transferts internationaux." }
+    ]
+  }
+  </script></head>
 <body>
 <header class="site-header">
   <div class="header-inner">
@@ -350,6 +370,8 @@ footer a { color: var(--teal); text-decoration: none; }
   <h1>Comment ouvrir un compte bancaire en <span class="accent">Géorgie</span></h1>
   <div class="article-meta"><time datetime="2026-06-21">Juin 2026</time><span>7 min de lecture</span></div>
   <div class="article-body">
+
+  <div class="art-lead"><p>Ouvrir un compte bancaire en Géorgie prend <strong>1 à 3 jours ouvrés</strong>. Les deux banques recommandées : <strong>TBC Bank</strong> et <strong>Bank of Georgia</strong>, disponibles en anglais. Documents requis : passeport + justificatif d'activité ou de revenus.</p></div>
 
     <h2>Pourquoi un compte bancaire géorgien est indispensable</h2>
     <p>Si vous vous installez en Géorgie, ouvrir un compte bancaire local devient rapidement indispensable. Les raisons sont multiples : payer son loyer en Lari, domicilier les revenus d'une société géorgienne, effectuer des transactions locales sans frais de change, recevoir des paiements de clients géorgiens. Sans compte local, chaque transaction passe par votre banque française avec des frais de change et des délais.</p>

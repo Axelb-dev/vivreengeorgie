@@ -245,8 +245,29 @@
     .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
     .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
     .brochure-send:disabled { opacity: .38; cursor: default; }
+      /* GEO Lead Box */
+    .art-lead { background: rgba(23,190,187,.07); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 0 0 36px; }
+    .art-lead p { color: rgba(255,255,255,.88); font-size: .97rem; line-height: 1.7; margin: 0; }
+    .art-lead strong { color: var(--teal); font-weight: 700; }
   </style>
-</head>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Comment créer une société en Géorgie en moins de 24h",
+    "description": "Procédure complète pour créer une SARL géorgienne en tant qu'étranger, du numéro fiscal à l'ouverture du compte bancaire.",
+    "totalTime": "PT24H",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": "100" },
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Obtenir un numéro fiscal géorgien (TIN)", "text": "Rendez-vous à la House of Justice avec votre passeport. Le TIN est délivré gratuitement en moins d'une heure." },
+      { "@type": "HowToStep", "position": 2, "name": "Choisir le nom et l'activité de la société", "text": "Vérifiez la disponibilité du nom sur le registre en ligne. Définissez le code d'activité (NACE géorgien)." },
+      { "@type": "HowToStep", "position": 3, "name": "Déposer le dossier d'enregistrement à la House of Justice", "text": "Soumettez les statuts et le formulaire. Frais : environ 100 GEL pour traitement express le jour même." },
+      { "@type": "HowToStep", "position": 4, "name": "Recevoir le certificat d'enregistrement", "text": "Le numéro d'enregistrement et le certificat sont délivrés le jour même pour la procédure express." },
+      { "@type": "HowToStep", "position": 5, "name": "Ouvrir un compte bancaire professionnel", "text": "Ouvrez un compte à TBC Bank ou Bank of Georgia avec votre certificat d'enregistrement et votre passeport. Délai : 1 à 3 jours." },
+      { "@type": "HowToStep", "position": 6, "name": "S'enregistrer comme Petite Entreprise", "text": "Faites la demande auprès du Service des revenus de Géorgie pour bénéficier de l'imposition à 1% sur le CA." }
+    ]
+  }
+  </script></head>
 <body>
 
 <header class="site-header">
@@ -354,6 +375,8 @@
   </div>
 
   <div class="article-body">
+
+  <div class="art-lead"><p>Créer une SARL géorgienne prend <strong>moins de 24 heures</strong> et coûte environ <strong>100 €</strong>. Documents requis : passeport + numéro fiscal géorgien (TIN). Dépôt à la House of Justice. <strong>Aucun capital minimum</strong> n'est exigé.</p></div>
 
     <h2>Pourquoi la Géorgie est championne mondiale de la création d'entreprise</h2>
     <p>La Banque mondiale classe régulièrement la Géorgie parmi les pays les plus faciles au monde pour créer et gérer une entreprise. Ce classement n'est pas qu'une question de marketing gouvernemental : c'est une réalité vécue chaque jour par des milliers d'entrepreneurs étrangers qui s'immatriculent au registre des sociétés géorgiennes — le National Agency of Public Registry (NAPR) — sans aucun intermédiaire obligatoire et dans des délais qui laissent sans voix les entrepreneurs habitués aux lenteurs administratives européennes.</p>
