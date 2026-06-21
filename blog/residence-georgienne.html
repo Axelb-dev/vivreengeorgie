@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment obtenir sa résidence géorgienne – Vivre en Géorgie</title>
+  <meta name="description" content="Carte de séjour, résidence permanente, résidence par investissement... Toutes les voies pour légaliser votre présence en Géorgie en 2026, expliquées simplement.">
+  <link rel="canonical" href="https://vivreengeorgie.com/blog/residence-georgienne.html">
+  <meta property="og:title" content="Comment obtenir sa résidence géorgienne">
+  <meta property="og:description" content="Carte de séjour, résidence permanente, résidence par investissement... Toutes les voies pour légaliser votre présence en Géorgie en 2026, expliquées simplement.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vivreengeorgie.com/blog/residence-georgienne.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #031d35; --navy2: #062746; --teal: #17BEBB; --gold: #D4AF37; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--navy); color: #fff; min-height: 100vh; }
+    /* ── Header ── */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding: 12px 16px; }
+    .header-inner { position: relative; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(6,39,70,.72); backdrop-filter: blur(12px); padding: 0 18px 0 14px; box-shadow: 0 12px 28px rgba(3,29,53,.28); }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .logo-img { width: 44px; height: 44px; border-radius: 999px; overflow: hidden; background: #fff; border: 2px solid rgba(255,255,255,.85); flex-shrink: 0; }
+    .logo-img img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-img-fallback { width: 100%; height: 100%; background: linear-gradient(135deg, #0A4D8C, #17BEBB); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff; }
+    .logo-text { display: grid; }
+    .logo-name { font-size: 1rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
+    .logo-sub { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .btn-wa-header { display: none; align-items: center; gap: 8px; background: #25d366; color: #fff; font-weight: 800; font-size: 13px; border-radius: 999px; padding: 10px 20px; box-shadow: 0 4px 18px rgba(37,211,102,.28); transition: background .2s, transform .2s; text-decoration: none; }
+    .btn-wa-header:hover { background: #1ebe5d; transform: scale(1.04); }
+    @media(min-width:540px){ .btn-wa-header { display: inline-flex; } }
+    .btn-menu { width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s; flex-shrink: 0; }
+    .btn-menu:hover { background: rgba(255,255,255,.2); }
+    .btn-menu svg { width: 20px; height: 20px; }
+    .drawer-backdrop { position: fixed; inset: 0; z-index: 45; background: rgba(3,29,53,.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .28s ease; }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 50; width: min(92vw, 28rem); background: radial-gradient(circle at 18% 12%, rgba(23,190,187,.18), transparent 22rem), radial-gradient(circle at 92% 0%, rgba(212,175,55,.16), transparent 20rem), linear-gradient(155deg, rgba(3,29,53,.98), rgba(6,39,70,.96) 52%, rgba(10,77,140,.94)); border-left: 1px solid rgba(255,255,255,.12); padding: 20px; box-shadow: -20px 0 60px rgba(3,29,53,.5); transform: translateX(100%); transition: transform .34s cubic-bezier(.22,1,.36,1); display: flex; flex-direction: column; }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+    .btn-close { width: 42px; height: 42px; border-radius: 999px; background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    .btn-close:hover { background: rgba(255,255,255,.2); }
+    .btn-close svg { width: 18px; height: 18px; }
+    .drawer-nav { display: grid; gap: 8px; }
+    .drawer-link { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.07); color: rgba(255,255,255,.88); font-size: .95rem; font-weight: 600; opacity: 0; transform: translateX(20px); transition: opacity .28s ease, transform .28s ease, background .2s, border-color .2s; text-decoration: none; }
+    .drawer.open .drawer-link { opacity: 1; transform: translateX(0); }
+    .drawer.open .drawer-link:nth-child(1) { transition-delay: .05s; }
+    .drawer.open .drawer-link:nth-child(2) { transition-delay: .09s; }
+    .drawer.open .drawer-link:nth-child(3) { transition-delay: .13s; }
+    .drawer.open .drawer-link:nth-child(4) { transition-delay: .17s; }
+    .drawer.open .drawer-link:nth-child(5) { transition-delay: .21s; }
+    .drawer-link:hover { border-color: rgba(23,190,187,.45); background: rgba(255,255,255,.13); color: #fff; }
+    .drawer-link .icon { color: var(--gold); font-size: 17px; flex-shrink: 0; }
+    .drawer-wa { display: flex; align-items: center; justify-content: center; gap: 10px; position: relative; align-self: center; min-height: 48px; padding: 0 32px; border-radius: 999px; background: #25d366; color: #fff; font-weight: 800; font-size: 14px; margin-top: 24px; box-shadow: 0 6px 20px rgba(37,211,102,.3); opacity: 0; transform: translateY(10px); transition: opacity .28s ease .28s, transform .28s ease .28s, background .2s; text-decoration: none; }
+    .drawer.open .drawer-wa { opacity: 1; transform: translateY(0); }
+    .drawer-wa:hover { background: #1ebe5d; }
+    @keyframes ring { 0%,100%{ transform:scale(1);opacity:.8; } 50%{ transform:scale(1.07);opacity:0; } }
+    .drawer-wa::before { content: ''; position: absolute; inset: -5px; border-radius: 999px; border: 2px solid rgba(37,211,102,.45); animation: ring 2.2s ease-in-out infinite; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+    .article-label { font-size: 10.5px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+    h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 900; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 20px; }
+    .accent { color: var(--teal); }
+    .article-meta { display: flex; gap: 16px; font-size: 12px; color: rgba(255,255,255,.4); margin-bottom: 48px; flex-wrap: wrap; }
+    .article-body h2 { font-size: 1.2rem; font-weight: 800; color: var(--gold); margin: 40px 0 14px; }
+    .article-body p { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,.78); margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 20px; }
+    .article-body li { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,.78); margin-bottom: 8px; }
+    .article-body strong { color: #fff; }
+    .article-body a { color: var(--teal); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+    .info-box { background: rgba(23,190,187,.07); border: 1px solid rgba(23,190,187,.2); border-left: 4px solid var(--teal); border-radius: 8px; padding: 18px 22px; margin: 28px 0; }
+    .info-box p { color: rgba(255,255,255,.85); margin: 0; font-size: 14px; line-height: 1.7; }
+    .cta-band { background: linear-gradient(135deg, rgba(23,190,187,.1), rgba(212,175,55,.06)); border: 1px solid rgba(23,190,187,.2); border-radius: 16px; padding: 44px 32px; text-align: center; margin-top: 64px; }
+    .cta-band h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 12px; }
+    .cta-band p { color: rgba(255,255,255,.65); margin-bottom: 28px; font-size: 15px; }
+    .cta-wa { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; font-weight: 800; font-size: 15px; padding: 14px 28px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,.35); transition: background .2s, transform .2s; }
+    .cta-wa:hover { background: #1ebe5d; transform: scale(1.03); }
+    .related { margin-top: 48px; }
+    .related h3 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+    .related-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 10px; padding: 16px; text-decoration: none; color: inherit; display: block; transition: border-color .2s; }
+    .related-card:hover { border-color: rgba(23,190,187,.35); }
+    .related-card .num { font-size: 10px; font-weight: 800; color: var(--teal); letter-spacing: .1em; margin-bottom: 6px; }
+    .related-card .title { font-size: 13px; font-weight: 600; line-height: 1.4; color: rgba(255,255,255,.8); }
+    footer { text-align: center; padding: 24px; font-size: 12px; color: rgba(255,255,255,.3); border-top: 1px solid rgba(255,255,255,.07); margin-top: 40px; }
+    footer a { color: var(--teal); text-decoration: none; }
+    @media (max-width:600px) { .article-wrap { padding: 100px 16px 60px; } .cta-band { padding: 32px 20px; } }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-img">
+        <img src="../images/bei-batumi-logo.jpeg" alt="BEI Batumi Expat Invest"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">Batumi · Expat Invest</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="btn-menu" id="btn-menu" aria-label="Ouvrir le menu" onclick="openDrawer()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="drawer-backdrop" id="backdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-label="Menu de navigation">
+  <div class="drawer-head">
+    <a href="../index.html" class="logo">
+      <div class="logo-img">
+        <img src="../images/bei-batumi-logo.jpeg" alt="Logo"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">BEI Batumi</span>
+      </div>
+    </a>
+    <button class="btn-close" aria-label="Fermer le menu" onclick="closeDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="../index.html"          class="drawer-link" onclick="closeDrawer()"><span class="icon">🏠</span> Accueil</a>
+    <a href="../index.html#services" class="drawer-link" onclick="closeDrawer()"><span class="icon">🎯</span> Nos services</a>
+    <a href="../index.html#trust"    class="drawer-link" onclick="closeDrawer()"><span class="icon">🛡️</span> Pourquoi nous ?</a>
+    <a href="../index.html#contact"  class="drawer-link" onclick="closeDrawer()"><span class="icon">✉️</span> Contact</a>
+    <a href="../blog.html"           class="drawer-link" onclick="closeDrawer()"><span class="icon">📝</span> Blog</a>
+  </nav>
+  <a href="https://wa.me/33681108147" class="drawer-wa" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</aside>
+
+<div class="article-wrap">
+  <p class="article-label">IMMIGRATION · JURIDIQUE</p>
+  <h1>Comment obtenir sa <span class="accent">résidence géorgienne</span></h1>
+  <div class="article-meta">
+    <span>Juin 2026</span>
+    <span>8 min de lecture</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>La question de la résidence légale en Géorgie est l'une des premières que posent les candidats à l'expatriation. Le pays est réputé pour sa politique d'accueil ultra-libérale, et à juste titre — mais la liberté de séjour et la résidence légale sont deux choses distinctes. Voici un guide complet et à jour des différentes voies disponibles en 2026 pour un ressortissant français.</p>
+
+    <h2>Les Européens n'ont pas besoin de visa — mais ont-ils besoin d'une résidence ?</h2>
+    <p>Les ressortissants français peuvent séjourner en Géorgie jusqu'à 365 jours sans visa. Mais "séjourner" n'est pas "résider légalement". Au-delà d'un certain niveau d'intégration — ouvrir un compte bancaire, créer une société, posséder un bien immobilier, scolariser un enfant — il devient pertinent, voire nécessaire, d'officialiser son statut. Les titres de séjour géorgiens offrent aussi des droits supplémentaires et facilitent les démarches administratives. En pratique, un expatrié qui reste sous la barre des 365 jours par an sans activité formelle sur place peut techniquement se passer de titre de séjour. Mais dès que son ancrage géorgien se renforce — fiscalement, professionnellement, familialement — la régularisation de son statut devient non seulement utile mais indispensable.</p>
+
+    <h2>Le permis de séjour temporaire (TRP)</h2>
+    <p>Le permis de séjour temporaire (Temporary Residence Permit) est accordé pour un an, renouvelable. Plusieurs catégories existent selon la situation du demandeur : TRP pour travail (salarié d'une société géorgienne), TRP pour création d'entreprise (dirigeant d'une LLC géorgienne active), TRP pour investissement (investissement immobilier ou financier qualifié), et TRP familial (conjoint ou enfant d'un ressortissant géorgien ou d'un titulaire de TRP). La procédure se fait via la Public Services Hall (Sachino) et prend généralement entre 10 et 30 jours ouvrés. Les documents requis varient selon la catégorie, mais incluent toujours : passeport en cours de validité, preuve d'adresse en Géorgie, justificatif de l'activité ou du lien familial, et le cas échéant les documents de la société. Les frais administratifs sont modestes — quelques dizaines de lari — et la procédure ne nécessite pas d'avocat dans les cas standard.</p>
+
+    <h2>La résidence par investissement immobilier</h2>
+    <p>En achetant un bien immobilier d'une valeur minimale de <strong>100 000 USD</strong>, vous pouvez obtenir un permis de séjour temporaire valable 5 ans, renouvelable. Ce seuil peut évoluer — vérifiez toujours les conditions actuelles avec un conseiller spécialisé au moment de votre démarche. C'est la voie la plus prisée parmi nos clients car elle combine deux objectifs en une seule opération : constituer un actif immobilier générateur de revenus locatifs, et régulariser son statut de résident en Géorgie. L'investissement peut porter sur un ou plusieurs biens dont la valeur cumulée atteint le seuil requis. Le bien doit être détenu en nom propre (pas via une société). Les immeubles neufs en cours de construction comptent également, à condition que la valeur contractuelle atteigne le minimum requis.</p>
+
+    <h2>La résidence pour les entrepreneurs</h2>
+    <p>Si vous créez une société en Géorgie et en êtes le dirigeant, vous pouvez demander un TRP lié à votre activité professionnelle. Il faut démontrer que la société est réellement en activité : déclarations fiscales à jour, compte bancaire actif avec des mouvements réels, contrats ou factures témoignant d'une activité effective. Ce statut est particulièrement adapté aux entrepreneurs français qui créent une LLC géorgienne pour exercer leur activité à l'international depuis Batumi ou Tbilisi. Le TRP entrepreneur peut être demandé dès les premières semaines suivant la création de la société, et son renouvellement annuel est conditionné à la continuité de l'activité. C'est la voie que nous recommandons en priorité pour les indépendants, consultants, e-commerçants et créateurs de contenu qui s'installent en Géorgie.</p>
+
+    <div class="info-box">
+      <p>"Il n'existe pas de 'visa nomade digital' officiel en Géorgie comme dans certains autres pays. En revanche, la liberté de séjour d'un an sans visa, combinée au TRP renouvelable, offre en pratique une flexibilité totale pour la grande majorité des cas."</p>
+    </div>
+
+    <h2>La résidence permanente</h2>
+    <p>Après <strong>6 ans de résidence légale continue</strong> sur le territoire géorgien, il est possible de demander un permis de résidence permanente. Ce statut offre des droits très proches de ceux d'un citoyen géorgien, à quelques exceptions près : pas de droit de vote aux élections, impossibilité d'occuper certains emplois publics réservés aux nationaux. En pratique, la résidence permanente permet d'accéder aux services publics géorgiens dans les mêmes conditions que les citoyens, de renouveler un titre tous les 10 ans au lieu de chaque année, et d'apporter une stabilité juridique maximale à votre présence sur le territoire. La demande se fait auprès de l'Agence du Registre Civil, avec un dossier justifiant de la continuité de la résidence sur les 6 années écoulées.</p>
+
+    <h2>La voie vers la nationalité géorgienne</h2>
+    <p>La nationalité géorgienne peut être demandée après <strong>10 ans de résidence légale permanente</strong>, ou 5 ans pour les conjoints de citoyens géorgiens. La procédure inclut un test de langue géorgienne et une évaluation de l'intégration dans la société géorgienne. La bonne nouvelle : <strong>la Géorgie autorise la double nationalité</strong>. Vous n'avez pas à renoncer à votre passeport français pour obtenir le passeport géorgien. Ce dernier offre un accès sans visa à plus de 110 pays, dont la majorité des pays européens (hors UE). Pour les entrepreneurs les plus ancrés en Géorgie, la nationalité géorgienne représente un atout stratégique supplémentaire en termes de mobilité internationale.</p>
+
+    <h2>Notre recommandation pratique</h2>
+    <p>Pour la majorité des expatriés français qui s'installent à Batumi, voici le parcours le plus courant et le plus efficace : <strong>arriver avec le passeport</strong> (aucun visa requis pour les 365 premiers jours), <strong>créer sa société géorgienne dans les premières semaines</strong> grâce à une procédure rapide et peu coûteuse, puis <strong>demander un TRP lié à cette activité</strong> pour formaliser sa résidence légale et accéder à l'ensemble des droits associés. Cette séquence prend en général 4 à 8 semaines depuis l'arrivée. Elle peut être parallélisée avec la recherche d'un logement et l'ouverture d'un compte bancaire. BEI Batumi Expat Invest accompagne ses clients dans chaque étape de ce processus — de la création de société à la demande de TRP, en passant par les démarches bancaires et fiscales.</p>
+
+  </div>
+
+  <div class="cta-band">
+    <h3>Prêt à franchir le pas ?</h3>
+    <p>Nos experts BEI Batumi Expat Invest vous accompagnent dans toutes vos démarches en Géorgie.</p>
+    <a href="https://wa.me/33681108147" class="cta-wa" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Nous contacter sur WhatsApp
+    </a>
+  </div>
+
+  <div class="related">
+    <h3>Articles similaires</h3>
+    <div class="related-grid">
+      <a href="creer-societe-georgie-24h.html" class="related-card">
+        <div class="num">ARTICLE 05</div>
+        <div class="title">Créer une société en Géorgie en moins de 24h</div>
+      </a>
+      <a href="erreurs-expatriation.html" class="related-card">
+        <div class="num">ARTICLE 19</div>
+        <div class="title">Les erreurs à éviter avant de s'expatrier</div>
+      </a>
+      <a href="avantages-vivre-georgie.html" class="related-card">
+        <div class="num">ARTICLE 11</div>
+        <div class="title">Les 10 avantages de vivre en Géorgie</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Vivre en Géorgie &middot; <a href="../index.html">Retour au site</a> &middot; <a href="../mentions-legales.html">Mentions légales</a></footer>
+<script>
+function openDrawer() {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les 10 défauts de la Géorgie – Vivre en Géorgie</title>
+  <meta name="description" content="Trafic chaotique, bureaucratie, barrière linguistique, hivers pluvieux... Voici les 10 défauts réels de la Géorgie que personne ne vous dit avant de partir.">
+  <link rel="canonical" href="https://vivreengeorgie.com/blog/defauts-georgie.html">
+  <meta property="og:title" content="Les 10 défauts de la Géorgie">
+  <meta property="og:description" content="Trafic chaotique, bureaucratie, barrière linguistique, hivers pluvieux... Voici les 10 défauts réels de la Géorgie que personne ne vous dit avant de partir.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vivreengeorgie.com/blog/defauts-georgie.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #031d35; --navy2: #062746; --teal: #17BEBB; --gold: #D4AF37; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--navy); color: #fff; min-height: 100vh; }
+    /* ── Header ── */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding: 12px 16px; }
+    .header-inner { position: relative; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(6,39,70,.72); backdrop-filter: blur(12px); padding: 0 18px 0 14px; box-shadow: 0 12px 28px rgba(3,29,53,.28); }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .logo-img { width: 44px; height: 44px; border-radius: 999px; overflow: hidden; background: #fff; border: 2px solid rgba(255,255,255,.85); flex-shrink: 0; }
+    .logo-img img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-img-fallback { width: 100%; height: 100%; background: linear-gradient(135deg, #0A4D8C, #17BEBB); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff; }
+    .logo-text { display: grid; }
+    .logo-name { font-size: 1rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
+    .logo-sub { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .btn-wa-header { display: none; align-items: center; gap: 8px; background: #25d366; color: #fff; font-weight: 800; font-size: 13px; border-radius: 999px; padding: 10px 20px; box-shadow: 0 4px 18px rgba(37,211,102,.28); transition: background .2s, transform .2s; text-decoration: none; }
+    .btn-wa-header:hover { background: #1ebe5d; transform: scale(1.04); }
+    @media(min-width:540px){ .btn-wa-header { display: inline-flex; } }
+    .btn-menu { width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s; flex-shrink: 0; }
+    .btn-menu:hover { background: rgba(255,255,255,.2); }
+    .btn-menu svg { width: 20px; height: 20px; }
+    .drawer-backdrop { position: fixed; inset: 0; z-index: 45; background: rgba(3,29,53,.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .28s ease; }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 50; width: min(92vw, 28rem); background: radial-gradient(circle at 18% 12%, rgba(23,190,187,.18), transparent 22rem), radial-gradient(circle at 92% 0%, rgba(212,175,55,.16), transparent 20rem), linear-gradient(155deg, rgba(3,29,53,.98), rgba(6,39,70,.96) 52%, rgba(10,77,140,.94)); border-left: 1px solid rgba(255,255,255,.12); padding: 20px; box-shadow: -20px 0 60px rgba(3,29,53,.5); transform: translateX(100%); transition: transform .34s cubic-bezier(.22,1,.36,1); display: flex; flex-direction: column; }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+    .btn-close { width: 42px; height: 42px; border-radius: 999px; background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    .btn-close:hover { background: rgba(255,255,255,.2); }
+    .btn-close svg { width: 18px; height: 18px; }
+    .drawer-nav { display: grid; gap: 8px; }
+    .drawer-link { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.07); color: rgba(255,255,255,.88); font-size: .95rem; font-weight: 600; opacity: 0; transform: translateX(20px); transition: opacity .28s ease, transform .28s ease, background .2s, border-color .2s; text-decoration: none; }
+    .drawer.open .drawer-link { opacity: 1; transform: translateX(0); }
+    .drawer.open .drawer-link:nth-child(1) { transition-delay: .05s; }
+    .drawer.open .drawer-link:nth-child(2) { transition-delay: .09s; }
+    .drawer.open .drawer-link:nth-child(3) { transition-delay: .13s; }
+    .drawer.open .drawer-link:nth-child(4) { transition-delay: .17s; }
+    .drawer.open .drawer-link:nth-child(5) { transition-delay: .21s; }
+    .drawer-link:hover { border-color: rgba(23,190,187,.45); background: rgba(255,255,255,.13); color: #fff; }
+    .drawer-link .icon { color: var(--gold); font-size: 17px; flex-shrink: 0; }
+    .drawer-wa { display: flex; align-items: center; justify-content: center; gap: 10px; position: relative; align-self: center; min-height: 48px; padding: 0 32px; border-radius: 999px; background: #25d366; color: #fff; font-weight: 800; font-size: 14px; margin-top: 24px; box-shadow: 0 6px 20px rgba(37,211,102,.3); opacity: 0; transform: translateY(10px); transition: opacity .28s ease .28s, transform .28s ease .28s, background .2s; text-decoration: none; }
+    .drawer.open .drawer-wa { opacity: 1; transform: translateY(0); }
+    .drawer-wa:hover { background: #1ebe5d; }
+    @keyframes ring { 0%,100%{ transform:scale(1);opacity:.8; } 50%{ transform:scale(1.07);opacity:0; } }
+    .drawer-wa::before { content: ''; position: absolute; inset: -5px; border-radius: 999px; border: 2px solid rgba(37,211,102,.45); animation: ring 2.2s ease-in-out infinite; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+    .article-label { font-size: 10.5px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+    h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 900; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 20px; }
+    .accent { color: var(--teal); }
+    .article-meta { display: flex; gap: 16px; font-size: 12px; color: rgba(255,255,255,.4); margin-bottom: 48px; flex-wrap: wrap; }
+    .article-body h2 { font-size: 1.2rem; font-weight: 800; color: var(--gold); margin: 40px 0 14px; }
+    .article-body p { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,.78); margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 20px; }
+    .article-body li { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,.78); margin-bottom: 8px; }
+    .article-body strong { color: #fff; }
+    .article-body a { color: var(--teal); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+    .info-box { background: rgba(23,190,187,.07); border: 1px solid rgba(23,190,187,.2); border-left: 4px solid var(--teal); border-radius: 8px; padding: 18px 22px; margin: 28px 0; }
+    .info-box p { color: rgba(255,255,255,.85); margin: 0; font-size: 14px; line-height: 1.7; }
+    .cta-band { background: linear-gradient(135deg, rgba(23,190,187,.1), rgba(212,175,55,.06)); border: 1px solid rgba(23,190,187,.2); border-radius: 16px; padding: 44px 32px; text-align: center; margin-top: 64px; }
+    .cta-band h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 12px; }
+    .cta-band p { color: rgba(255,255,255,.65); margin-bottom: 28px; font-size: 15px; }
+    .cta-wa { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; font-weight: 800; font-size: 15px; padding: 14px 28px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,.35); transition: background .2s, transform .2s; }
+    .cta-wa:hover { background: #1ebe5d; transform: scale(1.03); }
+    .related { margin-top: 48px; }
+    .related h3 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+    .related-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 10px; padding: 16px; text-decoration: none; color: inherit; display: block; transition: border-color .2s; }
+    .related-card:hover { border-color: rgba(23,190,187,.35); }
+    .related-card .num { font-size: 10px; font-weight: 800; color: var(--teal); letter-spacing: .1em; margin-bottom: 6px; }
+    .related-card .title { font-size: 13px; font-weight: 600; line-height: 1.4; color: rgba(255,255,255,.8); }
+    footer { text-align: center; padding: 24px; font-size: 12px; color: rgba(255,255,255,.3); border-top: 1px solid rgba(255,255,255,.07); margin-top: 40px; }
+    footer a { color: var(--teal); text-decoration: none; }
+    @media (max-width:600px) { .article-wrap { padding: 100px 16px 60px; } .cta-band { padding: 32px 20px; } }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-img">
+        <img src="../images/bei-batumi-logo.jpeg" alt="BEI Batumi Expat Invest"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">Batumi · Expat Invest</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="btn-menu" id="btn-menu" aria-label="Ouvrir le menu" onclick="openDrawer()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="drawer-backdrop" id="backdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-label="Menu de navigation">
+  <div class="drawer-head">
+    <a href="../index.html" class="logo">
+      <div class="logo-img">
+        <img src="../images/bei-batumi-logo.jpeg" alt="Logo"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">BEI Batumi</span>
+      </div>
+    </a>
+    <button class="btn-close" aria-label="Fermer le menu" onclick="closeDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="../index.html"          class="drawer-link" onclick="closeDrawer()"><span class="icon">🏠</span> Accueil</a>
+    <a href="../index.html#services" class="drawer-link" onclick="closeDrawer()"><span class="icon">🎯</span> Nos services</a>
+    <a href="../index.html#trust"    class="drawer-link" onclick="closeDrawer()"><span class="icon">🛡️</span> Pourquoi nous ?</a>
+    <a href="../index.html#contact"  class="drawer-link" onclick="closeDrawer()"><span class="icon">✉️</span> Contact</a>
+    <a href="../blog.html"           class="drawer-link" onclick="closeDrawer()"><span class="icon">📝</span> Blog</a>
+  </nav>
+  <a href="https://wa.me/33681108147" class="drawer-wa" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</aside>
+
+<div class="article-wrap">
+  <p class="article-label">VIE EN GÉORGIE · EXPAT</p>
+  <h1>Les <span class="accent">10 défauts</span> de la Géorgie</h1>
+  <div class="article-meta">
+    <span>Juin 2026</span>
+    <span>7 min de lecture</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>Cet article fait pendant à notre liste d'avantages. Il serait malhonnête de ne parler que du positif. La Géorgie a des défauts réels. Les connaître avant de partir vous permettra d'arriver avec des attentes réalistes et d'éviter les déceptions.</p>
+
+    <h2>1. La conduite : un chaos organisé</h2>
+    <p>Conduire à Batumi (et encore plus à Tbilisi) est une expérience déstabilisante pour un Européen. Les règles du code de la route sont interprétées de façon très créative. Voitures qui grillent les feux, faufilent sans clignotant, klaxonnent sans raison. Les accidents sont fréquents. Si vous conduisez sur place, préparez-vous mentalement à un style radicalement différent de ce que vous connaissez. La bonne nouvelle est que la plupart des déplacements à Batumi peuvent s'effectuer à pied ou en taxi à des tarifs très abordables — 2 à 4€ pour la majorité des trajets en ville. Beaucoup d'expatriés font le choix de ne pas conduire localement, ce qui élimine entièrement ce problème du quotidien.</p>
+
+    <h2>2. La barrière linguistique</h2>
+    <p>Le géorgien est l'une des langues les plus difficiles au monde, avec un alphabet unique de 33 lettres. Très peu de Géorgiens parlent français, et l'anglais n'est pas aussi répandu qu'on pourrait le croire hors secteur touristique. Google Translate et quelques mots de base sont indispensables pour les démarches quotidiennes. Apprendre les 20 à 30 mots géorgiens de survie — merci, bonjour, combien, eau — change considérablement la qualité des interactions avec les locaux. En dehors de Batumi et Tbilisi, la difficulté augmente sensiblement. Les expatriés qui s'intègrent le mieux investissent dans quelques cours de géorgien dans les premiers mois — même un niveau A1 suffit à transformer l'expérience sociale.</p>
+
+    <h2>3. La qualité variable de l'administration</h2>
+    <p>La Géorgie a fait des progrès immenses dans la simplification administrative. Mais certains services restent imprévisibles : délais variables, informations contradictoires selon les fonctionnaires, langue de travail exclusivement en géorgien. Avoir un contact local ou un agent spécialisé facilite considérablement ces interactions. Les Public Service Halls (Sachino), véritables guichets uniques administratifs, ont considérablement amélioré l'expérience depuis 2015. Mais certaines démarches — renouvellement de titre de séjour, transferts de propriété immobilière, résolution de litiges fiscaux — requièrent encore une maîtrise du contexte local difficile à acquérir rapidement en arrivant de France.</p>
+
+    <h2>4. Les hivers à Batumi : humides et gris</h2>
+    <p>Batumi est réputée pour son été vibrant. Moins connue est sa réputation d'hiver : c'est l'une des villes les plus pluvieuses d'Europe avec plus de 2 400 mm de précipitations annuelles. De novembre à mars, les ciels gris et pluies persistantes peuvent peser sur le moral. C'est pourquoi beaucoup d'expatriés font des allers-retours saisonniers. Certains optent pour Tbilisi en hiver — la capitale, plus continentale, offre des hivers secs et ensoleillés, voire enneigés, qui tranchent radicalement avec le Batumi pluvieux. D'autres profitent de la proximité de la Turquie pour des escapades hivernales à Istanbul ou Antalya. La saisonnalité est réelle, mais elle se gère avec un peu d'organisation.</p>
+
+    <h2>5. Les coupures de courant et d'eau</h2>
+    <p>Moins fréquentes qu'il y a cinq ans, les coupures restent une réalité notamment dans les immeubles anciens. Un logement dans un immeuble récent avec générateur de secours est recommandé. Dans les nouveaux complexes résidentiels construits depuis 2018, les coupures sont quasi inexistantes grâce aux groupes électrogènes de secours. La pression d'eau peut parfois baisser pendant les pics de chaleur estivaux dans certains quartiers. Ces désagréments sont mineurs dans un logement bien choisi, mais peuvent devenir une vraie source de frustration dans un appartement ancien sans préparation adaptée.</p>
+
+    <h2>6. Les routes hors des grandes villes</h2>
+    <p>La route principale entre Batumi et Tbilisi est correcte. En dehors des axes principaux, l'état des routes peut varier du passable au catastrophique. Les pluies fréquentes en Adjarie aggravent la situation, provoquant régulièrement des glissements de terrain sur les routes de montagne. Prévoir un véhicule solide ou des transports organisés pour explorer le pays est indispensable. La Géorgie investit massivement dans ses infrastructures depuis 2020, mais les zones rurales et montagneuses accusent encore un retard significatif par rapport aux normes européennes. Pour les voyages hors des sentiers battus, planifier avec une marge de temps et un véhicule adapté reste la norme.</p>
+
+    <h2>7. L'accès limité à certains services européens</h2>
+    <p>Les cartes bancaires françaises sont souvent refusées dans les terminaux locaux. Amazon Prime ne livre pas en Géorgie. Certaines plateformes de streaming ont un catalogue réduit. La téléphonie internationale peut être coûteuse sans préparation. Ces contraintes sont gérables avec un peu d'anticipation : ouvrir un compte bancaire géorgien dans les premières semaines résout la majorité des problèmes de paiement. Un VPN règle les questions de catalogue de streaming. Pour les livraisons internationales, des services de réexpédition via la Turquie ou la Pologne fonctionnent bien. Mais ces solutions demandent un temps d'adaptation qui peut être frustrant pour les nouveaux arrivants habitués à la fluidité des services européens.</p>
+
+    <h2>8. Une saisonnalité très marquée à Batumi</h2>
+    <p>L'économie reste très dépendante du tourisme estival. En dehors de juillet-août, de nombreux restaurants et boutiques réduisent leurs horaires ou ferment. La ville en hiver offre une expérience très différente — plus calme, mais aussi moins animée. Si l'effervescence estivale de Batumi peut sembler excessive pour ceux qui cherchent la tranquillité, la ville hivernale peut en revanche décevoir ceux qui arrivent en attente de vie nocturne et d'animation culturelle. Cette dualité est l'une des principales sources de déceptions pour les expatriés qui n'ont visité Batumi qu'en été et s'y installent ensuite à l'année.</p>
+
+    <h2>9. La question de la stabilité politique</h2>
+    <p>La Géorgie est un pays démocratique mais avec des tensions politiques significatives. Les manifestations pro-européennes de 2023-2024 ont montré des divisions profondes sur l'orientation géopolitique. La situation avec la Russie (territoires d'Ossétie du Sud et d'Abkhazie occupés) reste une source d'incertitude. En pratique, ces tensions n'ont jamais affecté directement la sécurité des expatriés dans les grandes villes géorgiennes. Mais elles créent un fond d'incertitude géopolitique qu'il est honnête de mentionner. Diversifier ses actifs et maintenir une mobilité internationale reste une précaution de bon sens pour tout expatrié installé dans un pays de la région.</p>
+
+    <h2>10. L'intégration des enfants en scolarité locale</h2>
+    <p>Les écoles publiques géorgiennes sont gratuites mais enseignent en géorgien. Les écoles internationales coûtent 300 à 800€/mois. Il n'y a pas d'école française officielle à Batumi. Beaucoup de familles optent pour le CNED ou le homeschooling. Cette contrainte est l'une des plus significatives pour les familles avec enfants en âge scolaire. Le CNED (Centre National d'Enseignement à Distance) offre une solution viable pour maintenir le programme français, mais requiert une organisation domestique solide et un parent disponible pour encadrer. Des solutions hybrides émergent — cours en ligne avec des professeurs francophones, groupes d'apprentissage entre familles expatriées — mais aucune n'égale encore la simplicité d'une école publique de quartier.</p>
+
+    <div class="info-box">
+      <p>"Ces défauts ne sont pas des raisons de ne pas venir — ce sont des réalités à anticiper. La grande majorité des expatriés qui connaissent ces points avant de partir s'adaptent parfaitement et ne regrettent pas leur choix."</p>
+    </div>
+
+    <p>Connaître les défauts d'une destination avant d'y partir est la marque d'un projet sérieux. La Géorgie n'est pas un eldorado sans contraintes — c'est un pays réel, avec ses aspérités, ses défis et ses particularités culturelles. Mais pour qui arrive préparé, ces obstacles sont largement surmontables, et les avantages restent, de l'avis de la grande majorité des expatriés, bien supérieurs aux inconvénients.</p>
+
+  </div>
+
+  <div class="cta-band">
+    <h3>Prêt à franchir le pas ?</h3>
+    <p>Nos experts BEI Batumi Expat Invest vous accompagnent dans toutes vos démarches en Géorgie.</p>
+    <a href="https://wa.me/33681108147" class="cta-wa" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Nous contacter sur WhatsApp
+    </a>
+  </div>
+
+  <div class="related">
+    <h3>Articles similaires</h3>
+    <div class="related-grid">
+      <a href="avantages-vivre-georgie.html" class="related-card">
+        <div class="num">ARTICLE 11</div>
+        <div class="title">Les 10 avantages de vivre en Géorgie</div>
+      </a>
+      <a href="erreurs-expatriation.html" class="related-card">
+        <div class="num">ARTICLE 19</div>
+        <div class="title">Les erreurs à éviter avant de s'expatrier</div>
+      </a>
+      <a href="securite-georgie.html" class="related-card">
+        <div class="num">ARTICLE 17</div>
+        <div class="title">La sécurité en Géorgie</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Vivre en Géorgie &middot; <a href="../index.html">Retour au site</a> &middot; <a href="../mentions-legales.html">Mentions légales</a></footer>
+<script>
+function openDrawer() {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+</script>
+</body>
+</html>

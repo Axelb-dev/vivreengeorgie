@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivre en Géorgie – Vivez, Investissez, Entreprendez</title>
+  <meta name="description" content="Experts francophones à Batumi. 47 projets accompagnés depuis 2020. Expatriation, immobilier, société, fiscalité. Réponse sous 24h.">
+  <meta property="og:title" content="Vivre en Géorgie – Experts francophones">
+  <meta property="og:description" content="Expatriation, investissement, création de société et fiscalité en Géorgie. 47 projets accompagnés depuis 2020.">
+  <meta property="og:image" content="images/batumi-real.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:  #031d35;
+    --navy2: #062746;
+    --navy3: #0A4D8C;
+    --teal:  #17BEBB;
+    --gold:  #D4AF37;
+    --dark:  #1B1B1B;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: 'Inter', sans-serif; background: var(--navy); color: #fff; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; }
+
+  /* ── HEADER ── */
+  .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding: 12px 16px; }
+  .header-inner {
+    position: relative; max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(6,39,70,.72);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    padding: 0 18px 0 14px;
+    box-shadow: 0 12px 28px rgba(3,29,53,.28);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-img {
+    width: 44px; height: 44px; border-radius: 999px; overflow: hidden;
+    background: #fff; border: 2px solid rgba(255,255,255,.85);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.85), 0 8px 20px rgba(3,29,53,.18);
+    flex-shrink: 0;
+  }
+  .logo-img img { width: 100%; height: 100%; object-fit: cover; }
+  .logo-img-fallback {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--navy3), var(--teal));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 900; color: #fff;
+  }
+  .logo-text { display: grid; }
+  .logo-name { font-size: 1rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
+  .logo-sub  { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); }
+  .header-actions { display: flex; align-items: center; gap: 8px; }
+  .btn-wa-header {
+    display: none; align-items: center; gap: 8px;
+    background: #25d366; color: #fff;
+    font-weight: 800; font-size: 13px; border-radius: 999px; padding: 10px 20px;
+    box-shadow: 0 4px 18px rgba(37,211,102,.28); transition: background .2s, transform .2s;
+  }
+  .btn-wa-header:hover { background: #1ebe5d; transform: scale(1.04); }
+  @media(min-width:540px){ .btn-wa-header { display: inline-flex; } }
+  .btn-menu {
+    width: 44px; height: 44px; border-radius: 999px;
+    background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s; flex-shrink: 0;
+  }
+  .btn-menu:hover { background: rgba(255,255,255,.2); }
+  .btn-menu svg { width: 20px; height: 20px; }
+
+  /* ── DRAWER ── */
+  .drawer-backdrop {
+    position: fixed; inset: 0; z-index: 45;
+    background: rgba(3,29,53,.6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    opacity: 0; pointer-events: none; transition: opacity .28s ease;
+  }
+  .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 50;
+    width: min(92vw, 28rem);
+    background:
+      radial-gradient(circle at 18% 12%, rgba(23,190,187,.18), transparent 22rem),
+      radial-gradient(circle at 92% 0%, rgba(212,175,55,.16), transparent 20rem),
+      linear-gradient(155deg, rgba(3,29,53,.98), rgba(6,39,70,.96) 52%, rgba(10,77,140,.94));
+    border-left: 1px solid rgba(255,255,255,.12);
+    padding: 20px; box-shadow: -20px 0 60px rgba(3,29,53,.5);
+    transform: translateX(100%); transition: transform .34s cubic-bezier(.22,1,.36,1);
+    display: flex; flex-direction: column;
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+  .btn-close {
+    width: 42px; height: 42px; border-radius: 999px;
+    background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff;
+    display: flex; align-items: center; justify-content: center; transition: background .2s;
+  }
+  .btn-close:hover { background: rgba(255,255,255,.2); }
+  .btn-close svg { width: 18px; height: 18px; }
+  .drawer-nav { display: grid; gap: 8px; }
+  .drawer-link {
+    display: flex; align-items: center; gap: 12px;
+    min-height: 52px; padding: 0 16px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.07);
+    color: rgba(255,255,255,.88); font-size: .95rem; font-weight: 600;
+    opacity: 0; transform: translateX(20px);
+    transition: opacity .28s ease, transform .28s ease, background .2s, border-color .2s;
+  }
+  .drawer.open .drawer-link { opacity: 1; transform: translateX(0); }
+  .drawer.open .drawer-link:nth-child(1) { transition-delay: .05s; }
+  .drawer.open .drawer-link:nth-child(2) { transition-delay: .09s; }
+  .drawer.open .drawer-link:nth-child(3) { transition-delay: .13s; }
+  .drawer.open .drawer-link:nth-child(4) { transition-delay: .17s; }
+  .drawer.open .drawer-link:nth-child(5) { transition-delay: .21s; }
+  .drawer-link:hover { border-color: rgba(23,190,187,.45); background: rgba(255,255,255,.13); color: #fff; }
+  .drawer-link .icon { color: var(--gold); font-size: 17px; flex-shrink: 0; }
+  .drawer-wa {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    position: relative; align-self: center; min-height: 48px; padding: 0 32px;
+    border-radius: 999px; background: #25d366;
+    color: #fff; font-weight: 800; font-size: 14px; margin-top: 36px;
+    box-shadow: 0 6px 20px rgba(37,211,102,.3);
+    opacity: 0; transform: translateY(10px);
+    transition: opacity .28s ease .28s, transform .28s ease .28s, background .2s;
+  }
+  .drawer.open .drawer-wa { opacity: 1; transform: translateY(0); }
+  .drawer-wa:hover { background: #1ebe5d; }
+  .drawer-wa::before {
+    content: ''; position: absolute; inset: -5px; border-radius: 999px;
+    border: 2px solid rgba(37,211,102,.45); animation: ring 2.2s ease-in-out infinite;
+  }
+
+  /* ── LANGUAGE SELECT ── */
+  .lang-switcher {
+    margin-top: 20px; padding: 14px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08); border-radius: 12px;
+  }
+  .lang-label {
+    font-size: 9.5px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(255,255,255,.4); margin-bottom: 10px;
+  }
+  .lang-select {
+    width: 100%; appearance: none; -webkit-appearance: none;
+    background: rgba(255,255,255,.1)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")
+      no-repeat right 14px center;
+    border: 1px solid rgba(255,255,255,.2); border-radius: 8px;
+    color: #fff; font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 700; padding: 11px 40px 11px 14px;
+    cursor: pointer; outline: none; transition: border-color .2s, background .2s;
+  }
+  .lang-select:hover { border-color: rgba(23,190,187,.5); background-color: rgba(255,255,255,.15); }
+  .lang-select:focus { border-color: var(--teal); }
+  .lang-select option { background: #062746; color: #fff; font-weight: 600; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; min-height: 100vh; display: flex; align-items: center;
+    overflow: hidden; padding: 100px 24px 60px; --mx: 50%; --my: 50%;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('images/batumi-real.png') center / cover no-repeat;
+    will-change: transform;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(3,29,53,.93) 0%, rgba(6,39,70,.72) 48%, rgba(10,77,140,.18) 100%);
+  }
+  .hero-spot {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at var(--mx) var(--my), rgba(23,190,187,.22), transparent 28rem);
+    transition: background .06s ease;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 28%, #000 68%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 28%, #000 68%, transparent 100%);
+  }
+  .orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
+  .orb-1 { width: 560px; height: 560px; background: rgba(23,190,187,.15); top: -140px; left: -140px; animation: o1 14s ease-in-out infinite alternate; }
+  .orb-2 { width: 420px; height: 420px; background: rgba(212,175,55,.12); bottom: 0; right: 6%; animation: o2 18s ease-in-out infinite alternate; }
+  @keyframes o1 { to { transform: translate(70px, 50px); } }
+  @keyframes o2 { to { transform: translate(-50px, -70px); } }
+  .particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.17);
+    border-radius: 7px; padding: 8px 15px; font-size: 10.5px; font-weight: 800;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 26px; backdrop-filter: blur(10px);
+  }
+  .badge-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--teal);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{ opacity:1;transform:scale(1); } 50%{ opacity:.5;transform:scale(1.4); } }
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight: 900; line-height: 1.03;
+    letter-spacing: -.025em; max-width: 740px; margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--teal); }
+  .hero-sub { font-size: 1.08rem; color: rgba(255,255,255,.78); max-width: 520px; line-height: 1.74; margin-bottom: 44px; }
+  .feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 11px; max-width: 680px; }
+  @media(min-width:580px){ .feat-grid { grid-template-columns: repeat(4,1fr); } }
+  .feat-card {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.13);
+    border-radius: 10px; padding: 14px; backdrop-filter: blur(10px);
+    transition: transform .25s, background .25s, border-color .25s;
+  }
+  .feat-card:hover { transform: translateY(-5px); background: rgba(23,190,187,.12); border-color: rgba(23,190,187,.4); }
+  .feat-icon { font-size: 20px; margin-bottom: 9px; }
+  .feat-title { font-size: 9.5px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; }
+  .feat-text { font-size: 11px; color: rgba(255,255,255,.56); line-height: 1.55; }
+
+  /* ── STATS ── */
+  .stats-band {
+    background: linear-gradient(135deg, var(--navy2), var(--navy3));
+    border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); padding: 36px 24px;
+  }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+  @media(min-width:580px){ .stats-inner { grid-template-columns: repeat(4,1fr); } }
+  .stat { text-align: center; }
+  .stat-val { font-size: clamp(2.1rem, 5vw, 3.1rem); font-weight: 900; color: var(--gold); line-height: 1; }
+  .stat-lbl { font-size: 12px; color: rgba(255,255,255,.58); margin-top: 7px; font-weight: 500; }
+
+  /* ── WA BAR ── */
+  .wa-bar {
+    background: linear-gradient(90deg, var(--navy), var(--navy2), var(--navy));
+    border-top: 1px solid rgba(23,190,187,.17); border-bottom: 1px solid rgba(23,190,187,.17); padding: 26px 24px;
+  }
+  .wa-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+  @media(min-width:720px){ .wa-inner { flex-direction:row; justify-content:space-between; text-align:left; } }
+  .wa-txt h3 { font-size: 1.18rem; font-weight: 800; }
+  .wa-txt p  { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 4px; }
+  .wa-right { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .wa-btn {
+    position: relative; display: inline-flex; align-items: center; gap: 9px;
+    background: #25d366; color: #fff; font-weight: 800; font-size: 14px;
+    padding: 12px 20px; border-radius: 999px;
+    white-space: nowrap; transition: background .2s, transform .2s;
+    box-shadow: 0 6px 20px rgba(37,211,102,.3);
+  }
+  .wa-btn:hover { background: #1ebe5d; transform: scale(1.03); }
+  .wa-btn::before {
+    content: ''; position: absolute; inset: -5px; border-radius: 14px;
+    border: 2px solid rgba(37,211,102,.45); animation: ring 2.2s ease-in-out infinite; border-radius: 999px;
+  }
+  @keyframes ring { 0%,100%{ transform:scale(1);opacity:.8; } 50%{ transform:scale(1.07);opacity:0; } }
+  .wa-note { font-size: 11px; color: rgba(255,255,255,.42); }
+
+  /* ── SECTIONS ── */
+  .section { padding: 84px 24px; }
+  .sec { max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-size: 10.5px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  .sec-h2 { font-size: clamp(1.9rem, 4vw, 2.85rem); font-weight: 900; line-height: 1.14; letter-spacing: -.02em; margin-bottom: 16px; }
+  .sec-p { color: rgba(255,255,255,.66); font-size: 1rem; line-height: 1.74; max-width: 580px; margin-bottom: 50px; }
+
+  /* ── SERVICES ── */
+  .svc-bg { background: linear-gradient(180deg, rgba(3,29,53,.98), rgba(6,39,70,.94)); }
+  .cards-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media(min-width:580px){ .cards-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(min-width:1024px){ .cards-grid { grid-template-columns: repeat(4,1fr); } }
+  .svc-card {
+    display: block; color: #fff; background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1); border-radius: 13px; padding: 24px;
+    transition: transform .3s, border-color .3s, background .3s, box-shadow .3s;
+  }
+  .svc-card:hover { transform: translateY(-9px) scale(1.01); border-color: rgba(23,190,187,.5); background: rgba(23,190,187,.07); box-shadow: 0 28px 60px rgba(3,29,53,.38); }
+  .svc-ico { width: 46px; height: 46px; background: rgba(212,175,55,.14); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 18px; transition: background .3s; }
+  .svc-card:hover .svc-ico { background: var(--gold); }
+  .svc-title { font-size: 1.04rem; font-weight: 800; margin-bottom: 10px; }
+  .svc-text  { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.72; }
+  .svc-cta   { display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:12px; font-weight:700; color:var(--teal); }
+
+  /* ── TRUST ── */
+  .trust-bg { background: linear-gradient(145deg, var(--navy) 0%, var(--navy2) 55%, rgba(10,77,140,.22) 100%); border-top: 1px solid rgba(255,255,255,.06); }
+  .trust-grid { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 50px; }
+  @media(min-width:580px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+  .trust-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 13px; padding: 26px; transition: border-color .3s, background .3s, transform .3s; }
+  .trust-card:hover { border-color: rgba(23,190,187,.36); background: rgba(23,190,187,.05); transform: translateY(-4px); }
+  .trust-num   { font-size: 2.1rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+  .trust-title { font-size: .95rem; font-weight: 700; margin-bottom: 9px; }
+  .trust-text  { font-size: 13px; color: rgba(255,255,255,.54); line-height: 1.68; }
+
+  /* ── WHY BAR ── */
+  .why-bar { background: rgba(10,77,140,.14); border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 22px 24px; }
+  .why-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
+  .why-label { display:flex; align-items:center; gap:9px; font-size:.92rem; font-weight:900; white-space:nowrap; }
+  .star { color: var(--gold); }
+  .why-items { display:flex; flex-wrap:wrap; gap:12px 22px; }
+  .why-item { display:flex; align-items:center; gap:7px; font-size:12px; color:rgba(255,255,255,.78); font-weight:500; }
+  .chk { color: var(--teal); font-weight:800; }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #111827; border-top: 1px solid rgba(255,255,255,.08); }
+  .footer-top { max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; display: grid; gap: 40px; grid-template-columns: 1fr; }
+  @media(min-width:768px){ .footer-top { grid-template-columns: 1.4fr 1fr 1fr; } }
+  .footer-logo { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .f-logo-img { width: 46px; height: 46px; border-radius: 999px; overflow: hidden; background: #fff; border: 2px solid rgba(255,255,255,.85); box-shadow: 0 0 0 1px rgba(255,255,255,.85), 0 8px 20px rgba(3,29,53,.18); flex-shrink: 0; }
+  .f-logo-img img { width:100%;height:100%;object-fit:cover; }
+  .f-logo-name { font-size:1.05rem; font-weight:800; line-height:1.2; }
+  .f-logo-sub  { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.18em; color:var(--teal); }
+  .footer-desc { font-size:13.5px; line-height:1.74; color:rgba(255,255,255,.64); max-width:340px; }
+  .footer-contacts { margin-top:20px; display:grid; gap:8px; }
+  .footer-contact  { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; }
+  .footer-contact.teal { color:var(--teal); }
+  .footer-contact.gold { color:var(--gold); }
+  .footer-col h3 { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.18em; color:var(--gold); margin-bottom:16px; }
+  .footer-nav { display:grid; gap:10px; }
+  .footer-nav a { font-size:13.5px; color:rgba(255,255,255,.68); transition:color .2s; }
+  .footer-nav a:hover { color:#fff; }
+  .social-row { display:flex; gap:10px; }
+  .social-btn { width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.15); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: #fff; font-size:16px; transition: background .2s, border-color .2s, color .2s; }
+  .social-btn:hover { background: var(--teal); border-color: var(--teal); color: var(--navy2); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 18px 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,.42); max-width: 1200px; margin: 0 auto; }
+
+  /* ── FLOATING WA ── */
+  .float-wa { position: fixed; bottom: 24px; right: 24px; z-index: 35; width: 58px; height: 58px; border-radius: 999px; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,.4); transition: transform .25s, box-shadow .25s; }
+  .float-wa:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37,211,102,.55); }
+  .float-wa svg { width: 30px; height: 30px; }
+  .float-wa::before { content: ''; position: absolute; inset: -5px; border-radius: 999px; border: 2px solid rgba(37,211,102,.4); animation: ring 2.5s ease-in-out infinite; }
+
+  /* ── SCROLL TOP ── */
+  .scroll-top {
+    position: fixed; bottom: 94px; right: 24px; z-index: 35;
+    width: 44px; height: 44px; border-radius: 999px;
+    background: rgba(6,39,70,.8); border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;
+    color: #fff; cursor: pointer; opacity: 0; transform: translateY(10px);
+    transition: opacity .3s, transform .3s, background .2s; pointer-events: none;
+  }
+  .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .scroll-top:hover { background: var(--teal); border-color: var(--teal); }
+  .scroll-top svg { width: 18px; height: 18px; }
+  .reveal { opacity: 0; }
+
+  /* ── Brochure button ── */
+  .brochure-btn-wrap { text-align: center; margin-top: 40px; }
+  .btn-brochure { display: inline-flex; align-items: center; gap: 10px; border: 2px solid var(--gold); color: var(--gold); background: rgba(212,175,55,.06); font-family: inherit; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 999px; cursor: pointer; transition: background .2s, transform .2s; }
+  .btn-brochure:hover { background: rgba(212,175,55,.14); transform: scale(1.03); }
+  .btn-brochure-header { display: none; align-items: center; gap: 7px; background: rgba(212,175,55,.1); color: var(--gold); border: 1.5px solid rgba(212,175,55,.45); font-family: inherit; font-weight: 700; font-size: 12.5px; border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background .2s, transform .2s; white-space: nowrap; }
+  .btn-brochure-header:hover { background: rgba(212,175,55,.22); transform: scale(1.04); }
+  @media(min-width:540px){ .btn-brochure-header { display: inline-flex; } }
+  .drawer-brochure { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 32px; border-radius: 999px; background: rgba(212,175,55,.1); color: var(--gold); border: 1.5px solid rgba(212,175,55,.4); font-family: inherit; font-weight: 700; font-size: 14px; margin-top: 20px; cursor: pointer; opacity: 0; transform: translateY(10px); transition: opacity .28s ease .34s, transform .28s ease .34s, background .2s; }
+  .drawer.open .drawer-brochure { opacity: 1; transform: translateY(0); }
+  .drawer-brochure:hover { background: rgba(212,175,55,.2); }
+
+  /* ── Brochure modal ── */
+  .brochure-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(3,29,53,.78); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .28s ease; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .brochure-backdrop.open { opacity: 1; pointer-events: auto; }
+  .brochure-modal { background: linear-gradient(145deg, rgba(6,39,70,.98), rgba(3,29,53,.98)); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; transform: scale(.92) translateY(16px); transition: transform .32s cubic-bezier(.22,1,.36,1); }
+  .brochure-backdrop.open .brochure-modal { transform: scale(1) translateY(0); }
+  .brochure-modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 16px; }
+  .brochure-modal-head h3 { font-size: 1.25rem; font-weight: 900; }
+  .brochure-close { background: none; border: none; color: rgba(255,255,255,.45); cursor: pointer; font-size: 22px; line-height: 1; padding: 2px 4px; flex-shrink: 0; transition: color .2s; }
+  .brochure-close:hover { color: #fff; }
+  .brochure-modal > p { color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 22px; line-height: 1.6; }
+  .brochure-options { display: grid; gap: 10px; margin-bottom: 26px; }
+  .brochure-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); cursor: pointer; transition: border-color .2s, background .2s; user-select: none; }
+  .brochure-opt:hover { border-color: rgba(212,175,55,.35); background: rgba(212,175,55,.05); }
+  .brochure-opt.selected { border-color: var(--gold); background: rgba(212,175,55,.1); }
+  .brochure-opt-icon { font-size: 20px; flex-shrink: 0; }
+  .brochure-opt-label { font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.82); flex: 1; }
+  .brochure-opt.selected .brochure-opt-label { color: #fff; }
+  .brochure-opt-check { width: 20px; height: 20px; border-radius: 6px; border: 2px solid rgba(255,255,255,.22); background: transparent; transition: border-color .2s, background .2s; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .brochure-opt.selected .brochure-opt-check { border-color: var(--gold); background: var(--gold); }
+  .brochure-opt.selected .brochure-opt-check::after { content: ''; display: block; width: 5px; height: 9px; border-right: 2px solid #031d35; border-bottom: 2px solid #031d35; transform: rotate(45deg) translate(-1px,-2px); }
+  .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
+  .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
+  .brochure-send:disabled { opacity: .38; cursor: default; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#hero" class="logo" onclick="closeDrawer()">
+      <div class="logo-img">
+        <img src="images/bei-batumi-logo.jpeg" alt="BEI Batumi Expat Invest"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">Batumi · Expat Invest</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <button class="btn-brochure-header" onclick="openBrochureModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span data-i18n="brochure_btn">Obtenir la brochure</span>
+      </button>
+      <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="btn-menu" id="btn-menu" aria-label="Ouvrir le menu" onclick="openDrawer()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- DRAWER -->
+<div class="drawer-backdrop" id="backdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-label="Menu de navigation">
+  <div class="drawer-head">
+    <a href="#hero" class="logo" onclick="closeDrawer()">
+      <div class="logo-img">
+        <img src="images/bei-batumi-logo.jpeg" alt="Logo"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">BEI Batumi</span>
+      </div>
+    </a>
+    <button class="btn-close" aria-label="Fermer le menu" onclick="closeDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#hero"     class="drawer-link" onclick="closeDrawer()"><span class="icon">🏠</span> <span data-i18n="nav_home">Accueil</span></a>
+    <a href="#services" class="drawer-link" onclick="closeDrawer()"><span class="icon">🎯</span> <span data-i18n="nav_services">Nos services</span></a>
+    <a href="#trust"    class="drawer-link" onclick="closeDrawer()"><span class="icon">🛡️</span> <span data-i18n="nav_trust">Pourquoi nous ?</span></a>
+    <a href="#contact"  class="drawer-link" onclick="closeDrawer()"><span class="icon">✉️</span> <span data-i18n="nav_contact">Contact</span></a>
+    <a href="blog.html" class="drawer-link"><span class="icon">📝</span> <span data-i18n="nav_blog">Blog</span></a>
+  </nav>
+  <div class="lang-switcher">
+    <div class="lang-label" data-i18n="lang_label">Langue</div>
+    <select class="lang-select" id="lang-select" onchange="switchLang(this.value)">
+      <option value="fr">Français (FR)</option>
+      <option value="en">English (EN)</option>
+      <option value="es">Español (ES)</option>
+      <option value="ge">ქართული (GE)</option>
+    </select>
+  </div>
+  <a href="https://wa.me/33681108147" class="drawer-wa" target="_blank" rel="noopener" onclick="closeDrawer(); return openWA('wa_msg_generic')">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+  <button class="drawer-brochure" onclick="closeBrochureModal(); openBrochureModal(); closeDrawer()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    <span data-i18n="brochure_btn">Obtenir la brochure</span>
+  </button>
+</aside>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-spot" id="hero-spot"></div>
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="badge" id="hero-badge">
+      <span class="badge-dot"></span>
+      <span data-i18n="hero_badge">Votre projet en Géorgie, notre expertise</span>
+    </div>
+    <h1 id="hero-h1" data-i18n="hero_h1">Vivez, Investissez<br>Entreprenez en <span class="accent">GÉORGIE</span></h1>
+    <p class="hero-sub" id="hero-sub" data-i18n="hero_sub">
+      Nous vous accompagnons à chaque étape pour réussir votre projet en toute sérénité — avec des experts présents sur le terrain toute l'année.
+    </p>
+    <div class="feat-grid" id="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🛡️</div>
+        <div class="feat-title" data-i18n="feat1_title">Accompagnement sur mesure</div>
+        <div class="feat-text"  data-i18n="feat1_text">Un interlocuteur dans votre langue pour votre projet.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title" data-i18n="feat2_title">Réactivité exceptionnelle</div>
+        <div class="feat-text"  data-i18n="feat2_text">On répond peu importe l'heure, 7j/7.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📋</div>
+        <div class="feat-title" data-i18n="feat3_title">Démarches simplifiées</div>
+        <div class="feat-text"  data-i18n="feat3_text">Nous gérons les formalités administratives.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔒</div>
+        <div class="feat-title" data-i18n="feat4_title">Sécurité &amp; transparence</div>
+        <div class="feat-text"  data-i18n="feat4_text">Tarifs clairs avant tout engagement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band" id="stats">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-val" data-count="47">0</div>
+      <div class="stat-lbl" data-i18n="stat1_lbl">Projets accompagnés</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" data-i18n="stat2_val">4 ans</div>
+      <div class="stat-lbl" data-i18n="stat2_lbl">Sur le terrain à Batumi</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" data-i18n="stat3_val">3 villes</div>
+      <div class="stat-lbl" data-i18n="stat3_lbl">Couvertes en Géorgie</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">&lt;&nbsp;24h</div>
+      <div class="stat-lbl" data-i18n="stat4_lbl">Délai de réponse garanti</div>
+    </div>
+  </div>
+</section>
+
+<!-- WA BAR -->
+<section class="wa-bar">
+  <div class="wa-inner">
+    <div class="wa-txt">
+      <h3 data-i18n="wa_h3">💬 Parlons de votre projet !</h3>
+      <p data-i18n="wa_p">Échangeons gratuitement sur WhatsApp. Réponse sous 24h garantie.</p>
+    </div>
+    <div class="wa-right">
+      <a href="https://wa.me/33681108147" class="wa-btn" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="wa_btn">WhatsApp</span>
+      </a>
+      <span class="wa-note" data-i18n="wa_note">⏱ Réponse sous 24h · Gratuit · Sans engagement</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section svc-bg" id="services">
+  <div class="sec">
+    <p class="eyebrow reveal" data-i18n="svc_eyebrow">Vous êtes concerné si vous souhaitez…</p>
+    <h2 class="sec-h2 reveal" data-i18n="svc_h2">Votre projet en Géorgie, de A à Z.</h2>
+    <p class="sec-p reveal" data-i18n="svc_p">Expatriation, immobilier, création de société ou optimisation fiscale — nous gérons l'ensemble des démarches à votre place, en français.</p>
+    <div class="cards-grid">
+      <a href="https://wa.me/33681108147" class="svc-card reveal" target="_blank" rel="noopener" onclick="return openWA('wa_msg_svc1')">
+        <div class="svc-ico">🏠</div>
+        <div class="svc-title" data-i18n="svc1_title">Vivre en Géorgie</div>
+        <div class="svc-text"  data-i18n="svc1_text">S'expatrier et profiter d'une qualité de vie exceptionnelle. Logement, banque, visa, premiers repères sans stress.</div>
+        <div class="svc-cta"   data-i18n="svc1_cta">En parler →</div>
+      </a>
+      <a href="https://wa.me/33681108147" class="svc-card reveal" target="_blank" rel="noopener" onclick="return openWA('wa_msg_svc2')">
+        <div class="svc-ico">📈</div>
+        <div class="svc-title" data-i18n="svc2_title">Investir à Batumi</div>
+        <div class="svc-text"  data-i18n="svc2_text">De la recherche du bien à la finalisation de l'achat. Zones, promoteurs, rendement réaliste, gestion locative.</div>
+        <div class="svc-cta"   data-i18n="svc2_cta">En parler →</div>
+      </a>
+      <a href="https://wa.me/33681108147" class="svc-card reveal" target="_blank" rel="noopener" onclick="return openWA('wa_msg_svc3')">
+        <div class="svc-ico">🏢</div>
+        <div class="svc-title" data-i18n="svc3_title">Créer votre entreprise</div>
+        <div class="svc-text"  data-i18n="svc3_text">Société, numéro local, compte bancaire professionnel. Tout géré clé en main, en français.</div>
+        <div class="svc-cta"   data-i18n="svc3_cta">En parler →</div>
+      </a>
+      <a href="https://wa.me/33681108147" class="svc-card reveal" target="_blank" rel="noopener" onclick="return openWA('wa_msg_svc4')">
+        <div class="svc-ico">⚡</div>
+        <div class="svc-title" data-i18n="svc4_title">Optimiser votre fiscalité</div>
+        <div class="svc-text"  data-i18n="svc4_text">Résidence fiscale, structuration, démarches administratives adaptées à votre situation personnelle.</div>
+        <div class="svc-cta"   data-i18n="svc4_cta">En parler →</div>
+      </a>
+    </div>
+    <div class="brochure-btn-wrap reveal">
+      <button class="btn-brochure" onclick="openBrochureModal()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span data-i18n="brochure_btn">Obtenir la brochure</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- BROCHURE MODAL -->
+<div class="brochure-backdrop" id="brochure-backdrop" onclick="if(event.target===this)closeBrochureModal()">
+  <div class="brochure-modal">
+    <div class="brochure-modal-head">
+      <h3 data-i18n="brochure_title">Recevoir notre brochure</h3>
+      <button class="brochure-close" onclick="closeBrochureModal()">✕</button>
+    </div>
+    <p data-i18n="brochure_desc">Sélectionnez les domaines qui vous intéressent — choix multiple possible.</p>
+    <div class="brochure-options">
+      <div class="brochure-opt" data-key="1" onclick="toggleBrochureOpt(this)">
+        <span class="brochure-opt-icon">🏠</span>
+        <span class="brochure-opt-label" data-i18n="brochure_opt1">Expatriation</span>
+        <span class="brochure-opt-check"></span>
+      </div>
+      <div class="brochure-opt" data-key="2" onclick="toggleBrochureOpt(this)">
+        <span class="brochure-opt-icon">📈</span>
+        <span class="brochure-opt-label" data-i18n="brochure_opt2">Investissement</span>
+        <span class="brochure-opt-check"></span>
+      </div>
+      <div class="brochure-opt" data-key="3" onclick="toggleBrochureOpt(this)">
+        <span class="brochure-opt-icon">🏢</span>
+        <span class="brochure-opt-label" data-i18n="brochure_opt3">Création d'entreprise</span>
+        <span class="brochure-opt-check"></span>
+      </div>
+      <div class="brochure-opt" data-key="4" onclick="toggleBrochureOpt(this)">
+        <span class="brochure-opt-icon">⚡</span>
+        <span class="brochure-opt-label" data-i18n="brochure_opt4">Optimisation fiscale</span>
+        <span class="brochure-opt-check"></span>
+      </div>
+    </div>
+    <button class="brochure-send" id="brochure-send" onclick="sendBrochureWA()" disabled>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span data-i18n="brochure_send">Envoyer via WhatsApp</span>
+    </button>
+  </div>
+</div>
+
+<!-- TRUST -->
+<section class="section trust-bg" id="trust">
+  <div class="sec">
+    <p class="eyebrow reveal" data-i18n="trust_eyebrow">Pourquoi nous faire confiance ?</p>
+    <h2 class="sec-h2 reveal" data-i18n="trust_h2">Des experts locaux, pas des intermédiaires.</h2>
+    <p class="sec-p reveal" data-i18n="trust_p">On ne vend pas du rêve sur la Géorgie. On accompagne des projets concrets avec une méthode claire, des chiffres honnêtes et une présence physique permanente.</p>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-num">📍</div>
+        <div class="trust-title" data-i18n="trust1_title">Présents physiquement toute l'année</div>
+        <div class="trust-text"  data-i18n="trust1_text">Notre équipe vit à Batumi, Tbilissi et Koutaïssi. Pas de conseil à distance basé sur des articles internet.</div>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-num">47</div>
+        <div class="trust-title" data-i18n="trust2_title">Projets accompagnés depuis 2020</div>
+        <div class="trust-text"  data-i18n="trust2_text">Expatriation, immobilier, société, fiscalité. Chaque dossier suit un processus structuré et documenté.</div>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-num">0 €</div>
+        <div class="trust-title" data-i18n="trust3_title">Frais cachés — zéro</div>
+        <div class="trust-text"  data-i18n="trust3_text">Nos honoraires sont communiqués avant tout engagement. Vous savez exactement ce que vous payez.</div>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-num" data-i18n="trust4_num">🇫🇷</div>
+        <div class="trust-title" data-i18n="trust4_title">Tout géré en français</div>
+        <div class="trust-text"  data-i18n="trust4_text">Actes notariés, ouvertures de comptes, démarches admin. Zéro barrière de langue à chaque étape.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BAR -->
+<div class="why-bar">
+  <div class="why-inner">
+    <div class="why-label"><span class="star">★</span> <span data-i18n="why_label">Pourquoi nous choisir ?</span></div>
+    <div class="why-items">
+      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why1">Experts locaux · Terrain toute l'année</span></div>
+      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why2">47 projets accompagnés avec succès</span></div>
+      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why3">Réponse garantie sous 24h</span></div>
+      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why4">Données fiables &amp; vérifiées</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="contact">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <div class="f-logo-img">
+          <img src="images/bei-batumi-logo.jpeg" alt="Logo"
+               onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+        </div>
+        <div>
+          <div class="f-logo-name">Vivre en Géorgie</div>
+          <div class="f-logo-sub">BEI Batumi</div>
+        </div>
+      </div>
+      <p class="footer-desc" data-i18n="footer_desc">La référence francophone pour s'expatrier, investir et entreprendre en Géorgie — approche claire, sérieuse et orientée terrain.</p>
+      <div class="footer-contacts">
+        <a href="mailto:info@vivreengeorgie.com" class="footer-contact teal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          info@vivreengeorgie.com
+        </a>
+        <a href="https://wa.me/33681108147" class="footer-contact gold" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp · +33 6 81 10 81 47
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3 data-i18n="footer_nav_title">Navigation</h3>
+      <nav class="footer-nav">
+        <a href="#hero"     data-i18n="nav_home">Accueil</a>
+        <a href="#services" data-i18n="nav_services">Nos services</a>
+        <a href="#trust"    data-i18n="nav_trust">Pourquoi nous ?</a>
+        <a href="#contact"  data-i18n="nav_contact">Contact</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h3 data-i18n="footer_social_title">Réseaux sociaux</h3>
+      <div class="social-row">
+        <a href="https://www.youtube.com/@VivreenG%C3%A9orgie" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/vivreengeorgie/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@vivreengeorgie" class="social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34v-7a8.16 8.16 0 0 0 4.77 1.52V6.39a4.85 4.85 0 0 1-1-.3z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61590688067104" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;" data-i18n="footer_social_text">Suivez-nous pour les dernières actualités sur la vie en Géorgie, l'immobilier à Batumi et les opportunités d'investissement.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer_bottom">© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. Tous droits réservés.</span>
+    · <a href="mentions-legales.html" style="color:var(--teal)" data-i18n="footer_legal">Mentions légales</a>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/33681108147" class="float-wa" aria-label="WhatsApp" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="scroll-top" id="scroll-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ── i18n ── */
+const i18n = {
+  fr: {
+    lang_label:'Langue',
+    nav_home:'Accueil', nav_services:'Nos services', nav_trust:'Pourquoi nous ?', nav_contact:'Contact', nav_blog:'Blog',
+    hero_badge:'Votre projet en Géorgie, notre expertise',
+    hero_h1:'Vivez, Investissez<br>Entreprenez en <span class="accent">GÉORGIE</span>',
+    hero_sub:'Nous vous accompagnons à chaque étape pour réussir votre projet en toute sérénité — avec des experts présents sur le terrain toute l\'année.',
+    feat1_title:'Accompagnement sur mesure', feat1_text:'Un interlocuteur dans votre langue pour votre projet.',
+    feat2_title:'Réactivité exceptionnelle',  feat2_text:'On répond peu importe l\'heure, 7j/7.',
+    feat3_title:'Démarches simplifiées',      feat3_text:'Nous gérons les formalités administratives.',
+    feat4_title:'Sécurité & transparence',    feat4_text:'Tarifs clairs avant tout engagement.',
+    stat1_lbl:'Projets accompagnés', stat2_val:'4 ans', stat2_lbl:'Sur le terrain à Batumi',
+    stat3_val:'3 villes', stat3_lbl:'Couvertes en Géorgie', stat4_lbl:'Délai de réponse garanti',
+    wa_h3:'💬 Parlons de votre projet !', wa_p:'Échangeons gratuitement sur WhatsApp. Réponse sous 24h garantie.',
+    wa_btn:'WhatsApp', wa_note:'⏱ Réponse sous 24h · Gratuit · Sans engagement',
+    svc_eyebrow:'Vous êtes concerné si vous souhaitez…', svc_h2:'Votre projet en Géorgie, de A à Z.',
+    svc_p:'Expatriation, immobilier, création de société ou optimisation fiscale — nous gérons l\'ensemble des démarches à votre place, en français.',
+    svc1_title:'Vivre en Géorgie', svc1_text:'S\'expatrier et profiter d\'une qualité de vie exceptionnelle. Logement, banque, visa, premiers repères sans stress.', svc1_cta:'En parler →',
+    svc2_title:'Investir à Batumi', svc2_text:'De la recherche du bien à la finalisation de l\'achat. Zones, promoteurs, rendement réaliste, gestion locative.', svc2_cta:'En parler →',
+    svc3_title:'Créer votre entreprise', svc3_text:'Société, numéro local, compte bancaire professionnel. Tout géré clé en main, en français.', svc3_cta:'En parler →',
+    svc4_title:'Optimiser votre fiscalité', svc4_text:'Résidence fiscale, structuration, démarches administratives adaptées à votre situation personnelle.', svc4_cta:'En parler →',
+    trust_eyebrow:'Pourquoi nous faire confiance ?', trust_h2:'Des experts locaux, pas des intermédiaires.',
+    trust_p:'On ne vend pas du rêve sur la Géorgie. On accompagne des projets concrets avec une méthode claire, des chiffres honnêtes et une présence physique permanente.',
+    trust1_title:'Présents physiquement toute l\'année', trust1_text:'Notre équipe vit à Batumi, Tbilissi et Koutaïssi. Pas de conseil à distance basé sur des articles internet.',
+    trust2_title:'Projets accompagnés depuis 2020', trust2_text:'Expatriation, immobilier, société, fiscalité. Chaque dossier suit un processus structuré et documenté.',
+    trust3_title:'Frais cachés — zéro', trust3_text:'Nos honoraires sont communiqués avant tout engagement. Vous savez exactement ce que vous payez.',
+    trust4_num:'🇫🇷', trust4_title:'Tout géré en français', trust4_text:'Actes notariés, ouvertures de comptes, démarches admin. Zéro barrière de langue à chaque étape.',
+    why_label:'Pourquoi nous choisir ?',
+    why1:'Experts locaux · Terrain toute l\'année', why2:'47 projets accompagnés avec succès', why3:'Réponse garantie sous 24h', why4:'Données fiables & vérifiées',
+    footer_desc:'La référence francophone pour s\'expatrier, investir et entreprendre en Géorgie — approche claire, sérieuse et orientée terrain.',
+    footer_nav_title:'Navigation', footer_social_title:'Réseaux sociaux',
+    footer_social_text:'Suivez-nous pour les dernières actualités sur la vie en Géorgie, l\'immobilier à Batumi et les opportunités d\'investissement.',
+    footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. Tous droits réservés.', footer_legal:'Mentions légales',
+    brochure_btn:"Obtenir la brochure",
+    brochure_title:"Recevoir notre brochure",
+    brochure_desc:"Sélectionnez les domaines qui vous intéressent — choix multiple possible.",
+    brochure_opt1:"Expatriation", brochure_opt2:"Investissement", brochure_opt3:"Création d'entreprise", brochure_opt4:"Optimisation fiscale",
+    brochure_send:"Envoyer via WhatsApp",
+    brochure_wa_intro:"Bonjour Axel, je souhaite recevoir la brochure concernant",
+    brochure_wa_join:"et",
+    brochure_wa1:"l'expatriation", brochure_wa2:"l'investissement immobilier", brochure_wa3:"la création d'entreprise", brochure_wa4:"l'optimisation fiscale",
+    wa_msg_generic:"Bonjour Axel, j'aimerais en savoir plus sur vos services.",
+    wa_msg_svc1:"Bonjour Axel, j'aimerais en savoir plus sur votre accompagnement pour s'expatrier en Géorgie.",
+    wa_msg_svc2:"Bonjour Axel, j'aimerais en savoir plus sur votre service d'investissement immobilier à Batumi.",
+    wa_msg_svc3:"Bonjour Axel, j'aimerais en savoir plus sur votre service de création d'entreprise en Géorgie.",
+    wa_msg_svc4:"Bonjour Axel, j'aimerais en savoir plus sur votre service d'optimisation fiscale en Géorgie."
+  },
+  en: {
+    lang_label:'Language',
+    nav_home:'Home', nav_services:'Our services', nav_trust:'Why us?', nav_contact:'Contact', nav_blog:'Blog',
+    hero_badge:'Your project in Georgia, our expertise',
+    hero_h1:'Live, Invest<br>Do Business in <span class="accent">GEORGIA</span>',
+    hero_sub:'We guide you at every step to make your project a success — with experts on the ground in Georgia year-round.',
+    feat1_title:'Tailored support',           feat1_text:'A dedicated contact in your language for your project.',
+    feat2_title:'Exceptional responsiveness', feat2_text:'We reply no matter the hour, 7 days a week.',
+    feat3_title:'Simplified procedures',      feat3_text:'We handle all the administrative formalities.',
+    feat4_title:'Security & transparency',    feat4_text:'Clear pricing before any commitment.',
+    stat1_lbl:'Projects completed', stat2_val:'4 years', stat2_lbl:'On the ground in Batumi',
+    stat3_val:'3 cities', stat3_lbl:'Covered in Georgia', stat4_lbl:'Guaranteed response time',
+    wa_h3:'💬 Let\'s talk about your project!', wa_p:'Chat with us for free on WhatsApp. Reply guaranteed within 24h.',
+    wa_btn:'WhatsApp', wa_note:'⏱ Reply within 24h · Free · No commitment',
+    svc_eyebrow:'This is for you if you want to…', svc_h2:'Your project in Georgia, from A to Z.',
+    svc_p:'Relocation, real estate, company creation or tax optimization — we handle everything for you, in English.',
+    svc1_title:'Live in Georgia', svc1_text:'Relocate and enjoy an exceptional quality of life. Housing, banking, visa, first steps — stress-free.', svc1_cta:'Let\'s talk →',
+    svc2_title:'Invest in Batumi', svc2_text:'From property search to finalizing the purchase. Areas, developers, realistic returns, rental management.', svc2_cta:'Let\'s talk →',
+    svc3_title:'Set up your company', svc3_text:'Company, local number, professional bank account. All managed turnkey, in English.', svc3_cta:'Let\'s talk →',
+    svc4_title:'Optimize your taxes', svc4_text:'Tax residency, structuring, administrative procedures tailored to your personal situation.', svc4_cta:'Let\'s talk →',
+    trust_eyebrow:'Why trust us?', trust_h2:'Local experts, not middlemen.',
+    trust_p:'We don\'t sell Georgia dreams. We support real projects with a clear method, honest figures and permanent physical presence.',
+    trust1_title:'Physically present all year', trust1_text:'Our team lives in Batumi, Tbilisi and Kutaisi. No remote advice based on internet articles.',
+    trust2_title:'Projects completed since 2020', trust2_text:'Relocation, real estate, company, taxes. Every case follows a structured and documented process.',
+    trust3_title:'Hidden fees — zero', trust3_text:'Our fees are communicated before any commitment. You know exactly what you pay.',
+    trust4_num:'🇬🇧', trust4_title:'Fully managed in English', trust4_text:'Notarial deeds, account openings, admin procedures. Zero language barrier at every step.',
+    why_label:'Why choose us?',
+    why1:'Local experts · On-site year-round', why2:'47 projects completed successfully', why3:'Reply guaranteed within 24h', why4:'Reliable & verified data',
+    footer_desc:'The go-to English-speaking resource for relocating, investing and doing business in Georgia — clear, serious and field-oriented.',
+    footer_nav_title:'Navigation', footer_social_title:'Social media',
+    footer_social_text:'Follow us for the latest news about life in Georgia, real estate in Batumi and investment opportunities.',
+    footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. All rights reserved.', footer_legal:'Legal notices',
+    brochure_btn:"Get the brochure",
+    brochure_title:"Receive our brochure",
+    brochure_desc:"Select the areas you are interested in — multiple selection possible.",
+    brochure_opt1:"Relocation", brochure_opt2:"Investment", brochure_opt3:"Company setup", brochure_opt4:"Tax optimization",
+    brochure_send:"Send via WhatsApp",
+    brochure_wa_intro:"Hello Axel, I would like to receive the brochure about",
+    brochure_wa_join:"and",
+    brochure_wa1:"relocation", brochure_wa2:"real estate investment", brochure_wa3:"company setup", brochure_wa4:"tax optimization",
+    wa_msg_generic:"Hello Axel, I would like to know more about your services.",
+    wa_msg_svc1:"Hello Axel, I would like to know more about your expat relocation service in Georgia.",
+    wa_msg_svc2:"Hello Axel, I would like to know more about your real estate investment service in Batumi.",
+    wa_msg_svc3:"Hello Axel, I would like to know more about your company setup service in Georgia.",
+    wa_msg_svc4:"Hello Axel, I would like to know more about your tax optimization service in Georgia."
+  },
+  es: {
+    lang_label:'Idioma',
+    nav_home:'Inicio', nav_services:'Nuestros servicios', nav_trust:'¿Por qué nosotros?', nav_contact:'Contacto', nav_blog:'Blog',
+    hero_badge:'Tu proyecto en Georgia, nuestra experiencia',
+    hero_h1:'Vive, Invierte<br>Emprende en <span class="accent">GEORGIA</span>',
+    hero_sub:'Te acompañamos en cada etapa para que tu proyecto sea un éxito — con expertos sobre el terreno en Georgia durante todo el año.',
+    feat1_title:'Acompañamiento personalizado', feat1_text:'Un interlocutor en tu idioma para tu proyecto.',
+    feat2_title:'Reactividad excepcional',      feat2_text:'Respondemos a cualquier hora, 7 días a la semana.',
+    feat3_title:'Trámites simplificados',        feat3_text:'Gestionamos todas las formalidades administrativas.',
+    feat4_title:'Seguridad & transparencia',     feat4_text:'Tarifas claras antes de cualquier compromiso.',
+    stat1_lbl:'Proyectos acompañados', stat2_val:'4 años', stat2_lbl:'Sobre el terreno en Batumi',
+    stat3_val:'3 ciudades', stat3_lbl:'Cubiertas en Georgia', stat4_lbl:'Tiempo de respuesta garantizado',
+    wa_h3:'💬 ¡Hablemos de tu proyecto!', wa_p:'Chatea con nosotros gratis en WhatsApp. Respuesta garantizada en 24h.',
+    wa_btn:'WhatsApp', wa_note:'⏱ Respuesta en 24h · Gratis · Sin compromiso',
+    svc_eyebrow:'Esto es para ti si deseas…', svc_h2:'Tu proyecto en Georgia, de la A a la Z.',
+    svc_p:'Expatriación, bienes raíces, creación de empresa u optimización fiscal — gestionamos todo en tu lugar, en español.',
+    svc1_title:'Vivir en Georgia', svc1_text:'Expatriarte y disfrutar de una calidad de vida excepcional. Vivienda, banco, visa, primeros pasos sin estrés.', svc1_cta:'Hablemos →',
+    svc2_title:'Invertir en Batumi', svc2_text:'Desde la búsqueda del inmueble hasta la firma. Zonas, promotores, rentabilidad realista, gestión de alquiler.', svc2_cta:'Hablemos →',
+    svc3_title:'Crear tu empresa', svc3_text:'Sociedad, número local, cuenta bancaria profesional. Todo gestionado llave en mano, en español.', svc3_cta:'Hablemos →',
+    svc4_title:'Optimizar tu fiscalidad', svc4_text:'Residencia fiscal, estructuración, trámites administrativos adaptados a tu situación personal.', svc4_cta:'Hablemos →',
+    trust_eyebrow:'¿Por qué confiar en nosotros?', trust_h2:'Expertos locales, no intermediarios.',
+    trust_p:'No vendemos sueños sobre Georgia. Acompañamos proyectos concretos con un método claro, cifras honestas y presencia física permanente.',
+    trust1_title:'Presentes físicamente todo el año', trust1_text:'Nuestro equipo vive en Batumi, Tiflis y Kutaisi. Sin asesoramiento a distancia basado en artículos de internet.',
+    trust2_title:'Proyectos acompañados desde 2020', trust2_text:'Expatriación, inmobiliaria, empresa, fiscalidad. Cada expediente sigue un proceso estructurado y documentado.',
+    trust3_title:'Gastos ocultos — cero', trust3_text:'Nuestros honorarios se comunican antes de cualquier compromiso. Sabes exactamente lo que pagas.',
+    trust4_num:'🇪🇸', trust4_title:'Todo gestionado en español', trust4_text:'Escrituras notariales, apertura de cuentas, trámites admin. Cero barrera de idioma en cada paso.',
+    why_label:'¿Por qué elegirnos?',
+    why1:'Expertos locales · Sobre el terreno todo el año', why2:'47 proyectos acompañados con éxito', why3:'Respuesta garantizada en 24h', why4:'Datos fiables y verificados',
+    footer_desc:'La referencia hispanohablante para expatriarse, invertir y emprender en Georgia — enfoque claro, serio y orientado al terreno.',
+    footer_nav_title:'Navegación', footer_social_title:'Redes sociales',
+    footer_social_text:'Síguenos para las últimas noticias sobre la vida en Georgia, el sector inmobiliario en Batumi y las oportunidades de inversión.',
+    footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. Todos los derechos reservados.', footer_legal:'Aviso legal',
+    brochure_btn:"Obtener el folleto",
+    brochure_title:"Recibir nuestro folleto",
+    brochure_desc:"Seleccione los ámbitos que le interesan — selección múltiple posible.",
+    brochure_opt1:"Expatriación", brochure_opt2:"Inversión", brochure_opt3:"Creación de empresa", brochure_opt4:"Optimización fiscal",
+    brochure_send:"Enviar por WhatsApp",
+    brochure_wa_intro:"Hola Axel, me gustaría recibir el folleto sobre",
+    brochure_wa_join:"y",
+    brochure_wa1:"la expatriación", brochure_wa2:"la inversión inmobiliaria", brochure_wa3:"la creación de empresa", brochure_wa4:"la optimización fiscal",
+    wa_msg_generic:"Hola Axel, me gustaría saber más sobre sus servicios.",
+    wa_msg_svc1:"Hola Axel, me gustaría saber más sobre su servicio de expatriación a Georgia.",
+    wa_msg_svc2:"Hola Axel, me gustaría saber más sobre su servicio de inversión inmobiliaria en Batumi.",
+    wa_msg_svc3:"Hola Axel, me gustaría saber más sobre su servicio de creación de empresa en Georgia.",
+    wa_msg_svc4:"Hola Axel, me gustaría saber más sobre su servicio de optimización fiscal en Georgia."
+  },
+  ge: {
+    lang_label:'ენა',
+    nav_home:'მთავარი', nav_services:'სერვისები', nav_trust:'რატომ ჩვენ?', nav_contact:'კონტაქტი', nav_blog:'ბლოგი',
+    hero_badge:'თქვენი პროექტი საქართველოში — ჩვენი ექსპერტიზა',
+    hero_h1:'იცხოვრეთ, ინვესტირება<br>გააკეთეთ <span class="accent">საქართველოში</span>',
+    hero_sub:'ჩვენ გეხმარებით ყოველ ეტაპზე — ადგილობრივი ექსპერტები წლის განმავლობაში ადგილზე.',
+    feat1_title:'ინდივიდუალური მხარდაჭერა',    feat1_text:'სპეციალისტი თქვენი ენით თქვენი პროექტისთვის.',
+    feat2_title:'სწრაფი პასუხი',                feat2_text:'ვპასუხობთ ნებისმიერ საათზე, კვირაში 7 დღე.',
+    feat3_title:'გამარტივებული პროცედურები',    feat3_text:'ჩვენ ვმართავთ ყველა ადმინისტრაციულ ფორმალობას.',
+    feat4_title:'უსაფრთხოება & გამჭვირვალობა', feat4_text:'მკაფიო ფასები ნებისმიერი ვალდებულებამდე.',
+    stat1_lbl:'განხორციელებული პროექტი', stat2_val:'4 წელი', stat2_lbl:'ბათუმში ადგილზე',
+    stat3_val:'3 ქალაქი', stat3_lbl:'საქართველოში', stat4_lbl:'პასუხის გარანტირებული დრო',
+    wa_h3:'💬 ვისაუბროთ თქვენს პროექტზე!', wa_p:'დაგვიკავშირდით WhatsApp-ზე უფასოდ. პასუხი 24 საათში გარანტირებულია.',
+    wa_btn:'WhatsApp', wa_note:'⏱ პასუხი 24 საათში · უფასო · ვალდებულების გარეშე',
+    svc_eyebrow:'ეს თქვენთვისაა, თუ გსურთ…', svc_h2:'თქვენი პროექტი საქართველოში — A-დან Z-მდე.',
+    svc_p:'ემიგრაცია, უძრავი ქონება, კომპანიის შექმნა ან საგადასახადო ოპტიმიზაცია — ჩვენ ვმართავთ ყველაფერს თქვენი ნაცვლად.',
+    svc1_title:'საქართველოში ცხოვრება', svc1_text:'ემიგრაცია და განსაკუთრებული ცხოვრების ხარისხი. საცხოვრებელი, ბანკი, ვიზა, პირველი ნაბიჯები.', svc1_cta:'ვისაუბროთ →',
+    svc2_title:'ინვესტიცია ბათუმში', svc2_text:'ქონების ძიებიდან შეძენამდე. ზონები, დეველოპერები, რეალური შემოსავალი, იჯარის მართვა.', svc2_cta:'ვისაუბროთ →',
+    svc3_title:'კომპანიის დაარსება', svc3_text:'კომპანია, ლოკალური ნომერი, პროფესიული საბანკო ანგარიში. ყველაფერი გასაღებით.', svc3_cta:'ვისაუბროთ →',
+    svc4_title:'საგადასახადო ოპტიმიზაცია', svc4_text:'საგადასახადო რეზიდენტობა, სტრუქტურირება, ადმინისტრაციული პროცედურები თქვენი სიტუაციისთვის.', svc4_cta:'ვისაუბროთ →',
+    trust_eyebrow:'რატომ გვენდობით?', trust_h2:'ადგილობრივი ექსპერტები, არა შუამავლები.',
+    trust_p:'ჩვენ არ ვყიდით ოცნებებს. ვამხანაგობთ კონკრეტულ პროექტებს — მკაფიო მეთოდით, პატიოსანი ციფრებით და ფიზიკური ყოფნით.',
+    trust1_title:'ფიზიკურად მთელი წლის განმავლობაში', trust1_text:'ჩვენი გუნდი ცხოვრობს ბათუმში, თბილისსა და ქუთაისში. არ ვძლევთ დისტანციურ რჩევებს.',
+    trust2_title:'პროექტები 2020 წლიდან', trust2_text:'ემიგრაცია, უძრავი ქონება, კომპანია, გადასახადები. თითოეული საქმე სტრუქტურირებული პროცესით.',
+    trust3_title:'ფარული საკომისიო — ნული', trust3_text:'ჩვენი საფასური ნებისმიერ ვალდებულებამდე ცნობილია. ზუსტად იცით, რასაც იხდით.',
+    trust4_num:'🇬🇪', trust4_title:'ყველაფერი ქართულ ენაზე', trust4_text:'სანოტარო აქტები, ანგარიშის გახსნა, ადმინ. პროცედურები. ენის ბარიერი — ნული.',
+    why_label:'რატომ ავირჩიოთ ჩვენ?',
+    why1:'ადგილობრივი ექსპერტები · წლის განმავლობაში', why2:'47 წარმატებული პროექტი', why3:'პასუხი 24 საათში გარანტირებული', why4:'სანდო & გადამოწმებული მონაცემები',
+    footer_desc:'ქართული ბაზრისთვის — ემიგრაციის, ინვესტიციისა და ბიზნესის ექსპერტები საქართველოში.',
+    footer_nav_title:'ნავიგაცია', footer_social_title:'სოციალური ქსელები',
+    footer_social_text:'გამოგვყევით საქართველოს ცხოვრების, ბათუმის უძრავი ქონებისა და საინვესტიციო შესაძლებლობების სიახლეებისთვის.',
+    footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. ყველა უფლება დაცულია.', footer_legal:'სამართლებრივი შენიშვნები',
+    brochure_btn:"ბროშურის მიღება",
+    brochure_title:"მიიღეთ ჩვენი ბროშური",
+    brochure_desc:"აირჩიეთ თქვენთვის საინტერესო სფეროები — მრავლობითი არჩევანი შესაძლებელია.",
+    brochure_opt1:"ემიგრაცია", brochure_opt2:"ინვესტიცია", brochure_opt3:"კომპანიის დაარსება", brochure_opt4:"საგადასახადო ოპტიმიზაცია",
+    brochure_send:"WhatsApp-ით გაგზავნა",
+    brochure_wa_intro:"გამარჯობა Axel, გთხოვ გამომიგზავნო ბროშური:",
+    brochure_wa_join:"და",
+    brochure_wa1:"ემიგრაციის", brochure_wa2:"უძრავი ქონების ინვესტიციის", brochure_wa3:"კომპანიის დაარსების", brochure_wa4:"საგადასახადო ოპტიმიზაციის"
+  }
+};
+
+function switchLang(lang) {
+  const t = i18n[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  const sel = document.getElementById('lang-select');
+  if (sel) sel.value = lang;
+  const langMap = { fr:'fr', en:'en', es:'es', ge:'ka' };
+  document.documentElement.lang = langMap[lang] || lang;
+  localStorage.setItem('lang', lang);
+}
+
+/* Init */
+switchLang(localStorage.getItem('lang') || 'fr');
+
+/* ── Drawer ── */
+function openDrawer() {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); }
+});
+
+/* ── WhatsApp with pre-filled message ── */
+function openWA(key) {
+  const lang = localStorage.getItem('lang') || 'fr';
+  const waLang = lang === 'ge' ? 'en' : lang;
+  const msg = encodeURIComponent(i18n[waLang][key] || i18n[waLang].wa_msg_generic);
+  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
+  return false;
+}
+
+/* ── Brochure modal ── */
+function openBrochureModal() {
+  document.getElementById('brochure-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBrochureModal() {
+  document.getElementById('brochure-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function toggleBrochureOpt(el) {
+  el.classList.toggle('selected');
+  const anySelected = document.querySelectorAll('.brochure-opt.selected').length > 0;
+  document.getElementById('brochure-send').disabled = !anySelected;
+}
+function sendBrochureWA() {
+  const selected = [...document.querySelectorAll('.brochure-opt.selected')];
+  if (!selected.length) return;
+  const lang = localStorage.getItem('lang') || 'fr';
+  const waLang = lang === 'ge' ? 'en' : lang;
+  const t = i18n[waLang];
+  const labels = selected.map(el => t['brochure_wa' + el.dataset.key]);
+  let part;
+  if (labels.length === 1) {
+    part = labels[0];
+  } else {
+    part = labels.slice(0, -1).join(', ') + ' ' + t.brochure_wa_join + ' ' + labels[labels.length - 1];
+  }
+  const msg = encodeURIComponent(t.brochure_wa_intro + ' ' + part + '.');
+  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
+  closeBrochureModal();
+}
+
+/* ── Hero entrance ── */
+const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+tl.from('#hero-badge',  { y: 22, opacity: 0, duration: 0.65, delay: 0.2 })
+  .from('#hero-h1',     { y: 44, opacity: 0, duration: 1.0  }, '-=0.35')
+  .from('#hero-sub',    { y: 30, opacity: 0, duration: 0.85 }, '-=0.68')
+  .from('#feat-grid .feat-card', { y: 22, opacity: 0, duration: 0.55, stagger: 0.1 }, '-=0.55');
+
+/* ── Parallax hero bg ── */
+gsap.to('#hero-bg', {
+  y: '26%', ease: 'none',
+  scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
+});
+
+/* ── Mouse spotlight ── */
+document.getElementById('hero').addEventListener('mousemove', e => {
+  const r = e.currentTarget.getBoundingClientRect();
+  const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+  const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+  document.getElementById('hero-spot').style.background =
+    `radial-gradient(circle at ${x}% ${y}%, rgba(23,190,187,.22), transparent 28rem)`;
+});
+
+/* ── Counter animation ── */
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = +el.dataset.count;
+  const suffix = el.dataset.suffix || '';
+  ScrollTrigger.create({
+    trigger: el, start: 'top 82%', once: true,
+    onEnter: () => gsap.to({ v: 0 }, {
+      v: target, duration: 1.7, ease: 'power2.out',
+      onUpdate() { el.textContent = Math.round(this.targets()[0].v) + suffix; }
+    })
+  });
+});
+
+/* ── Stats entrance ── */
+gsap.from('#stats .stat', {
+  y: 26, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out',
+  scrollTrigger: { trigger: '#stats', start: 'top 80%' }
+});
+
+/* ── Scroll reveals ── */
+gsap.utils.toArray('.reveal').forEach((el, i) => {
+  gsap.fromTo(el,
+    { y: 32, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.75, ease: 'power2.out', delay: (i % 4) * 0.09,
+      scrollTrigger: { trigger: el, start: 'top 87%', toggleActions: 'play none none none' } }
+  );
+});
+
+/* ── Section fades ── */
+gsap.utils.toArray('.stats-band, .wa-bar, .section, .why-bar').forEach(el => {
+  gsap.fromTo(el,
+    { opacity: 0, y: 28 },
+    { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+    }
+  );
+});
+
+/* ── Scroll-to-top button ── */
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
+/* ── Floating particles ── */
+(function() {
+  const container = document.getElementById('particles');
+  const style = document.createElement('style');
+  let keyframes = '';
+  for (let i = 0; i < 20; i++) {
+    const dx = ((Math.random() - 0.5) * 80).toFixed(0);
+    keyframes += `@keyframes fp${i}{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-110vh) translateX(${dx}px);opacity:0}}`;
+    const p = document.createElement('div');
+    const size = (Math.random() * 2.5 + 1.5).toFixed(1);
+    p.style.cssText = `position:absolute;border-radius:50%;background:rgba(23,190,187,.55);width:${size}px;height:${size}px;left:${(Math.random()*100).toFixed(1)}%;bottom:-10px;opacity:${(Math.random()*.3+.1).toFixed(2)};animation:fp${i} ${(10+Math.random()*14).toFixed(1)}s linear infinite;animation-delay:-${(Math.random()*20).toFixed(1)}s;`;
+    container.appendChild(p);
+  }
+  style.textContent = keyframes;
+  document.head.appendChild(style);
+})();
+</script>
+</body>
+</html>

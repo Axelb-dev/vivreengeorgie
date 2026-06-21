@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon installation à Batumi : budget complet – Vivre en Géorgie</title>
+  <meta name="description" content="Du billet d'avion au premier mois de loyer : voici le budget complet et réaliste d'une installation à Batumi en 2026, basé sur les expériences réelles de nos clients.">
+  <link rel="canonical" href="https://vivreengeorgie.com/blog/installation-batumi-budget.html">
+  <meta property="og:title" content="Mon installation à Batumi : budget complet">
+  <meta property="og:description" content="Du billet d'avion au premier mois de loyer : voici le budget complet et réaliste d'une installation à Batumi en 2026, basé sur les expériences réelles de nos clients.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vivreengeorgie.com/blog/installation-batumi-budget.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy: #031d35; --navy2: #062746; --teal: #17BEBB; --gold: #D4AF37; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--navy); color: #fff; min-height: 100vh; }
+    /* ── Header ── */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding: 12px 16px; }
+    .header-inner { position: relative; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(6,39,70,.72); backdrop-filter: blur(12px); padding: 0 18px 0 14px; box-shadow: 0 12px 28px rgba(3,29,53,.28); }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .logo-img { width: 44px; height: 44px; border-radius: 999px; overflow: hidden; background: #fff; border: 2px solid rgba(255,255,255,.85); flex-shrink: 0; }
+    .logo-img img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-img-fallback { width: 100%; height: 100%; background: linear-gradient(135deg, #0A4D8C, #17BEBB); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff; }
+    .logo-text { display: grid; }
+    .logo-name { font-size: 1rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
+    .logo-sub { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .btn-wa-header { display: none; align-items: center; gap: 8px; background: #25d366; color: #25d366; font-weight: 800; font-size: 13px; border-radius: 999px; padding: 10px 20px; box-shadow: 0 4px 18px rgba(37,211,102,.28); transition: background .2s, transform .2s; }
+    .btn-wa-header { color: #fff; }
+    .btn-wa-header:hover { background: #1ebe5d; transform: scale(1.04); }
+    @media(min-width:540px){ .btn-wa-header { display: inline-flex; } }
+    .btn-menu { width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s; flex-shrink: 0; }
+    .btn-menu:hover { background: rgba(255,255,255,.2); }
+    .btn-menu svg { width: 20px; height: 20px; }
+    .drawer-backdrop { position: fixed; inset: 0; z-index: 45; background: rgba(3,29,53,.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .28s ease; }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 50; width: min(92vw, 28rem); background: radial-gradient(circle at 18% 12%, rgba(23,190,187,.18), transparent 22rem), radial-gradient(circle at 92% 0%, rgba(212,175,55,.16), transparent 20rem), linear-gradient(155deg, rgba(3,29,53,.98), rgba(6,39,70,.96) 52%, rgba(10,77,140,.94)); border-left: 1px solid rgba(255,255,255,.12); padding: 20px; box-shadow: -20px 0 60px rgba(3,29,53,.5); transform: translateX(100%); transition: transform .34s cubic-bezier(.22,1,.36,1); display: flex; flex-direction: column; }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+    .btn-close { width: 42px; height: 42px; border-radius: 999px; background: rgba(255,255,255,.1); border: none; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    .btn-close:hover { background: rgba(255,255,255,.2); }
+    .btn-close svg { width: 18px; height: 18px; }
+    .drawer-nav { display: grid; gap: 8px; }
+    .drawer-link { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.07); color: rgba(255,255,255,.88); font-size: .95rem; font-weight: 600; opacity: 0; transform: translateX(20px); transition: opacity .28s ease, transform .28s ease, background .2s, border-color .2s; text-decoration: none; }
+    .drawer.open .drawer-link { opacity: 1; transform: translateX(0); }
+    .drawer.open .drawer-link:nth-child(1) { transition-delay: .05s; }
+    .drawer.open .drawer-link:nth-child(2) { transition-delay: .09s; }
+    .drawer.open .drawer-link:nth-child(3) { transition-delay: .13s; }
+    .drawer.open .drawer-link:nth-child(4) { transition-delay: .17s; }
+    .drawer.open .drawer-link:nth-child(5) { transition-delay: .21s; }
+    .drawer-link:hover { border-color: rgba(23,190,187,.45); background: rgba(255,255,255,.13); color: #fff; }
+    .drawer-link .icon { color: var(--gold); font-size: 17px; flex-shrink: 0; }
+    .drawer-wa { display: flex; align-items: center; justify-content: center; gap: 10px; position: relative; align-self: center; min-height: 48px; padding: 0 32px; border-radius: 999px; background: #25d366; color: #fff; font-weight: 800; font-size: 14px; margin-top: 24px; box-shadow: 0 6px 20px rgba(37,211,102,.3); opacity: 0; transform: translateY(10px); transition: opacity .28s ease .28s, transform .28s ease .28s, background .2s; text-decoration: none; }
+    .drawer.open .drawer-wa { opacity: 1; transform: translateY(0); }
+    .drawer-wa:hover { background: #1ebe5d; }
+    @keyframes ring { 0%,100%{ transform:scale(1);opacity:.8; } 50%{ transform:scale(1.07);opacity:0; } }
+    .drawer-wa::before { content: ''; position: absolute; inset: -5px; border-radius: 999px; border: 2px solid rgba(37,211,102,.45); animation: ring 2.2s ease-in-out infinite; }
+.article-wrap { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+.article-label { font-size: 10.5px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 900; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 20px; }
+.accent { color: var(--teal); }
+.article-meta { display: flex; gap: 16px; font-size: 12px; color: rgba(255,255,255,.4); margin-bottom: 48px; flex-wrap: wrap; }
+.article-body h2 { font-size: 1.2rem; font-weight: 800; color: var(--gold); margin: 40px 0 14px; }
+.article-body p { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,.78); margin-bottom: 20px; }
+.article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 20px; }
+.article-body li { font-size: 15px; line-height: 1.82; color: rgba(255,255,255,.78); margin-bottom: 8px; }
+.article-body strong { color: #fff; }
+.article-body a { color: var(--teal); text-decoration: none; }
+.article-body a:hover { text-decoration: underline; }
+.info-box { background: rgba(23,190,187,.07); border: 1px solid rgba(23,190,187,.2); border-left: 4px solid var(--teal); border-radius: 8px; padding: 18px 22px; margin: 28px 0; }
+.info-box p { color: rgba(255,255,255,.85); margin: 0; font-size: 14px; line-height: 1.7; }
+.cta-band { background: linear-gradient(135deg, rgba(23,190,187,.1), rgba(212,175,55,.06)); border: 1px solid rgba(23,190,187,.2); border-radius: 16px; padding: 44px 32px; text-align: center; margin-top: 64px; }
+.cta-band h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 12px; }
+.cta-band p { color: rgba(255,255,255,.65); margin-bottom: 28px; font-size: 15px; }
+.cta-wa { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; font-weight: 800; font-size: 15px; padding: 14px 28px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,.35); transition: background .2s, transform .2s; }
+.cta-wa:hover { background: #1ebe5d; transform: scale(1.03); }
+.related { margin-top: 48px; }
+.related h3 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); margin-bottom: 16px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.related-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 10px; padding: 16px; text-decoration: none; color: inherit; display: block; transition: border-color .2s; }
+.related-card:hover { border-color: rgba(23,190,187,.35); }
+.related-card .num { font-size: 10px; font-weight: 800; color: var(--teal); letter-spacing: .1em; margin-bottom: 6px; }
+.related-card .title { font-size: 13px; font-weight: 600; line-height: 1.4; color: rgba(255,255,255,.8); }
+footer { text-align: center; padding: 24px; font-size: 12px; color: rgba(255,255,255,.3); border-top: 1px solid rgba(255,255,255,.07); margin-top: 40px; }
+footer a { color: var(--teal); text-decoration: none; }
+@media (max-width:600px) { .article-wrap { padding: 100px 16px 60px; } .cta-band { padding: 32px 20px; } }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-img">
+        <img src="../images/bei-batumi-logo.jpeg" alt="BEI Batumi Expat Invest"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">Batumi · Expat Invest</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="btn-menu" id="btn-menu" aria-label="Ouvrir le menu" onclick="openDrawer()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="drawer-backdrop" id="backdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-label="Menu de navigation">
+  <div class="drawer-head">
+    <a href="../index.html" class="logo">
+      <div class="logo-img">
+        <img src="../images/bei-batumi-logo.jpeg" alt="Logo"
+             onerror="this.parentNode.innerHTML='<div class=\'logo-img-fallback\'>BEI</div>'">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Vivre en Géorgie</span>
+        <span class="logo-sub">BEI Batumi</span>
+      </div>
+    </a>
+    <button class="btn-close" aria-label="Fermer le menu" onclick="closeDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="../index.html"          class="drawer-link" onclick="closeDrawer()"><span class="icon">🏠</span> Accueil</a>
+    <a href="../index.html#services" class="drawer-link" onclick="closeDrawer()"><span class="icon">🎯</span> Nos services</a>
+    <a href="../index.html#trust"    class="drawer-link" onclick="closeDrawer()"><span class="icon">🛡️</span> Pourquoi nous ?</a>
+    <a href="../index.html#contact"  class="drawer-link" onclick="closeDrawer()"><span class="icon">✉️</span> Contact</a>
+    <a href="../blog.html"           class="drawer-link" onclick="closeDrawer()"><span class="icon">📝</span> Blog</a>
+  </nav>
+  <a href="https://wa.me/33681108147" class="drawer-wa" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</aside>
+<div class="article-wrap">
+  <p class="article-label">Témoignage · Budget</p>
+  <h1>Mon installation à Batumi : <span class="accent">budget complet</span></h1>
+  <div class="article-meta"><span>Juin 2026</span><span>8 min de lecture</span></div>
+  <div class="article-body">
+
+    <p>Cet article n'est pas théorique — c'est le récit chiffré d'une installation type à Batumi, basé sur les expériences réelles de dizaines de clients accompagnés par BEI Batumi Expat Invest. Pas de chiffres arrangés pour faire rêver : voici la réalité, avec ses frais inattendus et ses bonnes surprises.</p>
+
+    <h2>Avant le départ : les préparatifs (200–400 €)</h2>
+    <ul>
+      <li><strong>Billet d'avion Paris → Batumi :</strong> 180 à 350 € selon la saison (via Istanbul en général)</li>
+      <li><strong>Assurance santé internationale (premier mois) :</strong> 60–80 €</li>
+      <li><strong>Traduction de documents</strong> (acte de naissance, diplômes si nécessaire) : 50–150 €</li>
+      <li><strong>Consultation fiscale pré-départ</strong> (fortement recommandé) : 150–300 €</li>
+    </ul>
+    <p><strong>Budget total pré-départ : 440 à 880 €</strong></p>
+
+    <h2>À l'arrivée : les premiers frais (700–1 500 €)</h2>
+    <ul>
+      <li><strong>Premier mois de loyer + caution :</strong> 600–1 400 € (1 mois de loyer + 1 mois de caution)</li>
+      <li><strong>Équipement et aménagement de l'appartement :</strong> 100–300 €</li>
+      <li><strong>Carte SIM géorgienne :</strong> 5–10 €</li>
+      <li><strong>Abonnement internet si non inclus :</strong> 15 € d'installation + 15 €/mois</li>
+      <li><strong>Premiers achats alimentaires et ménagers :</strong> 80–150 €</li>
+    </ul>
+    <p><strong>Budget arrivée : 800 à 1 875 €</strong></p>
+
+    <h2>La création de société (300–600 €)</h2>
+    <ul>
+      <li><strong>Frais d'enregistrement au NAPR :</strong> 30–60 €</li>
+      <li><strong>Traduction et légalisation de documents :</strong> 50–100 €</li>
+      <li><strong>Accompagnement juridique</strong> (optionnel mais recommandé) : 200–400 €</li>
+      <li><strong>Ouverture compte bancaire professionnel :</strong> gratuit, mais nécessite présence physique</li>
+    </ul>
+    <p><strong>Budget création société : 280 à 560 €.</strong> Cet investissement se rentabilise rapidement : la première économie fiscale réalisée par rapport à la France compense généralement ces frais en moins d'un mois.</p>
+
+    <h2>Le permis de séjour temporaire (150–350 €)</h2>
+    <ul>
+      <li><strong>Frais administratifs NAPR :</strong> 50–80 €</li>
+      <li><strong>Photos d'identité, copies de documents :</strong> 15–20 €</li>
+      <li><strong>Traductions certifiées supplémentaires :</strong> 50–150 €</li>
+      <li><strong>Accompagnement si vous ne parlez pas géorgien :</strong> 100–200 €</li>
+    </ul>
+    <p><strong>Budget TRP : 215 à 450 €</strong></p>
+
+    <h2>Budget de vie les premiers mois</h2>
+    <p>Voici une fourchette réaliste pour un expatrié seul sans enfant :</p>
+    <ul>
+      <li><strong>Loyer :</strong> 350 à 700 €</li>
+      <li><strong>Alimentation :</strong> 150 à 250 €</li>
+      <li><strong>Transports :</strong> 40 à 80 €</li>
+      <li><strong>Assurance santé :</strong> 55 à 100 €</li>
+      <li><strong>Loisirs :</strong> 100 à 200 €</li>
+      <li><strong>Divers</strong> (abonnements, imprévus) : 80 à 150 €</li>
+      <li><strong>Total mensuel : 775 à 1 480 €</strong></li>
+    </ul>
+
+    <h2>Budget total pour les 3 premiers mois</h2>
+    <p>En additionnant tous les postes — préparatifs, arrivée, création de société, TRP et 3 mois de vie — voici le budget réaliste pour une installation complète à Batumi sur 3 mois, en mode confort : <strong>environ 5 000 à 8 000 €</strong>.</p>
+    <p>Ce chiffre inclut toutes les démarches administratives et un premier trimestre de vie normale. Pour un couple, ce budget est divisé par environ 1,5 car certains frais fixes comme le logement sont partagés. Ce qui représente une accessibilité remarquable pour s'établir durablement dans un nouveau pays.</p>
+
+    <div class="info-box">
+      <p>Ce budget est une estimation basée sur des cas réels accompagnés par <strong>BEI Batumi Expat Invest</strong>. Votre situation personnelle peut varier selon votre profil, vos exigences de confort, et la période d'installation. Contactez-nous pour un bilan personnalisé avant votre départ.</p>
+    </div>
+
+    <h2>Le retour sur investissement</h2>
+    <p>Pour un entrepreneur français payant 30 à 40 % de charges et impôts en France, le différentiel annuel — économies sur le coût de la vie additionnées aux économies fiscales — représente souvent <strong>20 000 à 40 000 € par an</strong>.</p>
+    <p>L'installation s'amortit donc généralement en 1 à 4 mois de vie en Géorgie. Un calcul limpide qui explique pourquoi de plus en plus de familles franchissent le pas, et pourquoi ceux qui l'ont fait expriment rarement des regrets sur la décision elle-même — seulement parfois sur la façon dont ils l'ont préparée.</p>
+
+  </div>
+
+  <div class="cta-band">
+    <h3>Prêt à franchir le pas ?</h3>
+    <p>Nos experts BEI Batumi Expat Invest vous accompagnent dans toutes vos démarches en Géorgie.</p>
+    <a href="https://wa.me/33681108147" class="cta-wa" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Nous contacter sur WhatsApp
+    </a>
+  </div>
+
+  <div class="related">
+    <h3>Articles similaires</h3>
+    <div class="related-grid">
+      <a href="erreurs-expatriation.html" class="related-card">
+        <div class="num">ARTICLE 19</div>
+        <div class="title">Les erreurs à éviter avant de s'expatrier en Géorgie</div>
+      </a>
+      <a href="cout-vie-batumi.html" class="related-card">
+        <div class="num">ARTICLE 03</div>
+        <div class="title">Combien coûte réellement la vie à Batumi ?</div>
+      </a>
+      <a href="residence-georgienne.html" class="related-card">
+        <div class="num">ARTICLE 13</div>
+        <div class="title">Comment obtenir sa résidence géorgienne</div>
+      </a>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Vivre en Géorgie &middot; <a href="../index.html">Retour au site</a> &middot; <a href="../mentions-legales.html">Mentions légales</a></footer>
+<script>
+function openDrawer() {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+</script>
+</body>
+</html>
