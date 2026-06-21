@@ -433,7 +433,11 @@
 
   /* ── TEAM ── */
   .team-wrap { margin-top: 64px; }
-  .team-tagline { text-align: center; font-size: 1.05rem; font-weight: 800; color: var(--gold); margin-bottom: 40px; letter-spacing: -.01em; }
+  .team-divider { display:flex; align-items:center; gap:16px; margin-bottom:28px; }
+  .team-divider::before, .team-divider::after { content:''; flex:1; height:1px; background:linear-gradient(to right, transparent, rgba(255,255,255,.13)); }
+  .team-divider::after { background:linear-gradient(to left, transparent, rgba(255,255,255,.13)); }
+  .team-divider span { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.2em; color:var(--gold); white-space:nowrap; }
+  .team-tagline { text-align: center; font-size: 1.05rem; font-weight: 800; color: rgba(255,255,255,.9); margin-bottom: 40px; letter-spacing: -.01em; }
   .team-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
   @media(min-width:680px){ .team-grid { grid-template-columns: 1fr 1fr; } }
   .team-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 16px; padding: 32px; transition: border-color .3s, transform .3s; }
@@ -885,20 +889,21 @@
 
     <!-- TEAM -->
     <div class="team-wrap">
-      <p class="team-tagline reveal">🤝 Deux expertises. Un seul objectif : votre réussite en Géorgie.</p>
+      <div class="team-divider"><span data-i18n="team_eyebrow">Notre équipe</span></div>
+      <p class="team-tagline reveal" data-i18n="team_tagline">🤝 Deux expertises. Un seul objectif : votre réussite en Géorgie.</p>
       <div class="team-grid">
 
         <div class="team-card reveal">
           <img src="images/victor-gogoladze.jpg" alt="Victor Gogoladze – Expert local Géorgie" class="team-avatar" width="88" height="88" loading="lazy">
           <div class="team-flag">🇬🇪</div>
           <div class="team-name">Victor GOGOLADZE</div>
-          <div class="team-role">Votre accès direct à la Géorgie</div>
-          <p class="team-bio">Issu d'une famille géorgienne, Victor parle couramment le géorgien et le français. Installé en Géorgie depuis plus de 15 ans, il a construit un réseau local solide : banques, comptables, avocats, promoteurs immobiliers et partenaires stratégiques.</p>
+          <div class="team-role" data-i18n="team_victor_role">Votre accès direct à la Géorgie</div>
+          <p class="team-bio" data-i18n="team_victor_bio">Issu d'une famille géorgienne, Victor parle couramment le géorgien et le français. Installé en Géorgie depuis plus de 15 ans, il a construit un réseau local solide : banques, comptables, avocats, promoteurs immobiliers et partenaires stratégiques.</p>
           <div class="team-perks">
-            <div class="team-perk">Accès à un réseau local de confiance</div>
-            <div class="team-perk">Accompagnement dans les démarches administratives</div>
-            <div class="team-perk">Facilitation des échanges avec les interlocuteurs géorgiens</div>
-            <div class="team-perk">Gain de temps considérable</div>
+            <div class="team-perk" data-i18n="team_victor_perk1">Accès à un réseau local de confiance</div>
+            <div class="team-perk" data-i18n="team_victor_perk2">Accompagnement dans les démarches administratives</div>
+            <div class="team-perk" data-i18n="team_victor_perk3">Facilitation des échanges avec les interlocuteurs géorgiens</div>
+            <div class="team-perk" data-i18n="team_victor_perk4">Gain de temps considérable</div>
           </div>
         </div>
 
@@ -906,24 +911,24 @@
           <img src="images/axel-briard.jpg" alt="Axel Briard – Entrepreneur expatrié à Batumi" class="team-avatar" width="88" height="88" loading="lazy">
           <div class="team-flag">🇫🇷</div>
           <div class="team-name">Axel BRIARD</div>
-          <div class="team-role">Votre vision d'entrepreneur et d'expatrié</div>
-          <p class="team-bio">Entrepreneur français, investisseur et expatrié à Batumi, Axel parle couramment le français et l'espagnol. Il a lui-même réalisé toutes les étapes de son installation : création d'entreprise, comptes bancaires, immobilier, fiscalité.</p>
+          <div class="team-role" data-i18n="team_axel_role">Votre vision d'entrepreneur et d'expatrié</div>
+          <p class="team-bio" data-i18n="team_axel_bio">Entrepreneur français, investisseur et expatrié à Batumi, Axel parle couramment le français et l'espagnol. Il a lui-même réalisé toutes les étapes de son installation : création d'entreprise, comptes bancaires, immobilier, fiscalité.</p>
           <div class="team-perks">
-            <div class="team-perk">Expérience terrain vécue de l'intérieur</div>
-            <div class="team-perk">Accompagnement en français et espagnol</div>
-            <div class="team-perk">Vision d'entrepreneur et d'investisseur</div>
-            <div class="team-perk">Connaît les doutes et questions des expatriés</div>
+            <div class="team-perk" data-i18n="team_axel_perk1">Expérience terrain vécue de l'intérieur</div>
+            <div class="team-perk" data-i18n="team_axel_perk2">Accompagnement en français et espagnol</div>
+            <div class="team-perk" data-i18n="team_axel_perk3">Vision d'entrepreneur et d'investisseur</div>
+            <div class="team-perk" data-i18n="team_axel_perk4">Connaît les doutes et questions des expatriés</div>
           </div>
         </div>
 
       </div>
 
       <div class="team-cta-box reveal">
-        <div class="team-cta-title">🚀 Pourquoi passer par nous plutôt que seul ?</div>
-        <p class="team-cta-text">Vous n'arrivez pas seul dans un pays que vous ne connaissez pas. Vous arrivez avec une équipe déjà implantée — réseau, connaissances et présence locale permanente. En français, géorgien et espagnol.</p>
-        <a href="https://wa.me/33681108147" class="btn-wa-hero" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
+        <div class="team-cta-title" data-i18n="team_cta_title">🚀 Pourquoi passer par nous plutôt que seul ?</div>
+        <p class="team-cta-text" data-i18n="team_cta_text">Vous n'arrivez pas seul dans un pays que vous ne connaissez pas. Vous arrivez avec une équipe déjà implantée — réseau, connaissances et présence locale permanente. En français, géorgien et espagnol.</p>
+        <a href="https://wa.me/33681108147" class="wa-btn" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Discutons de votre projet
+          <span data-i18n="team_cta_btn">Discutons de votre projet</span>
         </a>
       </div>
     </div>
@@ -1129,6 +1134,19 @@ const i18n = {
     trust2_title:'Projets accompagnés depuis 2020', trust2_text:'Expatriation, immobilier, société, fiscalité. Chaque dossier suit un processus structuré et documenté.',
     trust3_title:'Frais cachés — zéro', trust3_text:'Nos honoraires sont communiqués avant tout engagement. Vous savez exactement ce que vous payez.',
     trust4_num:'🇫🇷', trust4_title:'Tout géré en français', trust4_text:'Actes notariés, ouvertures de comptes, démarches admin. Zéro barrière de langue à chaque étape.',
+    team_eyebrow:'Notre équipe',
+    team_tagline:'🤝 Deux expertises. Un seul objectif : votre réussite en Géorgie.',
+    team_victor_role:'Votre accès direct à la Géorgie',
+    team_victor_bio:'Issu d\'une famille géorgienne, Victor parle couramment le géorgien et le français. Installé en Géorgie depuis plus de 15 ans, il a construit un réseau local solide : banques, comptables, avocats, promoteurs immobiliers et partenaires stratégiques.',
+    team_victor_perk1:'Accès à un réseau local de confiance', team_victor_perk2:'Accompagnement dans les démarches administratives',
+    team_victor_perk3:'Facilitation des échanges avec les interlocuteurs géorgiens', team_victor_perk4:'Gain de temps considérable',
+    team_axel_role:'Votre vision d\'entrepreneur et d\'expatrié',
+    team_axel_bio:'Entrepreneur français, investisseur et expatrié à Batumi, Axel parle couramment le français et l\'espagnol. Il a lui-même réalisé toutes les étapes de son installation : création d\'entreprise, comptes bancaires, immobilier, fiscalité.',
+    team_axel_perk1:'Expérience terrain vécue de l\'intérieur', team_axel_perk2:'Accompagnement en français et espagnol',
+    team_axel_perk3:'Vision d\'entrepreneur et d\'investisseur', team_axel_perk4:'Connaît les doutes et questions des expatriés',
+    team_cta_title:'🚀 Pourquoi passer par nous plutôt que seul ?',
+    team_cta_text:'Vous n\'arrivez pas seul dans un pays que vous ne connaissez pas. Vous arrivez avec une équipe déjà implantée — réseau, connaissances et présence locale permanente. En français, géorgien et espagnol.',
+    team_cta_btn:'Discutons de votre projet',
     why_label:'Pourquoi nous choisir ?',
     why1:'Experts locaux · Terrain toute l\'année', why2:'+80 projets accompagnés avec succès', why3:'Répond généralement en moins de 4h', why4:'Données fiables & vérifiées',
     footer_desc:'La référence francophone pour s\'expatrier, investir et entreprendre en Géorgie — approche claire, sérieuse et orientée terrain.',
@@ -1175,6 +1193,19 @@ const i18n = {
     trust2_title:'Projects completed since 2020', trust2_text:'Relocation, real estate, company, taxes. Every case follows a structured and documented process.',
     trust3_title:'Hidden fees — zero', trust3_text:'Our fees are communicated before any commitment. You know exactly what you pay.',
     trust4_num:'🇬🇧', trust4_title:'Fully managed in English', trust4_text:'Notarial deeds, account openings, admin procedures. Zero language barrier at every step.',
+    team_eyebrow:'Our team',
+    team_tagline:'🤝 Two expertises. One goal: your success in Georgia.',
+    team_victor_role:'Your direct access to Georgia',
+    team_victor_bio:'From a Georgian family, Victor speaks Georgian and French fluently. Based in Georgia for over 15 years, he has built a solid local network: banks, accountants, lawyers, real estate developers and strategic partners.',
+    team_victor_perk1:'Access to a trusted local network', team_victor_perk2:'Support with administrative procedures',
+    team_victor_perk3:'Facilitating exchanges with Georgian contacts', team_victor_perk4:'Significant time savings',
+    team_axel_role:'Your entrepreneur & expat perspective',
+    team_axel_bio:'French entrepreneur, investor and expat in Batumi, Axel speaks French and Spanish fluently. He has personally gone through every step of his relocation: company creation, banking, real estate, tax optimization.',
+    team_axel_perk1:'First-hand field experience', team_axel_perk2:'Support in French and Spanish',
+    team_axel_perk3:'Entrepreneur and investor mindset', team_axel_perk4:'Understands expat doubts and questions',
+    team_cta_title:'🚀 Why work with us rather than going it alone?',
+    team_cta_text:'You don\'t arrive alone in a country you don\'t know. You arrive with an already established team — network, know-how and permanent local presence. In French, Georgian and Spanish.',
+    team_cta_btn:'Let\'s discuss your project',
     why_label:'Why choose us?',
     why1:'Local experts · On-site year-round', why2:'+80 projects completed successfully', why3:'Usually replies in under 4h', why4:'Reliable & verified data',
     footer_desc:'The go-to English-speaking resource for relocating, investing and doing business in Georgia — clear, serious and field-oriented.',
@@ -1221,6 +1252,19 @@ const i18n = {
     trust2_title:'Proyectos acompañados desde 2020', trust2_text:'Expatriación, inmobiliaria, empresa, fiscalidad. Cada expediente sigue un proceso estructurado y documentado.',
     trust3_title:'Gastos ocultos — cero', trust3_text:'Nuestros honorarios se comunican antes de cualquier compromiso. Sabes exactamente lo que pagas.',
     trust4_num:'🇪🇸', trust4_title:'Todo gestionado en español', trust4_text:'Escrituras notariales, apertura de cuentas, trámites admin. Cero barrera de idioma en cada paso.',
+    team_eyebrow:'Nuestro equipo',
+    team_tagline:'🤝 Dos experticias. Un solo objetivo: tu éxito en Georgia.',
+    team_victor_role:'Tu acceso directo a Georgia',
+    team_victor_bio:'De familia georgiana, Victor habla con fluidez el georgiano y el francés. Establecido en Georgia desde hace más de 15 años, ha construido una sólida red local: bancos, contables, abogados, promotores inmobiliarios y socios estratégicos.',
+    team_victor_perk1:'Acceso a una red local de confianza', team_victor_perk2:'Acompañamiento en los trámites administrativos',
+    team_victor_perk3:'Facilitación de los intercambios con interlocutores georgianos', team_victor_perk4:'Ahorro considerable de tiempo',
+    team_axel_role:'Tu visión de emprendedor y expatriado',
+    team_axel_bio:'Emprendedor francés, inversor y expatriado en Batumi, Axel habla con fluidez el francés y el español. Él mismo realizó todas las etapas de su instalación: creación de empresa, cuentas bancarias, inmobiliaria, fiscalidad.',
+    team_axel_perk1:'Experiencia de campo vivida desde dentro', team_axel_perk2:'Acompañamiento en francés y español',
+    team_axel_perk3:'Visión de emprendedor e inversor', team_axel_perk4:'Conoce las dudas y preguntas de los expatriados',
+    team_cta_title:'🚀 ¿Por qué pasar por nosotros en lugar de ir solo?',
+    team_cta_text:'No llegas solo a un país que no conoces. Llegas con un equipo ya implantado — red, conocimientos y presencia local permanente. En francés, georgiano y español.',
+    team_cta_btn:'Hablemos de tu proyecto',
     why_label:'¿Por qué elegirnos?',
     why1:'Expertos locales · Sobre el terreno todo el año', why2:'+80 proyectos acompañados con éxito', why3:'Responde en menos de 4h', why4:'Datos fiables y verificados',
     footer_desc:'La referencia hispanohablante para expatriarse, invertir y emprender en Georgia — enfoque claro, serio y orientado al terreno.',
@@ -1251,10 +1295,10 @@ const i18n = {
     feat2_title:'სწრაფი პასუხი',                feat2_text:'ვპასუხობთ ნებისმიერ საათზე, კვირაში 7 დღე.',
     feat3_title:'გამარტივებული პროცედურები',    feat3_text:'ჩვენ ვმართავთ ყველა ადმინისტრაციულ ფორმალობას.',
     feat4_title:'უსაფრთხოება & გამჭვირვალობა', feat4_text:'მკაფიო ფასები ნებისმიერი ვალდებულებამდე.',
-    stat1_lbl:'განხორციელებული პროექტი', stat2_val:'4 წელი', stat2_lbl:'ბათუმში ადგილზე',
-    stat3_val:'3 ქალაქი', stat3_lbl:'საქართველოში', stat4_lbl:'პასუხის გარანტირებული დრო',
-    wa_h3:'💬 ვისაუბროთ თქვენს პროექტზე!', wa_p:'დაგვიკავშირდით WhatsApp-ზე უფასოდ. პასუხი 24 საათში გარანტირებულია.',
-    wa_btn:'WhatsApp', wa_note:'⏱ პასუხი 24 საათში · უფასო · ვალდებულების გარეშე',
+    stat1_lbl:'განხორციელებული პროექტი', stat2_val:'2 წელი', stat2_lbl:'ბათუმში ადგილზე',
+    stat3_val:'Batumi &amp; Tbilisi', stat3_lbl:'ადგილობრივი ყოფნა', stat4_lbl:'საშუალო პასუხის დრო',
+    wa_h3:'💬 ვისაუბროთ თქვენს პროექტზე!', wa_p:'დაგვიკავშირდით WhatsApp-ზე უფასოდ. ჩვეულებრივ ვპასუხობთ 4 საათში.',
+    wa_btn:'WhatsApp', wa_note:'⏱ პასუხი &lt; 4 საათში · უფასო · ვალდებულების გარეშე',
     svc_eyebrow:'ეს თქვენთვისაა, თუ გსურთ…', svc_h2:'თქვენი პროექტი საქართველოში — A-დან Z-მდე.',
     svc_p:'ემიგრაცია, უძრავი ქონება, კომპანიის შექმნა ან საგადასახადო ოპტიმიზაცია — ჩვენ ვმართავთ ყველაფერს თქვენი ნაცვლად.',
     svc1_title:'საქართველოში ცხოვრება', svc1_text:'ემიგრაცია და განსაკუთრებული ცხოვრების ხარისხი. საცხოვრებელი, ბანკი, ვიზა, პირველი ნაბიჯები.', svc1_cta:'ვისაუბროთ →',
@@ -1267,8 +1311,21 @@ const i18n = {
     trust2_title:'პროექტები 2020 წლიდან', trust2_text:'ემიგრაცია, უძრავი ქონება, კომპანია, გადასახადები. თითოეული საქმე სტრუქტურირებული პროცესით.',
     trust3_title:'ფარული საკომისიო — ნული', trust3_text:'ჩვენი საფასური ნებისმიერ ვალდებულებამდე ცნობილია. ზუსტად იცით, რასაც იხდით.',
     trust4_num:'🇬🇪', trust4_title:'ყველაფერი ქართულ ენაზე', trust4_text:'სანოტარო აქტები, ანგარიშის გახსნა, ადმინ. პროცედურები. ენის ბარიერი — ნული.',
+    team_eyebrow:'ჩვენი გუნდი',
+    team_tagline:'🤝 ორი გამოცდილება. ერთი მიზანი: თქვენი წარმატება საქართველოში.',
+    team_victor_role:'თქვენი პირდაპირი წვდომა საქართველოში',
+    team_victor_bio:'ქართული ოჯახიდან, ვიქტორი მშვენივრად საუბრობს ქართულად და ფრანგულად. 15 წელზე მეტი ხნის განმავლობაში საქართველოში, მან ჩამოაყალიბა მყარი ადგილობრივი ქსელი: ბანკები, ბუღალტრები, იურისტები, უძრავი ქონების დეველოპერები და სტრატეგიული პარტნიორები.',
+    team_victor_perk1:'სანდო ადგილობრივი ქსელზე წვდომა', team_victor_perk2:'ადმინისტრაციული პროცედურების დახმარება',
+    team_victor_perk3:'ქართველ პარტნიორებთან ურთიერთობის გამარტივება', team_victor_perk4:'მნიშვნელოვანი დროის დაზოგვა',
+    team_axel_role:'მეწარმისა და ემიგრანტის პერსპექტივა',
+    team_axel_bio:'ფრანგი მეწარმე, ინვესტორი და ემიგრანტი ბათუმში, ეჟო მშვენივრად საუბრობს ფრანგულად და ესპანურად. მან თავად განახორციელა ყველა ეტაპი: კომპანიის შექმნა, საბანკო ანგარიშები, უძრავი ქონება, გადასახადები.',
+    team_axel_perk1:'პირადი გამოცდილება ადგილობრივ დონეზე', team_axel_perk2:'მხარდაჭერა ფრანგულ და ესპანურ ენებზე',
+    team_axel_perk3:'მეწარმისა და ინვესტორის ხედვა', team_axel_perk4:'ემიგრანტების ეჭვებსა და კითხვებს იცნობს',
+    team_cta_title:'🚀 რატომ ჩვენი გუნდი, ნაცვლად მარტო?',
+    team_cta_text:'თქვენ მარტო არ ჩადიხართ უცნობ ქვეყანაში. ჩადიხართ უკვე ჩამოყალიბებული გუნდით — ქსელი, ცოდნა და მუდმივი ადგილობრივი ყოფნა. ფრანგულ, ქართულ და ესპანურ ენებზე.',
+    team_cta_btn:'ვისაუბროთ თქვენს პროექტზე',
     why_label:'რატომ ავირჩიოთ ჩვენ?',
-    why1:'ადგილობრივი ექსპერტები · წლის განმავლობაში', why2:'47 წარმატებული პროექტი', why3:'პასუხი 24 საათში გარანტირებული', why4:'სანდო & გადამოწმებული მონაცემები',
+    why1:'ადგილობრივი ექსპერტები · წლის განმავლობაში', why2:'+80 წარმატებული პროექტი', why3:'ჩვეულებრივ ვპასუხობთ 4 საათში', why4:'სანდო & გადამოწმებული მონაცემები',
     footer_desc:'ქართული ბაზრისთვის — ემიგრაციის, ინვესტიციისა და ბიზნესის ექსპერტები საქართველოში.',
     footer_nav_title:'ნავიგაცია', footer_social_title:'სოციალური ქსელები',
     footer_social_text:'გამოგვყევით საქართველოს ცხოვრების, ბათუმის უძრავი ქონებისა და საინვესტიციო შესაძლებლობების სიახლეებისთვის.',
