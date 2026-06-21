@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Vivre en Géorgie">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="Vivre en Géorgie – Experts francophones à Batumi">
-  <meta property="og:description" content="Expatriation, investissement immobilier, création de société et optimisation fiscale en Géorgie. 47 projets accompagnés depuis 2020. Experts présents toute l'année à Batumi.">
+  <meta property="og:description" content="Expatriation, investissement immobilier, création de société et optimisation fiscale en Géorgie. +80 projets accompagnés. Experts présents à Batumi et Tbilissi.">
   <meta property="og:image" content="https://vivreengeorgie.com/images/batumi-real.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Vivre en Géorgie – Experts francophones à Batumi">
-  <meta name="twitter:description" content="Expatriation, investissement, société et fiscalité en Géorgie. 47 projets accompagnés depuis 2020.">
+  <meta name="twitter:description" content="Expatriation, investissement, société et fiscalité en Géorgie. +80 projets accompagnés.">
   <meta name="twitter:image" content="https://vivreengeorgie.com/images/batumi-real.png">
 
   <!-- JSON-LD FAQPage -->
@@ -431,6 +431,25 @@
   .trust-title { font-size: .95rem; font-weight: 700; margin-bottom: 9px; }
   .trust-text  { font-size: 13px; color: rgba(255,255,255,.54); line-height: 1.68; }
 
+  /* ── TEAM ── */
+  .team-wrap { margin-top: 64px; }
+  .team-tagline { text-align: center; font-size: 1.05rem; font-weight: 800; color: var(--gold); margin-bottom: 40px; letter-spacing: -.01em; }
+  .team-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
+  @media(min-width:680px){ .team-grid { grid-template-columns: 1fr 1fr; } }
+  .team-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 16px; padding: 32px; transition: border-color .3s, transform .3s; }
+  .team-card:hover { border-color: rgba(23,190,187,.36); transform: translateY(-4px); }
+  .team-avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--teal); display: block; margin-bottom: 16px; background: var(--navy2); }
+  .team-flag { font-size: 1.4rem; margin-bottom: 6px; }
+  .team-name { font-size: 1.05rem; font-weight: 900; letter-spacing: -.01em; margin-bottom: 4px; }
+  .team-role { font-size: .78rem; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+  .team-bio { font-size: .88rem; color: rgba(255,255,255,.65); line-height: 1.72; margin-bottom: 20px; }
+  .team-perks { display: grid; gap: 8px; }
+  .team-perk { font-size: .87rem; color: rgba(255,255,255,.8); padding-left: 20px; position: relative; line-height: 1.4; }
+  .team-perk::before { content: '✔'; color: var(--teal); position: absolute; left: 0; font-weight: 700; font-size: .8rem; top: 1px; }
+  .team-cta-box { margin-top: 40px; background: rgba(212,175,55,.07); border: 1px solid rgba(212,175,55,.22); border-radius: 16px; padding: 36px 28px; text-align: center; }
+  .team-cta-title { font-size: 1.1rem; font-weight: 900; margin-bottom: 12px; }
+  .team-cta-text { font-size: .92rem; color: rgba(255,255,255,.65); line-height: 1.72; max-width: 520px; margin: 0 auto 28px; }
+
   /* ── WHY BAR ── */
   .why-bar { background: rgba(10,77,140,.14); border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 22px 24px; }
   .why-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
@@ -722,19 +741,19 @@
 <section class="stats-band" id="stats">
   <div class="stats-inner">
     <div class="stat">
-      <div class="stat-val" data-count="47">0</div>
+      <div class="stat-val" data-count="80" data-prefix="+">0</div>
       <div class="stat-lbl" data-i18n="stat1_lbl">Projets accompagnés</div>
     </div>
     <div class="stat">
-      <div class="stat-val" data-i18n="stat2_val">4 ans</div>
+      <div class="stat-val" data-i18n="stat2_val">2 ans</div>
       <div class="stat-lbl" data-i18n="stat2_lbl">Sur le terrain à Batumi</div>
     </div>
     <div class="stat">
-      <div class="stat-val" data-i18n="stat3_val">3 villes</div>
+      <div class="stat-val" data-i18n="stat3_val">Batumi &amp; Tbilisi</div>
       <div class="stat-lbl" data-i18n="stat3_lbl">Couvertes en Géorgie</div>
     </div>
     <div class="stat">
-      <div class="stat-val">&lt;&nbsp;24h</div>
+      <div class="stat-val">&lt;&nbsp;4h</div>
       <div class="stat-lbl" data-i18n="stat4_lbl">Délai de réponse garanti</div>
     </div>
   </div>
@@ -745,14 +764,14 @@
   <div class="wa-inner">
     <div class="wa-txt">
       <h2 data-i18n="wa_h3">💬 Parlons de votre projet !</h2>
-      <p data-i18n="wa_p">Échangeons gratuitement sur WhatsApp. Réponse sous 24h garantie.</p>
+      <p data-i18n="wa_p">Échangeons gratuitement sur WhatsApp. Répond généralement en moins de 4h.</p>
     </div>
     <div class="wa-right">
       <a href="https://wa.me/33681108147" class="wa-btn" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span data-i18n="wa_btn">WhatsApp</span>
       </a>
-      <span class="wa-note" data-i18n="wa_note">⏱ Réponse sous 24h · Gratuit · Sans engagement</span>
+      <span class="wa-note" data-i18n="wa_note">⏱ Répond en &lt; 4h · Gratuit · Sans engagement</span>
     </div>
   </div>
 </section>
@@ -845,10 +864,10 @@
       <div class="trust-card reveal">
         <div class="trust-num">📍</div>
         <div class="trust-title" data-i18n="trust1_title">Présents physiquement toute l'année</div>
-        <div class="trust-text"  data-i18n="trust1_text">Notre équipe vit à Batumi, Tbilissi et Koutaïssi. Pas de conseil à distance basé sur des articles internet.</div>
+        <div class="trust-text"  data-i18n="trust1_text">Notre équipe est présente physiquement à Batumi et Tbilissi. Pas de conseil à distance basé sur des articles internet.</div>
       </div>
       <div class="trust-card reveal">
-        <div class="trust-num">47</div>
+        <div class="trust-num">+80</div>
         <div class="trust-title" data-i18n="trust2_title">Projets accompagnés depuis 2020</div>
         <div class="trust-text"  data-i18n="trust2_text">Expatriation, immobilier, société, fiscalité. Chaque dossier suit un processus structuré et documenté.</div>
       </div>
@@ -863,6 +882,52 @@
         <div class="trust-text"  data-i18n="trust4_text">Actes notariés, ouvertures de comptes, démarches admin. Zéro barrière de langue à chaque étape.</div>
       </div>
     </div>
+
+    <!-- TEAM -->
+    <div class="team-wrap">
+      <p class="team-tagline reveal">🤝 Deux expertises. Un seul objectif : votre réussite en Géorgie.</p>
+      <div class="team-grid">
+
+        <div class="team-card reveal">
+          <img src="images/victor-gogoladze.jpg" alt="Victor Gogoladze – Expert local Géorgie" class="team-avatar" width="88" height="88" loading="lazy">
+          <div class="team-flag">🇬🇪</div>
+          <div class="team-name">Victor GOGOLADZE</div>
+          <div class="team-role">Votre accès direct à la Géorgie</div>
+          <p class="team-bio">Issu d'une famille géorgienne, Victor parle couramment le géorgien et le français. Installé en Géorgie depuis plus de 15 ans, il a construit un réseau local solide : banques, comptables, avocats, promoteurs immobiliers et partenaires stratégiques.</p>
+          <div class="team-perks">
+            <div class="team-perk">Accès à un réseau local de confiance</div>
+            <div class="team-perk">Accompagnement dans les démarches administratives</div>
+            <div class="team-perk">Facilitation des échanges avec les interlocuteurs géorgiens</div>
+            <div class="team-perk">Gain de temps considérable</div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <img src="images/axel-briard.jpg" alt="Axel Briard – Entrepreneur expatrié à Batumi" class="team-avatar" width="88" height="88" loading="lazy">
+          <div class="team-flag">🇫🇷</div>
+          <div class="team-name">Axel BRIARD</div>
+          <div class="team-role">Votre vision d'entrepreneur et d'expatrié</div>
+          <p class="team-bio">Entrepreneur français, investisseur et expatrié à Batumi, Axel parle couramment le français et l'espagnol. Il a lui-même réalisé toutes les étapes de son installation : création d'entreprise, comptes bancaires, immobilier, fiscalité.</p>
+          <div class="team-perks">
+            <div class="team-perk">Expérience terrain vécue de l'intérieur</div>
+            <div class="team-perk">Accompagnement en français et espagnol</div>
+            <div class="team-perk">Vision d'entrepreneur et d'investisseur</div>
+            <div class="team-perk">Connaît les doutes et questions des expatriés</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="team-cta-box reveal">
+        <div class="team-cta-title">🚀 Pourquoi passer par nous plutôt que seul ?</div>
+        <p class="team-cta-text">Vous n'arrivez pas seul dans un pays que vous ne connaissez pas. Vous arrivez avec une équipe déjà implantée — réseau, connaissances et présence locale permanente. En français, géorgien et espagnol.</p>
+        <a href="https://wa.me/33681108147" class="btn-wa-hero" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Discutons de votre projet
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -937,8 +1002,8 @@
     <div class="why-label"><span class="star">★</span> <span data-i18n="why_label">Pourquoi nous choisir ?</span></div>
     <div class="why-items">
       <div class="why-item"><span class="chk">✓</span> <span data-i18n="why1">Experts locaux · Terrain toute l'année</span></div>
-      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why2">47 projets accompagnés avec succès</span></div>
-      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why3">Réponse garantie sous 24h</span></div>
+      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why2">+80 projets accompagnés avec succès</span></div>
+      <div class="why-item"><span class="chk">✓</span> <span data-i18n="why3">Répond généralement en moins de 4h</span></div>
       <div class="why-item"><span class="chk">✓</span> <span data-i18n="why4">Données fiables &amp; vérifiées</span></div>
     </div>
   </div>
@@ -1048,10 +1113,10 @@ const i18n = {
     feat2_title:'Réactivité exceptionnelle',  feat2_text:'On répond peu importe l\'heure, 7j/7.',
     feat3_title:'Démarches simplifiées',      feat3_text:'Nous gérons les formalités administratives.',
     feat4_title:'Sécurité & transparence',    feat4_text:'Tarifs clairs avant tout engagement.',
-    stat1_lbl:'Projets accompagnés', stat2_val:'4 ans', stat2_lbl:'Sur le terrain à Batumi',
-    stat3_val:'3 villes', stat3_lbl:'Couvertes en Géorgie', stat4_lbl:'Délai de réponse garanti',
-    wa_h3:'💬 Parlons de votre projet !', wa_p:'Échangeons gratuitement sur WhatsApp. Réponse sous 24h garantie.',
-    wa_btn:'WhatsApp', wa_note:'⏱ Réponse sous 24h · Gratuit · Sans engagement',
+    stat1_lbl:'Projets accompagnés', stat2_val:'2 ans', stat2_lbl:'Sur le terrain à Batumi',
+    stat3_val:'Batumi &amp; Tbilisi', stat3_lbl:'Présents localement', stat4_lbl:'Temps de réponse moyen',
+    wa_h3:'💬 Parlons de votre projet !', wa_p:'Échangeons gratuitement sur WhatsApp. Répond généralement en moins de 4h.',
+    wa_btn:'WhatsApp', wa_note:'⏱ Répond en &lt; 4h · Gratuit · Sans engagement',
     svc_eyebrow:'Vous êtes concerné si vous souhaitez…', svc_h2:'Votre projet en Géorgie, de A à Z.',
     svc_p:'Expatriation, immobilier, création de société ou optimisation fiscale — nous gérons l\'ensemble des démarches à votre place, en français.',
     svc1_title:'Vivre en Géorgie', svc1_text:'S\'expatrier et profiter d\'une qualité de vie exceptionnelle. Logement, banque, visa, premiers repères sans stress.', svc1_cta:'En parler →',
@@ -1060,12 +1125,12 @@ const i18n = {
     svc4_title:'Optimiser votre fiscalité', svc4_text:'Résidence fiscale, structuration, démarches administratives adaptées à votre situation personnelle.', svc4_cta:'En parler →',
     trust_eyebrow:'Pourquoi nous faire confiance ?', trust_h2:'Des experts locaux, pas des intermédiaires.',
     trust_p:'On ne vend pas du rêve sur la Géorgie. On accompagne des projets concrets avec une méthode claire, des chiffres honnêtes et une présence physique permanente.',
-    trust1_title:'Présents physiquement toute l\'année', trust1_text:'Notre équipe vit à Batumi, Tbilissi et Koutaïssi. Pas de conseil à distance basé sur des articles internet.',
+    trust1_title:'Présents physiquement toute l\'année', trust1_text:'Notre équipe est présente physiquement à Batumi et Tbilissi. Pas de conseil à distance basé sur des articles internet.',
     trust2_title:'Projets accompagnés depuis 2020', trust2_text:'Expatriation, immobilier, société, fiscalité. Chaque dossier suit un processus structuré et documenté.',
     trust3_title:'Frais cachés — zéro', trust3_text:'Nos honoraires sont communiqués avant tout engagement. Vous savez exactement ce que vous payez.',
     trust4_num:'🇫🇷', trust4_title:'Tout géré en français', trust4_text:'Actes notariés, ouvertures de comptes, démarches admin. Zéro barrière de langue à chaque étape.',
     why_label:'Pourquoi nous choisir ?',
-    why1:'Experts locaux · Terrain toute l\'année', why2:'47 projets accompagnés avec succès', why3:'Réponse garantie sous 24h', why4:'Données fiables & vérifiées',
+    why1:'Experts locaux · Terrain toute l\'année', why2:'+80 projets accompagnés avec succès', why3:'Répond généralement en moins de 4h', why4:'Données fiables & vérifiées',
     footer_desc:'La référence francophone pour s\'expatrier, investir et entreprendre en Géorgie — approche claire, sérieuse et orientée terrain.',
     footer_nav_title:'Navigation', footer_social_title:'Réseaux sociaux',
     footer_social_text:'Suivez-nous pour les dernières actualités sur la vie en Géorgie, l\'immobilier à Batumi et les opportunités d\'investissement.',
@@ -1094,10 +1159,10 @@ const i18n = {
     feat2_title:'Exceptional responsiveness', feat2_text:'We reply no matter the hour, 7 days a week.',
     feat3_title:'Simplified procedures',      feat3_text:'We handle all the administrative formalities.',
     feat4_title:'Security & transparency',    feat4_text:'Clear pricing before any commitment.',
-    stat1_lbl:'Projects completed', stat2_val:'4 years', stat2_lbl:'On the ground in Batumi',
-    stat3_val:'3 cities', stat3_lbl:'Covered in Georgia', stat4_lbl:'Guaranteed response time',
-    wa_h3:'💬 Let\'s talk about your project!', wa_p:'Chat with us for free on WhatsApp. Reply guaranteed within 24h.',
-    wa_btn:'WhatsApp', wa_note:'⏱ Reply within 24h · Free · No commitment',
+    stat1_lbl:'Projects completed', stat2_val:'2 years', stat2_lbl:'On the ground in Batumi',
+    stat3_val:'Batumi &amp; Tbilisi', stat3_lbl:'Locally present', stat4_lbl:'Average response time',
+    wa_h3:'💬 Let\'s talk about your project!', wa_p:'Chat with us for free on WhatsApp. We usually reply in under 4h.',
+    wa_btn:'WhatsApp', wa_note:'⏱ Reply in &lt; 4h · Free · No commitment',
     svc_eyebrow:'This is for you if you want to…', svc_h2:'Your project in Georgia, from A to Z.',
     svc_p:'Relocation, real estate, company creation or tax optimization — we handle everything for you, in English.',
     svc1_title:'Live in Georgia', svc1_text:'Relocate and enjoy an exceptional quality of life. Housing, banking, visa, first steps — stress-free.', svc1_cta:'Let\'s talk →',
@@ -1106,12 +1171,12 @@ const i18n = {
     svc4_title:'Optimize your taxes', svc4_text:'Tax residency, structuring, administrative procedures tailored to your personal situation.', svc4_cta:'Let\'s talk →',
     trust_eyebrow:'Why trust us?', trust_h2:'Local experts, not middlemen.',
     trust_p:'We don\'t sell Georgia dreams. We support real projects with a clear method, honest figures and permanent physical presence.',
-    trust1_title:'Physically present all year', trust1_text:'Our team lives in Batumi, Tbilisi and Kutaisi. No remote advice based on internet articles.',
+    trust1_title:'Physically present all year', trust1_text:'Our team is physically present in Batumi and Tbilisi. No remote advice based on internet articles.',
     trust2_title:'Projects completed since 2020', trust2_text:'Relocation, real estate, company, taxes. Every case follows a structured and documented process.',
     trust3_title:'Hidden fees — zero', trust3_text:'Our fees are communicated before any commitment. You know exactly what you pay.',
     trust4_num:'🇬🇧', trust4_title:'Fully managed in English', trust4_text:'Notarial deeds, account openings, admin procedures. Zero language barrier at every step.',
     why_label:'Why choose us?',
-    why1:'Local experts · On-site year-round', why2:'47 projects completed successfully', why3:'Reply guaranteed within 24h', why4:'Reliable & verified data',
+    why1:'Local experts · On-site year-round', why2:'+80 projects completed successfully', why3:'Usually replies in under 4h', why4:'Reliable & verified data',
     footer_desc:'The go-to English-speaking resource for relocating, investing and doing business in Georgia — clear, serious and field-oriented.',
     footer_nav_title:'Navigation', footer_social_title:'Social media',
     footer_social_text:'Follow us for the latest news about life in Georgia, real estate in Batumi and investment opportunities.',
@@ -1140,10 +1205,10 @@ const i18n = {
     feat2_title:'Reactividad excepcional',      feat2_text:'Respondemos a cualquier hora, 7 días a la semana.',
     feat3_title:'Trámites simplificados',        feat3_text:'Gestionamos todas las formalidades administrativas.',
     feat4_title:'Seguridad & transparencia',     feat4_text:'Tarifas claras antes de cualquier compromiso.',
-    stat1_lbl:'Proyectos acompañados', stat2_val:'4 años', stat2_lbl:'Sobre el terreno en Batumi',
-    stat3_val:'3 ciudades', stat3_lbl:'Cubiertas en Georgia', stat4_lbl:'Tiempo de respuesta garantizado',
-    wa_h3:'💬 ¡Hablemos de tu proyecto!', wa_p:'Chatea con nosotros gratis en WhatsApp. Respuesta garantizada en 24h.',
-    wa_btn:'WhatsApp', wa_note:'⏱ Respuesta en 24h · Gratis · Sin compromiso',
+    stat1_lbl:'Proyectos acompañados', stat2_val:'2 años', stat2_lbl:'Sobre el terreno en Batumi',
+    stat3_val:'Batumi &amp; Tbilisi', stat3_lbl:'Presencia local', stat4_lbl:'Tiempo de respuesta medio',
+    wa_h3:'💬 ¡Hablemos de tu proyecto!', wa_p:'Chatea con nosotros gratis en WhatsApp. Respondemos en menos de 4h.',
+    wa_btn:'WhatsApp', wa_note:'⏱ Responde en &lt; 4h · Gratis · Sin compromiso',
     svc_eyebrow:'Esto es para ti si deseas…', svc_h2:'Tu proyecto en Georgia, de la A a la Z.',
     svc_p:'Expatriación, bienes raíces, creación de empresa u optimización fiscal — gestionamos todo en tu lugar, en español.',
     svc1_title:'Vivir en Georgia', svc1_text:'Expatriarte y disfrutar de una calidad de vida excepcional. Vivienda, banco, visa, primeros pasos sin estrés.', svc1_cta:'Hablemos →',
@@ -1152,12 +1217,12 @@ const i18n = {
     svc4_title:'Optimizar tu fiscalidad', svc4_text:'Residencia fiscal, estructuración, trámites administrativos adaptados a tu situación personal.', svc4_cta:'Hablemos →',
     trust_eyebrow:'¿Por qué confiar en nosotros?', trust_h2:'Expertos locales, no intermediarios.',
     trust_p:'No vendemos sueños sobre Georgia. Acompañamos proyectos concretos con un método claro, cifras honestas y presencia física permanente.',
-    trust1_title:'Presentes físicamente todo el año', trust1_text:'Nuestro equipo vive en Batumi, Tiflis y Kutaisi. Sin asesoramiento a distancia basado en artículos de internet.',
+    trust1_title:'Presentes físicamente todo el año', trust1_text:'Nuestro equipo está físicamente presente en Batumi y Tiflis. Sin asesoramiento a distancia basado en artículos de internet.',
     trust2_title:'Proyectos acompañados desde 2020', trust2_text:'Expatriación, inmobiliaria, empresa, fiscalidad. Cada expediente sigue un proceso estructurado y documentado.',
     trust3_title:'Gastos ocultos — cero', trust3_text:'Nuestros honorarios se comunican antes de cualquier compromiso. Sabes exactamente lo que pagas.',
     trust4_num:'🇪🇸', trust4_title:'Todo gestionado en español', trust4_text:'Escrituras notariales, apertura de cuentas, trámites admin. Cero barrera de idioma en cada paso.',
     why_label:'¿Por qué elegirnos?',
-    why1:'Expertos locales · Sobre el terreno todo el año', why2:'47 proyectos acompañados con éxito', why3:'Respuesta garantizada en 24h', why4:'Datos fiables y verificados',
+    why1:'Expertos locales · Sobre el terreno todo el año', why2:'+80 proyectos acompañados con éxito', why3:'Responde en menos de 4h', why4:'Datos fiables y verificados',
     footer_desc:'La referencia hispanohablante para expatriarse, invertir y emprender en Georgia — enfoque claro, serio y orientado al terreno.',
     footer_nav_title:'Navegación', footer_social_title:'Redes sociales',
     footer_social_text:'Síguenos para las últimas noticias sobre la vida en Georgia, el sector inmobiliario en Batumi y las oportunidades de inversión.',
@@ -1331,12 +1396,13 @@ document.getElementById('hero').addEventListener('mousemove', e => {
 /* ── Counter animation ── */
 document.querySelectorAll('[data-count]').forEach(el => {
   const target = +el.dataset.count;
+  const prefix = el.dataset.prefix || '';
   const suffix = el.dataset.suffix || '';
   ScrollTrigger.create({
     trigger: el, start: 'top 82%', once: true,
     onEnter: () => gsap.to({ v: 0 }, {
       v: target, duration: 1.7, ease: 'power2.out',
-      onUpdate() { el.textContent = Math.round(this.targets()[0].v) + suffix; }
+      onUpdate() { el.textContent = prefix + Math.round(this.targets()[0].v) + suffix; }
     })
   });
 });
