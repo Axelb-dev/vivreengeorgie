@@ -532,7 +532,7 @@ function closeDrawer() {
   document.getElementById('backdrop').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); } });
 
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
@@ -545,6 +545,29 @@ function toggleFaq(btn) {
     item.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
   }
+}
+function openBrochureModal() {
+  document.getElementById('brochure-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBrochureModal() {
+  document.getElementById('brochure-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+  document.querySelectorAll('.brochure-opt.selected').forEach(function(el) { el.classList.remove('selected'); });
+  document.getElementById('brochure-send-btn').disabled = true;
+}
+function toggleBrochureOpt(el) {
+  el.classList.toggle('selected');
+  document.getElementById('brochure-send-btn').disabled = !document.querySelector('.brochure-opt.selected');
+}
+function sendBrochureWA() {
+  var selected = Array.from(document.querySelectorAll('.brochure-opt.selected'));
+  if (!selected.length) return;
+  var labels = selected.map(function(el) { return el.querySelector('.brochure-opt-label').textContent.trim(); });
+  var part = labels.length === 1 ? labels[0] : labels.slice(0,-1).join(', ') + ' et ' + labels[labels.length-1];
+  var msg = encodeURIComponent('Bonjour Axel, je souhaite recevoir votre brochure concernant : ' + part + '.');
+  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
+  closeBrochureModal();
 }
 </script>
 </body>
