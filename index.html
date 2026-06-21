@@ -25,6 +25,64 @@
   <meta name="twitter:description" content="Expatriation, investissement, société et fiscalité en Géorgie. 47 projets accompagnés depuis 2020.">
   <meta name="twitter:image" content="https://vivreengeorgie.com/images/batumi-real.png">
 
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Peut-on vivre confortablement à Batumi avec moins de 1 500 € par mois ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Un expatrié célibataire vit très confortablement à Batumi avec 800 à 1 200 € par mois : appartement meublé (300–500 €), restauration locale (150–250 €), transports et loisirs inclus. Le coût de la vie est 3 à 4 fois inférieur à Paris."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il un visa pour s'installer en Géorgie en tant que Français ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Les ressortissants français, belges, suisses et canadiens peuvent séjourner en Géorgie sans visa pendant 365 jours par an. Aucune démarche préalable n'est requise pour entrer sur le territoire géorgien."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on créer une société en Géorgie en tant qu'étranger ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, et en moins de 24 heures. La Géorgie figure parmi les pays les plus simples au monde pour créer une entreprise. Les étrangers bénéficient des mêmes droits que les Géorgiens. Le statut Petite Entreprise offre un taux d'imposition de seulement 1% sur le chiffre d'affaires jusqu'à 500 000 GEL (~170 000 €)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel est le taux d'imposition en Géorgie pour une petite entreprise ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le statut de Petite Entreprise (Small Business) en Géorgie permet un taux d'imposition de 1% sur le chiffre d'affaires annuel jusqu'à 500 000 GEL (~170 000 €). Au-delà, le taux est de 3%. C'est l'un des régimes fiscaux les plus avantageux d'Europe et d'Asie centrale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La Géorgie est-elle un pays sûr pour les expatriés ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. La Géorgie, et Batumi en particulier, est classée parmi les destinations les plus sûres du monde par l'Indice Global de la Paix. Le taux de criminalité est très bas et la présence policière est forte. La grande majorité des expatriés installés témoignent d'un sentiment de sécurité supérieur à la France."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment obtenir la résidence géorgienne ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La résidence temporaire en Géorgie s'obtient via plusieurs voies : investissement immobilier (à partir de 100 000 USD), création d'entreprise active, ou contrat de travail local. Le délai moyen de traitement est de 2 à 4 semaines avec un accompagnement spécialisé."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -482,6 +540,41 @@
   .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
   .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
   .brochure-send:disabled { opacity: .38; cursor: default; }
+
+  /* ── FAQ ── */
+  .faq-section { padding: 80px 24px; background: var(--navy2); }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq-section .eyebrow { text-align: center; }
+  .faq-section .sec-h2 { text-align: center; margin-bottom: 12px; }
+  .faq-section .sec-p { text-align: center; max-width: 560px; margin: 0 auto 52px; }
+  .faq-list { display: grid; gap: 12px; }
+  .faq-item {
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    background: rgba(255,255,255,.04);
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 20px 22px; background: none; border: none;
+    color: #fff; font-family: inherit; font-size: 1rem; font-weight: 700;
+    text-align: left; cursor: pointer; line-height: 1.4;
+    transition: background .2s;
+  }
+  .faq-q:hover { background: rgba(255,255,255,.05); }
+  .faq-chevron {
+    width: 22px; height: 22px; flex-shrink: 0; color: var(--teal);
+    transition: transform .3s ease;
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, padding .35s ease;
+    padding: 0 22px;
+  }
+  .faq-item.open .faq-a { max-height: 400px; padding: 0 22px 20px; }
+  .faq-a p { font-size: 14.5px; line-height: 1.78; color: rgba(255,255,255,.68); margin: 0; }
+  .faq-a strong { color: var(--teal); }
   </style>
 </head>
 <body>
@@ -557,6 +650,7 @@
     <a href="#hero"     class="drawer-link" onclick="closeDrawer()"><span class="icon">🏠</span> <span data-i18n="nav_home">Accueil</span></a>
     <a href="#services" class="drawer-link" onclick="closeDrawer()"><span class="icon">🎯</span> <span data-i18n="nav_services">Nos services</span></a>
     <a href="#trust"    class="drawer-link" onclick="closeDrawer()"><span class="icon">🛡️</span> <span data-i18n="nav_trust">Pourquoi nous ?</span></a>
+    <a href="#faq"      class="drawer-link" onclick="closeDrawer()"><span class="icon">❓</span> <span>FAQ</span></a>
     <a href="#contact"  class="drawer-link" onclick="closeDrawer()"><span class="icon">✉️</span> <span data-i18n="nav_contact">Contact</span></a>
     <a href="blog.html" class="drawer-link"><span class="icon">📝</span> <span data-i18n="nav_blog">Blog</span></a>
   </nav>
@@ -767,6 +861,71 @@
         <div class="trust-num" data-i18n="trust4_num">🇫🇷</div>
         <div class="trust-title" data-i18n="trust4_title">Tout géré en français</div>
         <div class="trust-text"  data-i18n="trust4_text">Actes notariés, ouvertures de comptes, démarches admin. Zéro barrière de langue à chaque étape.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <p class="eyebrow reveal">Questions fréquentes</p>
+    <h2 class="sec-h2 reveal">Tout ce que vous voulez savoir<br>avant de vous lancer.</h2>
+    <p class="sec-p reveal">Des réponses directes, basées sur notre expérience terrain à Batumi depuis 2020.</p>
+    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span itemprop="name">Peut-on vivre confortablement à Batumi avec moins de 1 500 € par mois ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Oui. Un expatrié célibataire vit très confortablement à Batumi avec <strong>800 à 1 200 € par mois</strong> : appartement meublé (300–500 €), restauration locale (150–250 €), transports et loisirs inclus. Le coût de la vie est 3 à 4 fois inférieur à Paris pour un niveau de confort équivalent ou supérieur.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span itemprop="name">Faut-il un visa pour s'installer en Géorgie en tant que Français ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Non. Les ressortissants français, belges, suisses et canadiens peuvent séjourner en Géorgie <strong>sans visa pendant 365 jours par an</strong>. Aucune démarche préalable n'est requise pour entrer sur le territoire. C'est l'un des rares pays au monde à offrir une telle liberté de circulation.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span itemprop="name">Quel est le taux d'imposition en Géorgie pour une petite entreprise ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Le statut de <strong>Petite Entreprise (Small Business)</strong> en Géorgie permet un taux d'imposition de <strong>1% sur le chiffre d'affaires</strong> jusqu'à 500 000 GEL (~170 000 €) par an. Au-delà, le taux passe à 3%. Aucune TVA en dessous du seuil. C'est l'un des régimes fiscaux les plus avantageux d'Europe et d'Asie centrale.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span itemprop="name">Peut-on créer une société en Géorgie en tant qu'étranger ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Oui, et en <strong>moins de 24 heures</strong>. La Géorgie figure parmi les pays les plus simples au monde pour créer une entreprise (top 7 Banque Mondiale). Les étrangers bénéficient exactement des mêmes droits que les Géorgiens. Notre équipe gère l'ensemble des démarches clé en main, en français, sans que vous ayez à vous déplacer.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span itemprop="name">La Géorgie est-elle un pays sûr pour les expatriés ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Oui. Batumi est classée parmi les villes les plus sûres du monde par l'<strong>Indice Global de la Paix</strong>. Le taux de criminalité est très bas, la présence policière est forte et visible. La grande majorité des expatriés installés depuis plusieurs années témoignent d'un sentiment de sécurité largement supérieur à la France ou à d'autres destinations comme la Thaïlande ou le Mexique.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span itemprop="name">Comment obtenir la résidence géorgienne ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">La résidence temporaire en Géorgie s'obtient via plusieurs voies : <strong>investissement immobilier</strong> (à partir de 100 000 USD), <strong>création d'entreprise</strong> active, ou contrat de travail local. Le délai moyen de traitement est de 2 à 4 semaines. Notre équipe accompagne chaque dossier de résidence de A à Z, en français, avec un taux de réussite de 100%.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1091,6 +1250,20 @@ function closeDrawer() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); }
 });
+
+/* ── FAQ accordion ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
 
 /* ── WhatsApp with pre-filled message ── */
 function openWA(key) {
