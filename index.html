@@ -440,14 +440,16 @@
   .team-tagline { text-align: center; font-size: 1.05rem; font-weight: 800; color: rgba(255,255,255,.9); margin-bottom: 40px; letter-spacing: -.01em; }
   .team-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
   @media(min-width:680px){ .team-grid { grid-template-columns: 1fr 1fr; } }
-  .team-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 16px; padding: 32px; transition: border-color .3s, transform .3s; }
+  .team-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 16px; padding: 32px; transition: border-color .3s, transform .3s; position: relative; text-align: center; }
   .team-card:hover { border-color: rgba(23,190,187,.36); transform: translateY(-4px); }
-  .team-avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--teal); display: block; margin-bottom: 16px; background: var(--navy2); }
-  .team-flag { font-size: 1.4rem; margin-bottom: 6px; }
+  .team-avatar-wrap { width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 3px solid var(--teal); margin: 0 auto 16px; background: var(--navy2); flex-shrink: 0; }
+  .team-avatar { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .team-avatar--zoom { transform: scale(1.15); transform-origin: center 22%; }
+  .team-flag { position: absolute; top: 14px; right: 16px; font-size: 1.5rem; line-height: 1; }
   .team-name { font-size: 1.05rem; font-weight: 900; letter-spacing: -.01em; margin-bottom: 4px; }
   .team-role { font-size: .78rem; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
-  .team-bio { font-size: .88rem; color: rgba(255,255,255,.65); line-height: 1.72; margin-bottom: 20px; }
-  .team-perks { display: grid; gap: 8px; }
+  .team-bio { font-size: .88rem; color: rgba(255,255,255,.65); line-height: 1.72; margin-bottom: 20px; text-align: left; }
+  .team-perks { display: grid; gap: 8px; text-align: left; }
   .team-perk { font-size: .87rem; color: rgba(255,255,255,.8); padding-left: 20px; position: relative; line-height: 1.4; }
   .team-perk::before { content: '✔'; color: var(--teal); position: absolute; left: 0; font-weight: 700; font-size: .8rem; top: 1px; }
   .team-cta-box { margin-top: 40px; background: rgba(212,175,55,.07); border: 1px solid rgba(212,175,55,.22); border-radius: 16px; padding: 36px 28px; text-align: center; }
@@ -816,7 +818,9 @@
       <div class="team-grid">
 
         <div class="team-card reveal">
-          <img src="images/victor-gogoladze.jpg" alt="Victor Gogoladze – Expert local Géorgie" class="team-avatar" width="88" height="88" loading="lazy">
+          <div class="team-avatar-wrap">
+            <img src="images/victor-gogoladze.jpg" alt="Victor Gogoladze – Expert local Géorgie" class="team-avatar team-avatar--zoom" width="92" height="92" loading="lazy">
+          </div>
           <div class="team-flag">🇬🇪</div>
           <div class="team-name">Victor GOGOLADZE</div>
           <div class="team-role" data-i18n="team_victor_role">Votre accès direct à la Géorgie</div>
@@ -830,7 +834,9 @@
         </div>
 
         <div class="team-card reveal">
-          <img src="images/axel-briard.jpg" alt="Axel Briard – Entrepreneur expatrié à Batumi" class="team-avatar" width="88" height="88" loading="lazy">
+          <div class="team-avatar-wrap">
+            <img src="images/axel-briard.jpg" alt="Axel Briard – Entrepreneur expatrié à Batumi" class="team-avatar" width="92" height="92" loading="lazy">
+          </div>
           <div class="team-flag">🇫🇷</div>
           <div class="team-name">Axel BRIARD</div>
           <div class="team-role" data-i18n="team_axel_role">Votre vision d'entrepreneur et d'expatrié</div>
