@@ -87,34 +87,87 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Vivre en Géorgie – BEI Batumi Expat Invest",
-    "url": "https://vivreengeorgie.com",
-    "logo": "https://vivreengeorgie.com/images/bei-batumi-logo.jpeg",
-    "image": "https://vivreengeorgie.com/images/batumi-real.png",
-    "description": "Accompagnement francophone pour entreprendre, investir dans l'immobilier neuf et s'installer en Géorgie. Équipe présente à Batumi et Tbilissi.",
-    "telephone": "+33681108147",
-    "email": "info@vivreengeorgie.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Batumi",
-      "addressCountry": "GE"
-    },
-    "areaServed": ["Géorgie", "Batumi", "Tbilissi"],
-    "serviceType": ["Entreprendre en Géorgie", "Investissement immobilier neuf", "S'installer en Géorgie"],
-    "sameAs": [
-      "https://www.youtube.com/@VivreenG%C3%A9orgie",
-      "https://www.tiktok.com/@vivreengeorgie",
-      "https://www.instagram.com/vivreengeorgie/",
-      "https://www.facebook.com/profile.php?id=61590688067104"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+33681108147",
-      "contactType": "customer service",
-      "availableLanguage": ["French", "English", "Spanish", "Georgian"],
-      "contactOption": "TollFree"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vivreengeorgie.com/#organization",
+        "name": "Vivre en Géorgie – BEI Batumi Expat Invest",
+        "url": "https://vivreengeorgie.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vivreengeorgie.com/images/bei-batumi-logo.jpeg"
+        },
+        "image": "https://vivreengeorgie.com/images/batumi-real.png",
+        "description": "Cabinet francophone de conseil et d'accompagnement pour entreprendre, investir dans l'immobilier neuf et s'installer en Géorgie.",
+        "telephone": "+33681108147",
+        "email": "info@vivreengeorgie.com",
+        "areaServed": ["Géorgie", "France", "Belgique", "Suisse", "Canada"],
+        "sameAs": [
+          "https://www.youtube.com/@VivreenG%C3%A9orgie",
+          "https://www.tiktok.com/@vivreengeorgie",
+          "https://www.instagram.com/vivreengeorgie/",
+          "https://www.facebook.com/profile.php?id=61590688067104",
+          "https://www.threads.net/@vivreengeorgie",
+          "https://x.com/vivreengeorgie"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+33681108147",
+          "contactType": "customer service",
+          "availableLanguage": ["French", "English", "Spanish", "Georgian"]
+        },
+        "member": [
+          {
+            "@type": "Person",
+            "@id": "https://vivreengeorgie.com/equipe/axel-briard#person",
+            "name": "Axel Briard",
+            "jobTitle": "Fondateur – Vivre en Géorgie"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://vivreengeorgie.com/equipe/victor-gogoladze#person",
+            "name": "Victor Gogoladze",
+            "jobTitle": "Coordinateur local – Géorgie"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vivreengeorgie.com/#website",
+        "url": "https://vivreengeorgie.com",
+        "name": "Vivre en Géorgie",
+        "description": "La référence francophone pour s'expatrier, investir et entreprendre en Géorgie.",
+        "publisher": { "@id": "https://vivreengeorgie.com/#organization" },
+        "inLanguage": ["fr", "en", "es", "ka"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://vivreengeorgie.com/entreprendre-en-georgie#service",
+        "name": "Entreprendre en Géorgie",
+        "description": "Accompagnement à la création de société, ouverture de compte bancaire professionnel et démarches fiscales en Géorgie.",
+        "provider": { "@id": "https://vivreengeorgie.com/#organization" },
+        "areaServed": "Géorgie",
+        "url": "https://vivreengeorgie.com/entreprendre-en-georgie.html"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://vivreengeorgie.com/investir-en-georgie#service",
+        "name": "Investissement immobilier en Géorgie",
+        "description": "Sélection de biens immobiliers neufs, accompagnement à l'achat et gestion locative à Batumi.",
+        "provider": { "@id": "https://vivreengeorgie.com/#organization" },
+        "areaServed": "Géorgie",
+        "url": "https://vivreengeorgie.com/investir-en-georgie.html"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://vivreengeorgie.com/s-installer-en-georgie#service",
+        "name": "S'installer en Géorgie",
+        "description": "Accompagnement complet pour l'installation en Géorgie : logement, démarches administratives, intégration locale.",
+        "provider": { "@id": "https://vivreengeorgie.com/#organization" },
+        "areaServed": "Géorgie",
+        "url": "https://vivreengeorgie.com/s-installer-en-georgie.html"
+      }
+    ]
   }
   </script>
   <link rel="icon" href="images/bei-batumi-logo.jpeg" type="image/jpeg">

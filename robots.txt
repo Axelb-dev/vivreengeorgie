@@ -44,4 +44,7 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://vivreengeorgie.com/sitemap.xml
