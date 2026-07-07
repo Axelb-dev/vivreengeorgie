@@ -222,37 +222,7 @@ footer a { color: var(--teal); text-decoration: none; }
     .faq-a p { font-size: 14px; line-height: 1.76; color: rgba(255,255,255,.64); margin: 0; }
     .faq-a strong { color: #fff; }
 
-    /* ── Brochure button ── */
-    .btn-brochure-header { display: none; align-items: center; gap: 7px; background: rgba(212,175,55,.1); color: #D4AF37; border: 1.5px solid rgba(212,175,55,.45); font-family: 'Inter',sans-serif; font-weight: 700; font-size: 12.5px; border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background .2s, transform .2s; white-space: nowrap; text-decoration: none; }
-    .btn-brochure-header:hover { background: rgba(212,175,55,.22); transform: scale(1.04); }
-    @media(min-width:540px){ .btn-brochure-header { display: inline-flex; } }
-    .drawer-brochure { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 32px; border-radius: 999px; background: rgba(212,175,55,.1); color: #D4AF37; border: 1.5px solid rgba(212,175,55,.4); font-family: inherit; font-weight: 700; font-size: 14px; margin-top: 16px; cursor: pointer; opacity: 0; transform: translateY(10px); transition: opacity .28s ease .34s, transform .28s ease .34s, background .2s; }
-    .drawer.open .drawer-brochure { opacity: 1; transform: translateY(0); }
-    .drawer-brochure:hover { background: rgba(212,175,55,.2); }
-    /* Brochure modal */
-    .brochure-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(3,29,53,.78); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .28s ease; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .brochure-backdrop.open { opacity: 1; pointer-events: auto; }
-    .brochure-modal { background: linear-gradient(145deg, rgba(6,39,70,.98), rgba(3,29,53,.98)); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; transform: scale(.92) translateY(16px); transition: transform .32s cubic-bezier(.22,1,.36,1); }
-    .brochure-backdrop.open .brochure-modal { transform: scale(1) translateY(0); }
-    .brochure-modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 16px; }
-    .brochure-modal-head h2 { font-size: 1.25rem; font-weight: 900; }
-    .brochure-close { background: none; border: none; color: rgba(255,255,255,.45); cursor: pointer; font-size: 22px; line-height: 1; padding: 2px 4px; flex-shrink: 0; transition: color .2s; }
-    .brochure-close:hover { color: #fff; }
-    .brochure-modal > p { color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 22px; line-height: 1.6; }
-    .brochure-options { display: grid; gap: 10px; margin-bottom: 26px; }
-    .brochure-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); cursor: pointer; transition: border-color .2s, background .2s; user-select: none; }
-    .brochure-opt:hover { border-color: rgba(212,175,55,.35); background: rgba(212,175,55,.05); }
-    .brochure-opt.selected { border-color: #D4AF37; background: rgba(212,175,55,.1); }
-    .brochure-opt-icon { font-size: 20px; flex-shrink: 0; }
-    .brochure-opt-label { font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.82); flex: 1; }
-    .brochure-opt.selected .brochure-opt-label { color: #fff; }
-    .brochure-opt-check { width: 20px; height: 20px; border-radius: 6px; border: 2px solid rgba(255,255,255,.22); background: transparent; transition: border-color .2s, background .2s; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .brochure-opt.selected .brochure-opt-check { border-color: #D4AF37; background: #D4AF37; }
-    .brochure-opt.selected .brochure-opt-check::after { content: '✓'; font-size: 12px; color: #062746; font-weight: 900; }
-    .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
-    .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
-    .brochure-send:disabled { opacity: .38; cursor: default; }
-      /* GEO Lead Box */
+              /* GEO Lead Box */
     .art-lead { background: rgba(23,190,187,.07); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 0 0 36px; }
     .art-lead p { color: rgba(255,255,255,.88); font-size: .97rem; line-height: 1.7; margin: 0; }
     .art-lead strong { color: var(--teal); font-weight: 700; }
@@ -272,10 +242,6 @@ footer a { color: var(--teal); text-decoration: none; }
       </div>
     </a>
     <div class="header-actions">
-      <button class="btn-brochure-header" onclick="openBrochureModal()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Obtenir la brochure
-      </button>
 
       <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -314,237 +280,7 @@ footer a { color: var(--teal); text-decoration: none; }
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
-  <button class="drawer-brochure" onclick="openBrochureModal(); closeDrawer()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    Obtenir la brochure
-  </button>
-</aside>
-
-<div class="brochure-backdrop" id="brochure-backdrop" onclick="if(event.target===this)closeBrochureModal()">
-  <div class="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-title">
-    <div class="brochure-modal-head">
-      <h2 id="brochure-title">Recevoir notre brochure</h2>
-      <button class="brochure-close" aria-label="Fermer" onclick="closeBrochureModal()">✕</button>
-    </div>
-    <p>Sélectionnez les domaines qui vous intéressent — choix multiple possible.</p>
-    <div class="brochure-options">
-      <div class="brochure-opt" data-key="1" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏠</span>
-        <span class="brochure-opt-label">Expatriation</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="2" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">📈</span>
-        <span class="brochure-opt-label">Investissement immobilier</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="3" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏢</span>
-        <span class="brochure-opt-label">Création d'entreprise</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="4" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">⚡</span>
-        <span class="brochure-opt-label">Optimisation fiscale</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-    </div>
-    <button class="brochure-send" onclick="sendBrochureWA()" disabled id="brochure-send-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Envoyer via WhatsApp
-    </button>
-  </div>
-</div>
-<main><article class="article-wrap">
-  <p class="article-label">Budget · Vie Pratique</p>
-  <h1>Peut-on vivre avec <span class="accent">1000€</span> à Batumi ?</h1>
-  <div class="article-meta">
-    <time datetime="2026-06-21">Juin 2026</time>
-    <span>6 min de lecture</span>
-  </div>
-
-  <div class="article-body">
-
-  <div class="art-lead"><p>Vivre confortablement à Batumi avec <strong>1 000 €/mois</strong> est tout à fait possible : loyer 400 €, alimentation 200 €, transports 30 €, internet 20 €, loisirs 200 €, divers 150 €. Il reste une <strong>marge d'épargne mensuelle</strong>.</p></div>
-
-    <h2>1000€ à Batumi : c'est possible, vraiment</h2>
-    <p>La réponse courte est oui — mais avec des conditions claires. 1000€ par mois permet de vivre décemment à Batumi en 2026, à condition de ne pas chercher à reproduire le style de vie occidental haut de gamme. Ce budget vous donnera accès à un appartement meublé correct, une alimentation variée et de qualité, tous vos besoins de base couverts, et même quelques loisirs. Ce que vous n'aurez pas : un appartement avec vue mer dans un immeuble neuf, des restaurants tous les soirs, et des voyages fréquents.</p>
-
-    <h2>Scénario 1 : célibataire, mode économe</h2>
-    <ul>
-      <li>Loyer studio quartier Didache : <strong>280€</strong></li>
-      <li>Alimentation (marché + cuisiner) : <strong>150€</strong></li>
-      <li>Transport (taxi + bus) : <strong>40€</strong></li>
-      <li>Assurance santé : <strong>55€</strong></li>
-      <li>Internet (fibre 1Gbps) : <strong>15€</strong></li>
-      <li>Téléphone : <strong>10€</strong></li>
-      <li>Loisirs et sorties : <strong>120€</strong></li>
-      <li>Divers (imprévus) : <strong>80€</strong></li>
-      <li><strong>Total : ~750€/mois</strong></li>
-    </ul>
-    <p>Ce budget fonctionne réellement — et il vous laisse même une marge. La clé : cuisiner la majorité de vos repas avec des produits du marché local, choisir un quartier un peu excentré du boulevard, et privilégier les bars et restaurants locaux plutôt que les établissements "expat".</p>
-
-    <h2>Scénario 2 : couple sans enfant</h2>
-    <ul>
-      <li>Appartement 2 pièces en retrait de la mer : <strong>450€</strong></li>
-      <li>Alimentation pour deux : <strong>280€</strong></li>
-      <li>Transport : <strong>70€</strong></li>
-      <li>Assurance santé (x2) : <strong>110€</strong></li>
-      <li>Internet + téléphones : <strong>35€</strong></li>
-      <li>Loisirs et sorties pour deux : <strong>220€</strong></li>
-      <li>Divers : <strong>100€</strong></li>
-      <li><strong>Total : ~1 265€/mois</strong> (soit 632€ par personne)</li>
-    </ul>
-    <p>Le couple est la configuration la plus économique par tête. Les coûts fixes (loyer, internet, divers) se partagent, et la vie sociale est naturellement moins coûteuse à deux. Avec 2000€ à deux, vous vivez très confortablement.</p>
-
-    <h2>Scénario 3 : parent solo avec un enfant</h2>
-    <p>C'est le scénario le plus complexe. Si l'enfant va à l'école internationale (recommandée pour maintenir le niveau académique français), comptez 300 à 600€/mois de frais de scolarité. Le budget global monte alors à 1 500-1 800€/mois. Avec l'école publique géorgienne (gratuite mais en géorgien), le budget peut rester autour de 1 200€ mais l'intégration de l'enfant est plus difficile. Beaucoup de familles optent pour l'école française en ligne (CNED).</p>
-
-    <div class="info-box">
-      <p>Le vrai avantage de Batumi n'est pas seulement le faible coût de la vie — c'est la libération mentale que représente la sécurité financière retrouvée. Des dizaines de familles françaises témoignent que 1 500€/mois à Batumi leur offrent une qualité de vie supérieure à ce qu'ils avaient avec 3 500€ à Paris.</p>
-    </div>
-
-    <h2>Ce qu'on gagne vraiment avec ce budget</h2>
-    <p>Au-delà des chiffres, vivre avec 1000-1500€ à Batumi signifie : réduire drastiquement son stress financier, pouvoir travailler sur des projets à long terme sans urgence de trésorerie, retrouver du temps libre, profiter d'une mer à 10 minutes à pied, et appartenir à une communauté internationale dynamique et bienveillante. Ce sont ces éléments qui font revenir les expatriés après leur premier essai, et qui poussent la plupart à prolonger indéfiniment leur séjour.</p>
-
-  </div>
-
-  <div class="cta-band">
-    <h3>Prêt à franchir le pas ?</h3>
-    <p>Nos experts BEI Batumi Expat Invest vous accompagnent dans toutes vos démarches en Géorgie.</p>
-    <a href="https://wa.me/33681108147" class="cta-wa" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Nous contacter sur WhatsApp
-    </a>
-  </div>
-
-  <div class="related">
-    <h3>Articles similaires</h3>
-    <div class="related-grid">
-      <a href="cout-vie-batumi.html" class="related-card">
-        <div class="num">ARTICLE 03</div>
-        <div class="title">Combien coûte réellement la vie à Batumi ?</div>
-      </a>
-      <a href="installation-batumi-budget.html" class="related-card">
-        <div class="num">ARTICLE 20</div>
-        <div class="title">Mon installation à Batumi : budget complet</div>
-      </a>
-      <a href="salaires-georgie.html" class="related-card">
-        <div class="num">ARTICLE 07</div>
-        <div class="title">Les salaires en Géorgie : la réalité</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="art-faq">
-    <p class="art-sec-eyebrow">FAQ</p>
-    <h2 class="art-sec-h2">Questions fréquentes</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Peut-on vraiment vivre avec 1000€ par mois à Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Oui, <strong>1000€</strong> par mois permet de vivre décemment à Batumi en 2026. Un célibataire peut couvrir tous ses besoins — loyer studio (<strong>280€</strong>), alimentation (<strong>150€</strong>), transport (<strong>40€</strong>), assurance santé (<strong>55€</strong>), internet (<strong>15€</strong>) et loisirs (<strong>120€</strong>) — pour environ <strong>750€/mois</strong>, avec une marge de sécurité.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Quel budget faut-il pour un couple à Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Un couple sans enfant peut vivre confortablement à Batumi pour environ <strong>1 265€/mois</strong> (soit <strong>632€</strong> par personne), en incluant un appartement 2 pièces (<strong>450€</strong>), l'alimentation (<strong>280€</strong>), les transports (<strong>70€</strong>) et les loisirs (<strong>220€</strong>). Avec <strong>2000€</strong> à deux, on vit très confortablement.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Quel est le loyer d'un studio à Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Un studio dans un quartier comme Didache, légèrement excentré du boulevard, se loue autour de <strong>280€/mois</strong>. Un appartement 2 pièces en retrait de la mer coûte environ <strong>450€/mois</strong>. Les loyers sur le boulevard ou dans des immeubles neufs avec vue mer sont naturellement plus élevés.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Combien coûte la scolarité pour un enfant à Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Une école internationale à Batumi coûte entre <strong>300 et 600€/mois</strong>. L'école publique géorgienne est gratuite mais dispensée en géorgien. De nombreuses familles françaises optent pour le CNED (école française en ligne). Avec scolarité internationale, le budget d'un parent solo avec un enfant monte à <strong>1 500-1 800€/mois</strong>.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Quel est l'avantage concret de vivre avec 1000-1500€ à Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Des familles françaises témoignent que <strong>1 500€/mois</strong> à Batumi offrent une qualité de vie supérieure à ce qu'elles avaient avec <strong>3 500€</strong> à Paris. Au-delà des chiffres, cela signifie réduire le stress financier, travailler sur des projets à long terme, retrouver du temps libre et vivre à 10 minutes à pied de la mer.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="art-services">
-    <p class="art-sec-eyebrow">Nos services</p>
-    <h2 class="art-sec-h2">Votre projet en Géorgie, de A à Z</h2>
-    <div class="art-services-grid">
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">🏠</span>
-        <span class="art-svc-title">Vivre en Géorgie</span>
-        <span class="art-svc-sub">Logement · Banque · Visa</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">📈</span>
-        <span class="art-svc-title">Investir à Batumi</span>
-        <span class="art-svc-sub">Immobilier · Rendement</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">🏢</span>
-        <span class="art-svc-title">Créer votre société</span>
-        <span class="art-svc-sub">LLC · Compte pro · Clé en main</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">⚡</span>
-        <span class="art-svc-title">Optimiser la fiscalité</span>
-        <span class="art-svc-sub">Résidence · Structuration</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="art-social">
-    <p class="art-sec-eyebrow">Communauté</p>
-    <h2 class="art-sec-h2">Suivez notre actualité</h2>
-    <p class="art-social-desc">Conseils, témoignages et bons plans sur la vie en Géorgie — chaque semaine.</p>
-    <div class="art-social-row">
-      <a href="https://www.youtube.com/@VivreenG%C3%A9orgie" class="art-social-btn" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        YouTube
-      </a>
-      <a href="https://www.instagram.com/vivreengeorgie/" class="art-social-btn" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        Instagram
-      </a>
-      <a href="https://www.tiktok.com/@vivreengeorgie" class="art-social-btn" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.17 8.17 0 0 0 4.78 1.52V6.82a4.85 4.85 0 0 1-1.01-.13z"/></svg>
-        TikTok
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61590688067104" class="art-social-btn" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebook
-      </a>
-    </div>
-  </div>
-
-</article></main>
-
-<footer>
-  © 2026 Vivre en Géorgie &middot; <a href="../index.html">Retour au site</a> &middot; <a href="../mentions-legales.html">Mentions légales</a>
-</footer>
-<script>
+</aside><script>
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('backdrop').classList.add('open');
@@ -555,7 +291,7 @@ function closeDrawer() {
   document.getElementById('backdrop').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); } });
 
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
@@ -568,29 +304,6 @@ function toggleFaq(btn) {
     item.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
   }
-}
-function openBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.remove('open');
-  document.body.style.overflow = '';
-  document.querySelectorAll('.brochure-opt.selected').forEach(function(el) { el.classList.remove('selected'); });
-  document.getElementById('brochure-send-btn').disabled = true;
-}
-function toggleBrochureOpt(el) {
-  el.classList.toggle('selected');
-  document.getElementById('brochure-send-btn').disabled = !document.querySelector('.brochure-opt.selected');
-}
-function sendBrochureWA() {
-  var selected = Array.from(document.querySelectorAll('.brochure-opt.selected'));
-  if (!selected.length) return;
-  var labels = selected.map(function(el) { return el.querySelector('.brochure-opt-label').textContent.trim(); });
-  var part = labels.length === 1 ? labels[0] : labels.slice(0,-1).join(', ') + ' et ' + labels[labels.length-1];
-  var msg = encodeURIComponent('Bonjour Axel, je souhaite recevoir votre brochure concernant : ' + part + '.');
-  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
-  closeBrochureModal();
 }
 </script>
 </body>

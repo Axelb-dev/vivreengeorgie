@@ -215,37 +215,7 @@
     .faq-a p { font-size: 14px; line-height: 1.76; color: rgba(255,255,255,.64); margin: 0; }
     .faq-a strong { color: #fff; }
 
-    /* ── Brochure button ── */
-    .btn-brochure-header { display: none; align-items: center; gap: 7px; background: rgba(212,175,55,.1); color: #D4AF37; border: 1.5px solid rgba(212,175,55,.45); font-family: 'Inter',sans-serif; font-weight: 700; font-size: 12.5px; border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background .2s, transform .2s; white-space: nowrap; text-decoration: none; }
-    .btn-brochure-header:hover { background: rgba(212,175,55,.22); transform: scale(1.04); }
-    @media(min-width:540px){ .btn-brochure-header { display: inline-flex; } }
-    .drawer-brochure { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 32px; border-radius: 999px; background: rgba(212,175,55,.1); color: #D4AF37; border: 1.5px solid rgba(212,175,55,.4); font-family: inherit; font-weight: 700; font-size: 14px; margin-top: 16px; cursor: pointer; opacity: 0; transform: translateY(10px); transition: opacity .28s ease .34s, transform .28s ease .34s, background .2s; }
-    .drawer.open .drawer-brochure { opacity: 1; transform: translateY(0); }
-    .drawer-brochure:hover { background: rgba(212,175,55,.2); }
-    /* Brochure modal */
-    .brochure-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(3,29,53,.78); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .28s ease; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .brochure-backdrop.open { opacity: 1; pointer-events: auto; }
-    .brochure-modal { background: linear-gradient(145deg, rgba(6,39,70,.98), rgba(3,29,53,.98)); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; transform: scale(.92) translateY(16px); transition: transform .32s cubic-bezier(.22,1,.36,1); }
-    .brochure-backdrop.open .brochure-modal { transform: scale(1) translateY(0); }
-    .brochure-modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 16px; }
-    .brochure-modal-head h2 { font-size: 1.25rem; font-weight: 900; }
-    .brochure-close { background: none; border: none; color: rgba(255,255,255,.45); cursor: pointer; font-size: 22px; line-height: 1; padding: 2px 4px; flex-shrink: 0; transition: color .2s; }
-    .brochure-close:hover { color: #fff; }
-    .brochure-modal > p { color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 22px; line-height: 1.6; }
-    .brochure-options { display: grid; gap: 10px; margin-bottom: 26px; }
-    .brochure-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); cursor: pointer; transition: border-color .2s, background .2s; user-select: none; }
-    .brochure-opt:hover { border-color: rgba(212,175,55,.35); background: rgba(212,175,55,.05); }
-    .brochure-opt.selected { border-color: #D4AF37; background: rgba(212,175,55,.1); }
-    .brochure-opt-icon { font-size: 20px; flex-shrink: 0; }
-    .brochure-opt-label { font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.82); flex: 1; }
-    .brochure-opt.selected .brochure-opt-label { color: #fff; }
-    .brochure-opt-check { width: 20px; height: 20px; border-radius: 6px; border: 2px solid rgba(255,255,255,.22); background: transparent; transition: border-color .2s, background .2s; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .brochure-opt.selected .brochure-opt-check { border-color: #D4AF37; background: #D4AF37; }
-    .brochure-opt.selected .brochure-opt-check::after { content: '✓'; font-size: 12px; color: #062746; font-weight: 900; }
-    .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
-    .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
-    .brochure-send:disabled { opacity: .38; cursor: default; }
-      /* GEO Lead Box */
+              /* GEO Lead Box */
     .art-lead { background: rgba(23,190,187,.07); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 0 0 36px; }
     .art-lead p { color: rgba(255,255,255,.88); font-size: .97rem; line-height: 1.7; margin: 0; }
     .art-lead strong { color: var(--teal); font-weight: 700; }
@@ -265,10 +235,6 @@
       </div>
     </a>
     <div class="header-actions">
-      <button class="btn-brochure-header" onclick="openBrochureModal()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Obtenir la brochure
-      </button>
 
       <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -307,215 +273,7 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
-  <button class="drawer-brochure" onclick="openBrochureModal(); closeDrawer()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    Obtenir la brochure
-  </button>
-</aside>
-
-<div class="brochure-backdrop" id="brochure-backdrop" onclick="if(event.target===this)closeBrochureModal()">
-  <div class="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-title">
-    <div class="brochure-modal-head">
-      <h2 id="brochure-title">Recevoir notre brochure</h2>
-      <button class="brochure-close" aria-label="Fermer" onclick="closeBrochureModal()">✕</button>
-    </div>
-    <p>Sélectionnez les domaines qui vous intéressent — choix multiple possible.</p>
-    <div class="brochure-options">
-      <div class="brochure-opt" data-key="1" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏠</span>
-        <span class="brochure-opt-label">Expatriation</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="2" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">📈</span>
-        <span class="brochure-opt-label">Investissement immobilier</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="3" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏢</span>
-        <span class="brochure-opt-label">Création d'entreprise</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="4" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">⚡</span>
-        <span class="brochure-opt-label">Optimisation fiscale</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-    </div>
-    <button class="brochure-send" onclick="sendBrochureWA()" disabled id="brochure-send-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Envoyer via WhatsApp
-    </button>
-  </div>
-</div>
-<main><article class="article-wrap">
-  <p class="article-label">VIE LOCALE · GUIDE</p>
-  <h1>Les quartiers de <span class="accent">Batumi</span> expliqués</h1>
-  <div class="article-meta">
-    <time datetime="2026-06-21">Juin 2026</time>
-    <span>7 min de lecture</span>
-  </div>
-
-  <div class="article-body">
-
-  <div class="art-lead"><p>Batumi compte <strong>quatre quartiers principaux</strong> pour les expatriés : Old Town (authenticité, 700-900 €/m²), Boulevard (front de mer, 1 200-1 500 €/m²), Saburtalo (résidentiel calme, 600-800 €/m²), New Boulevard (moderne, 900-1 200 €/m²).</p></div>
-
-    <p>Choisir son quartier à Batumi est l'une des décisions les plus importantes pour un expatrié qui s'installe dans la ville. L'offre s'est considérablement diversifiée ces cinq dernières années, avec le développement de nouveaux complexes résidentiels, la rénovation de l'Old Town et l'expansion des quartiers périphériques. Ce guide vous donne toutes les clés pour faire le bon choix selon votre profil, votre budget et vos priorités.</p>
-
-    <h2>Comprendre la géographie de Batumi</h2>
-    <p>Batumi est une ville relativement compacte, organisée autour de son boulevard en bord de mer Noire et de son centre-ville historique. La plupart des quartiers peuvent être traversés à pied en 20 à 30 minutes. La ville s'étend sur un axe nord-sud le long du littoral, avec la mer à l'ouest et les premiers contreforts du Caucase à l'est. Comprendre la personnalité de chaque quartier vous permettra de choisir le bon endroit selon votre budget, votre style de vie et vos priorités. En règle générale : plus vous êtes proches de la mer et du boulevard, plus c'est animé, prisé et cher ; plus vous vous enfoncez vers l'est ou vers les quartiers résidentiels, plus c'est calme et abordable.</p>
-
-    <h2>Le Boulevard et le Front de Mer : prestige et prix</h2>
-    <p>Le Boulevard est l'artère principale de Batumi, longeant la mer sur plusieurs kilomètres. Immeubles de standing récents, hôtels 5 étoiles, restaurants tendance, bars branchés, promenades animées jour et nuit en été. C'est l'image de carte postale de Batumi. C'est aussi le plus cher : <strong>600 à 1 200€/mois</strong> en location pour un appartement de qualité, et <strong>2 000 à 3 500€/m²</strong> à l'achat pour du neuf avec vue mer. Ce secteur est idéal pour ceux qui veulent l'animation et la vie balnéaire à portée de main, ou pour un investissement locatif à destination des touristes en haute saison. En dehors de l'été, l'animation retombe significativement, ce qui peut surprendre les nouveaux arrivants.</p>
-
-    <h2>L'Old Town (Vieux Batumi) : charme et authenticité</h2>
-    <p>Le vieux quartier de Batumi est un joyau architectural préservé qui tranche avec les tours modernes qui l'entourent. Maisons à balcons sculptés en bois, ruelles pavées, cours fleuries aux bougainvillées, cafés cachés dans des arrière-cours. L'atmosphère est unique : on y croise des mosquées ottomanes, des églises orthodoxes et des synagogues à quelques mètres de distance — témoignage de la riche histoire multiculturelle de la ville. Les logements y sont généralement plus abordables que sur le boulevard (<strong>350 à 650€/mois</strong> en location), mais souvent plus anciens et avec des infrastructures moins récentes. Parfait pour les amoureux d'authenticité et d'histoire qui ne font pas de la modernité de l'immeuble une priorité absolue.</p>
-
-    <h2>Le Centre-Ville (Piazza / Rustaveli) : pratique et central</h2>
-    <p>Le centre administratif et commercial de Batumi est structuré autour de la Place de l'Europe (Piazza) et de la rue Rustaveli. On y trouve banques, administrations, supermarchés Carrefour et Agrohub, restaurants du quotidien, pharmacies, et l'essentiel des services dont on a besoin dans la vie courante. C'est un excellent compromis entre accessibilité et coût : <strong>400 à 700€/mois</strong> pour un bon appartement de deux pièces bien situé, avec tout à portée de marche. Ce secteur est particulièrement apprécié des familles et des professionnels qui privilégient la praticité à l'animation nocturne ou à la vue mer. La densité urbaine y est plus élevée, avec davantage de bruit et d'animation que dans les quartiers résidentiels.</p>
-
-    <h2>Didache et Bagrationi : les favoris des expatriés long terme</h2>
-    <p>Ces quartiers résidentiels légèrement en retrait du centre sont devenus au fil des années les favoris des expatriés qui s'installent durablement à Batumi. Plus calmes, plus verts, avec des immeubles récents bien construits, ils offrent un excellent rapport qualité-prix : <strong>300 à 550€/mois</strong> pour un appartement de deux pièces, souvent avec parking et ascenseur. La communauté internationale y est particulièrement dense — vous aurez de grandes chances d'avoir des voisins français, polonais, ukrainiens ou turcs. Les commerces du quotidien sont accessibles à pied, et le centre-ville est à 15-20 minutes de marche ou 5 minutes en taxi. <strong>C'est notre recommandation principale pour un premier séjour ou une installation durable à budget maîtrisé.</strong></p>
-
-    <h2>Le Nouveau Batumi (Seaside / Ardagani) : moderne mais excentré</h2>
-    <p>Ce secteur en développement intense depuis 2018 se caractérise par ses tours ultra-modernes, ses centres commerciaux (Batumi Mall, Black Sea Arena), et ses complexes mixtes alliant résidentiel, hôtellerie et commerces. Les logements y sont neufs, bien équipés, avec des prestations modernes (piscines communes, salles de sport, concierge). Les prix sont légèrement inférieurs à ceux du boulevard pour une qualité comparable, car l'éloignement du centre-ville représente un frein pour certains. Bon choix pour les familles cherchant de la surface, de la modernité et des équipements communautaires, à condition d'accepter de dépendre davantage des transports ou d'un véhicule pour les sorties quotidiennes.</p>
-
-    <h2>La campagne autour de Batumi : Makhinjauri et Kobuleti</h2>
-    <p>À 10 à 20 minutes du centre de Batumi, ces deux stations balnéaires offrent une alternative plus verte et plus calme à la densité urbaine de la ville. Makhinjauri est particulièrement appréciée pour son cadre naturel luxuriant, ses jardins botaniques à proximité et son ambiance village balnéaire hors saison. Kobuleti, plus au nord, est plus grande et dispose de sa propre vie locale. Les prix y sont nettement plus bas (<strong>200 à 400€/mois</strong>), les plages moins bondées en été, et l'atmosphère globalement plus reposante. Recommandé pour les familles avec enfants, les retraités actifs, ou ceux qui cherchent une retraite tranquille tout en restant proches des commodités de Batumi.</p>
-
-    <div class="info-box">
-      <p>"Conseil pratique : avant de signer un bail, venez visiter le quartier le soir. L'ambiance nocturne peut être très différente de l'ambiance diurne, notamment autour du boulevard en été — ce qui est une fête permanente en juillet peut se révéler insupportable pour travailler le lendemain matin."</p>
-    </div>
-
-    <p>Quel que soit le quartier que vous choisissez, n'hésitez pas à demander conseil à des expatriés déjà installés — leurs retours d'expérience valent souvent mieux que n'importe quel guide. Et si vous souhaitez un accompagnement personnalisé dans votre recherche de logement ou votre investissement immobilier à Batumi, l'équipe BEI est à votre disposition.</p>
-
-  </div>
-
-  <div class="cta-band">
-    <h3>Prêt à franchir le pas ?</h3>
-    <p>Nos experts BEI Batumi Expat Invest vous accompagnent dans toutes vos démarches en Géorgie.</p>
-    <a href="https://wa.me/33681108147" class="cta-wa" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Nous contacter sur WhatsApp
-    </a>
-  </div>
-
-  <div class="related">
-    <h3>Articles similaires</h3>
-    <div class="related-grid">
-      <a href="cout-vie-batumi.html" class="related-card">
-        <div class="num">ARTICLE 03</div>
-        <div class="title">Combien coûte réellement la vie à Batumi ?</div>
-      </a>
-      <a href="installation-batumi-budget.html" class="related-card">
-        <div class="num">ARTICLE 20</div>
-        <div class="title">Mon installation à Batumi : budget complet</div>
-      </a>
-      <a href="investir-immobilier-batumi.html" class="related-card">
-        <div class="num">ARTICLE 10</div>
-        <div class="title">Investir dans l'immobilier à Batumi</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="art-faq">
-    <p class="art-sec-eyebrow">FAQ</p>
-    <h2 class="art-sec-h2">Questions fréquentes</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Quel est le meilleur quartier de Batumi pour s'installer en tant qu'expatrié ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Pour un premier séjour ou une installation durable à budget maîtrisé, les quartiers <strong>Didache et Bagrationi</strong> sont les plus recommandés. Calmes, verdoyants, avec des immeubles récents bien construits, ils offrent des loyers de <strong>300 à 550€/mois</strong> pour un 2 pièces. La communauté internationale y est dense et le centre-ville est à 15-20 min à pied.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Combien coûte un loyer sur le boulevard de Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Sur le boulevard bord de mer de Batumi, un appartement de qualité se loue entre <strong>600 et 1 200€/mois</strong>. Le prix à l'achat pour du neuf avec vue mer est de <strong>2 000 à 3 500€/m²</strong>. C'est le secteur le plus cher et le plus animé de la ville, surtout en été.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Qu'est-ce que l'Old Town de Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>L'<strong>Old Town</strong> (Vieux Batumi) est un quartier historique préservé avec des maisons à balcons sculptés, des ruelles pavées et une architecture multiculturelle (mosquées ottomanes, églises orthodoxes, synagogues). Les loyers y sont abordables (<strong>350 à 650€/mois</strong>) mais les immeubles plus anciens. Idéal pour les amoureux d'authenticité.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Y a-t-il des quartiers moins chers que le centre de Batumi ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Oui. Les stations balnéaires de <strong>Makhinjauri</strong> (10 min du centre) et <strong>Kobuleti</strong> (20 min) proposent des loyers de <strong>200 à 400€/mois</strong> dans un cadre plus vert et plus calme. Ces secteurs sont recommandés pour les familles avec enfants, les retraités actifs, ou ceux qui cherchent une atmosphère plus reposante.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="art-services">
-    <p class="art-sec-eyebrow">Nos services</p>
-    <h2 class="art-sec-h2">Votre projet en Géorgie, de A à Z</h2>
-    <div class="art-services-grid">
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">🏠</span>
-        <span class="art-svc-title">Vivre en Géorgie</span>
-        <span class="art-svc-sub">Logement · Banque · Visa</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">📈</span>
-        <span class="art-svc-title">Investir à Batumi</span>
-        <span class="art-svc-sub">Immobilier · Rendement</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">🏢</span>
-        <span class="art-svc-title">Créer votre société</span>
-        <span class="art-svc-sub">LLC · Compte pro · Clé en main</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">⚡</span>
-        <span class="art-svc-title">Optimiser la fiscalité</span>
-        <span class="art-svc-sub">Résidence · Structuration</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="art-social">
-    <p class="art-sec-eyebrow">Communauté</p>
-    <h2 class="art-sec-h2">Suivez notre actualité</h2>
-    <p class="art-social-desc">Conseils, témoignages et bons plans sur la vie en Géorgie — chaque semaine.</p>
-    <div class="art-social-row">
-      <a href="https://www.youtube.com/@VivreenG%C3%A9orgie" class="art-social-btn" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        YouTube
-      </a>
-      <a href="https://www.instagram.com/vivreengeorgie/" class="art-social-btn" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        Instagram
-      </a>
-      <a href="https://www.tiktok.com/@vivreengeorgie" class="art-social-btn" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.17 8.17 0 0 0 4.78 1.52V6.82a4.85 4.85 0 0 1-1.01-.13z"/></svg>
-        TikTok
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61590688067104" class="art-social-btn" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebook
-      </a>
-    </div>
-  </div>
-
-</article></main>
-
-<footer>© 2026 Vivre en Géorgie &middot; <a href="../index.html">Retour au site</a> &middot; <a href="../mentions-legales.html">Mentions légales</a></footer>
-<script>
+</aside><script>
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('backdrop').classList.add('open');
@@ -526,7 +284,7 @@ function closeDrawer() {
   document.getElementById('backdrop').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); } });
 
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
@@ -539,29 +297,6 @@ function toggleFaq(btn) {
     item.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
   }
-}
-function openBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.remove('open');
-  document.body.style.overflow = '';
-  document.querySelectorAll('.brochure-opt.selected').forEach(function(el) { el.classList.remove('selected'); });
-  document.getElementById('brochure-send-btn').disabled = true;
-}
-function toggleBrochureOpt(el) {
-  el.classList.toggle('selected');
-  document.getElementById('brochure-send-btn').disabled = !document.querySelector('.brochure-opt.selected');
-}
-function sendBrochureWA() {
-  var selected = Array.from(document.querySelectorAll('.brochure-opt.selected'));
-  if (!selected.length) return;
-  var labels = selected.map(function(el) { return el.querySelector('.brochure-opt-label').textContent.trim(); });
-  var part = labels.length === 1 ? labels[0] : labels.slice(0,-1).join(', ') + ' et ' + labels[labels.length-1];
-  var msg = encodeURIComponent('Bonjour Axel, je souhaite recevoir votre brochure concernant : ' + part + '.');
-  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
-  closeBrochureModal();
 }
 </script>
 </body>

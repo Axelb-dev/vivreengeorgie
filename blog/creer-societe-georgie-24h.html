@@ -215,37 +215,7 @@
     .faq-a p { font-size: 14px; line-height: 1.76; color: rgba(255,255,255,.64); margin: 0; }
     .faq-a strong { color: #fff; }
 
-    /* ── Brochure button ── */
-    .btn-brochure-header { display: none; align-items: center; gap: 7px; background: rgba(212,175,55,.1); color: #D4AF37; border: 1.5px solid rgba(212,175,55,.45); font-family: 'Inter',sans-serif; font-weight: 700; font-size: 12.5px; border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background .2s, transform .2s; white-space: nowrap; text-decoration: none; }
-    .btn-brochure-header:hover { background: rgba(212,175,55,.22); transform: scale(1.04); }
-    @media(min-width:540px){ .btn-brochure-header { display: inline-flex; } }
-    .drawer-brochure { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 32px; border-radius: 999px; background: rgba(212,175,55,.1); color: #D4AF37; border: 1.5px solid rgba(212,175,55,.4); font-family: inherit; font-weight: 700; font-size: 14px; margin-top: 16px; cursor: pointer; opacity: 0; transform: translateY(10px); transition: opacity .28s ease .34s, transform .28s ease .34s, background .2s; }
-    .drawer.open .drawer-brochure { opacity: 1; transform: translateY(0); }
-    .drawer-brochure:hover { background: rgba(212,175,55,.2); }
-    /* Brochure modal */
-    .brochure-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(3,29,53,.78); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .28s ease; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .brochure-backdrop.open { opacity: 1; pointer-events: auto; }
-    .brochure-modal { background: linear-gradient(145deg, rgba(6,39,70,.98), rgba(3,29,53,.98)); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; transform: scale(.92) translateY(16px); transition: transform .32s cubic-bezier(.22,1,.36,1); }
-    .brochure-backdrop.open .brochure-modal { transform: scale(1) translateY(0); }
-    .brochure-modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 16px; }
-    .brochure-modal-head h2 { font-size: 1.25rem; font-weight: 900; }
-    .brochure-close { background: none; border: none; color: rgba(255,255,255,.45); cursor: pointer; font-size: 22px; line-height: 1; padding: 2px 4px; flex-shrink: 0; transition: color .2s; }
-    .brochure-close:hover { color: #fff; }
-    .brochure-modal > p { color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 22px; line-height: 1.6; }
-    .brochure-options { display: grid; gap: 10px; margin-bottom: 26px; }
-    .brochure-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); cursor: pointer; transition: border-color .2s, background .2s; user-select: none; }
-    .brochure-opt:hover { border-color: rgba(212,175,55,.35); background: rgba(212,175,55,.05); }
-    .brochure-opt.selected { border-color: #D4AF37; background: rgba(212,175,55,.1); }
-    .brochure-opt-icon { font-size: 20px; flex-shrink: 0; }
-    .brochure-opt-label { font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.82); flex: 1; }
-    .brochure-opt.selected .brochure-opt-label { color: #fff; }
-    .brochure-opt-check { width: 20px; height: 20px; border-radius: 6px; border: 2px solid rgba(255,255,255,.22); background: transparent; transition: border-color .2s, background .2s; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .brochure-opt.selected .brochure-opt-check { border-color: #D4AF37; background: #D4AF37; }
-    .brochure-opt.selected .brochure-opt-check::after { content: '✓'; font-size: 12px; color: #062746; font-weight: 900; }
-    .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
-    .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
-    .brochure-send:disabled { opacity: .38; cursor: default; }
-      /* GEO Lead Box */
+              /* GEO Lead Box */
     .art-lead { background: rgba(23,190,187,.07); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 0 0 36px; }
     .art-lead p { color: rgba(255,255,255,.88); font-size: .97rem; line-height: 1.7; margin: 0; }
     .art-lead strong { color: var(--teal); font-weight: 700; }
@@ -283,10 +253,6 @@
       </div>
     </a>
     <div class="header-actions">
-      <button class="btn-brochure-header" onclick="openBrochureModal()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Obtenir la brochure
-      </button>
 
       <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -325,226 +291,7 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
-  <button class="drawer-brochure" onclick="openBrochureModal(); closeDrawer()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    Obtenir la brochure
-  </button>
-</aside>
-
-<div class="brochure-backdrop" id="brochure-backdrop" onclick="if(event.target===this)closeBrochureModal()">
-  <div class="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-title">
-    <div class="brochure-modal-head">
-      <h2 id="brochure-title">Recevoir notre brochure</h2>
-      <button class="brochure-close" aria-label="Fermer" onclick="closeBrochureModal()">✕</button>
-    </div>
-    <p>Sélectionnez les domaines qui vous intéressent — choix multiple possible.</p>
-    <div class="brochure-options">
-      <div class="brochure-opt" data-key="1" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏠</span>
-        <span class="brochure-opt-label">Expatriation</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="2" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">📈</span>
-        <span class="brochure-opt-label">Investissement immobilier</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="3" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏢</span>
-        <span class="brochure-opt-label">Création d'entreprise</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="4" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">⚡</span>
-        <span class="brochure-opt-label">Optimisation fiscale</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-    </div>
-    <button class="brochure-send" onclick="sendBrochureWA()" disabled id="brochure-send-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Envoyer via WhatsApp
-    </button>
-  </div>
-</div>
-<main><article class="article-wrap">
-  <p class="article-label">CRÉATION D'ENTREPRISE · JURIDIQUE</p>
-  <h1>Créer une société en Géorgie en <span class="accent">moins de 24h</span></h1>
-  <div class="article-meta">
-    <time datetime="2026-06-21">Juin 2026</time>
-    <span>7 min de lecture</span>
-  </div>
-
-  <div class="article-body">
-
-  <div class="art-lead"><p>Créer une SARL géorgienne prend <strong>moins de 24 heures</strong> et coûte environ <strong>100 €</strong>. Documents requis : passeport + numéro fiscal géorgien (TIN). Dépôt à la House of Justice. <strong>Aucun capital minimum</strong> n'est exigé.</p></div>
-
-    <h2>Pourquoi la Géorgie est championne mondiale de la création d'entreprise</h2>
-    <p>La Banque mondiale classe régulièrement la Géorgie parmi les pays les plus faciles au monde pour créer et gérer une entreprise. Ce classement n'est pas qu'une question de marketing gouvernemental : c'est une réalité vécue chaque jour par des milliers d'entrepreneurs étrangers qui s'immatriculent au registre des sociétés géorgiennes — le National Agency of Public Registry (NAPR) — sans aucun intermédiaire obligatoire et dans des délais qui laissent sans voix les entrepreneurs habitués aux lenteurs administratives européennes.</p>
-    <p>En France, créer une SARL prend en moyenne 3 à 4 semaines et génère plusieurs centaines d'euros de frais réglementaires, auxquels s'ajoutent les honoraires d'un expert-comptable et parfois d'un avocat si l'on veut éviter les erreurs. En Géorgie, 24 heures et 100€ suffisent. Et ce n'est pas une simplification approximative — c'est le délai légal standard, garanti par l'administration géorgienne. Pour les pressés, une procédure express en 4 heures est même disponible moyennant un léger surcoût.</p>
-
-    <h2>Les formes juridiques disponibles</h2>
-    <p>La forme la plus prisée par les entrepreneurs étrangers est la <strong>LLC (ს.პ.ს — sakartvelos pirveli sazogadoeba)</strong>, l'équivalent géorgien de la SARL française. Elle offre une responsabilité limitée au capital social — sans montant minimum obligatoire, ce qui signifie que vous pouvez constituer votre société avec un capital symbolique d'1 GEL si vous le souhaitez —, une gestion souple et une imposition particulièrement avantageuse via le régime d'impôt différé sur les bénéfices réinvestis.</p>
-    <p>Pour les entrepreneurs qui ne souhaitent pas de structure juridique séparée, le statut d'<strong>entrepreneur individuel (IP — Individual Entrepreneur)</strong> permet de travailler sous son nom propre avec des formalités encore plus réduites. Associé au statut de "Small Business", ce régime permet une imposition à seulement 1% du chiffre d'affaires tant que celui-ci ne dépasse pas 500 000 GEL par an (environ 165 000€). Un régime fiscal exceptionnel, légal et stable, qui attire chaque année davantage d'indépendants européens.</p>
-
-    <h2>La procédure pas à pas</h2>
-    <ol>
-      <li><strong>Rédiger le contrat de société (charter)</strong> : document définissant l'objet social, les associés, la répartition du capital et les modalités de gouvernance. BEI Batumi Expat Invest dispose de modèles en français et en géorgien, prêts à l'emploi et adaptables à chaque situation.</li>
-      <li><strong>Déposer le dossier au NAPR</strong> : en personne dans l'un des "Justice Houses" (Sakhalkho Centri) de Batumi, ou via un représentant habilité. Votre passeport en original est requis, ainsi qu'une traduction certifiée si votre document n'est pas en géorgien ou en anglais.</li>
-      <li><strong>Payer les frais d'enregistrement</strong> : 100 GEL pour l'enregistrement standard avec remise sous 24 heures, ou 200 GEL pour le service express avec remise sous 4 heures. Soit respectivement environ 30 et 60€ au taux de change actuel — un coût proprement dérisoire.</li>
-      <li><strong>Obtenir le numéro d'identification fiscal (TIN)</strong> : il est automatiquement attribué par l'administration fiscale géorgienne lors de la création de la société. Gratuit, sans démarche supplémentaire. Un système qui tranche avec la multiplication des interlocuteurs administratifs à laquelle sont confrontés les créateurs d'entreprise en France.</li>
-      <li><strong>Ouvrir un compte bancaire professionnel</strong> : étape indispensable pour commencer à facturer. TBC Bank et Bank of Georgia sont les deux établissements recommandés pour les non-résidents étrangers. L'ouverture de compte prend généralement 1 à 3 jours ouvrables, avec des justificatifs simples à fournir.</li>
-    </ol>
-
-    <h2>Les coûts réels</h2>
-    <p>Au total, la création d'une LLC en Géorgie revient à environ 100 à 150€ en frais officiels si vous gérez l'ensemble du processus vous-même et maîtrisez suffisamment l'anglais pour naviguer dans les formulaires administratifs. Ce coût couvre l'enregistrement au NAPR, l'attribution du numéro fiscal et la remise du certificat d'immatriculation.</p>
-    <p>Avec un accompagnateur spécialisé comme BEI Batumi Expat Invest — traduction certifiée des documents, représentation physique au NAPR, ouverture de compte bancaire assistée, et conseil fiscal initial personnalisé —, comptez 300 à 500€ pour un service complet clé en main. C'est une fraction de ce que coûte la même opération en France via un expert-comptable et un avocat, et cela vous assure que votre structure est correctement constituée dès le départ, sans erreurs qui pourraient coûter bien davantage à corriger.</p>
-
-    <h2>Ce qu'il faut prévoir après l'immatriculation</h2>
-    <p>La création de la société n'est que la première étape. Une fois immatriculé, plusieurs éléments doivent être mis en place pour exercer légalement et sereinement. Il faut d'abord s'enregistrer à la TVA géorgienne si votre chiffre d'affaires dépasse 100 000 GEL par an (environ 33 000€) — le seuil est généreux et permet à la plupart des entrepreneurs débutants de démarrer sans cette contrainte supplémentaire.</p>
-    <p>Il faut ensuite mettre en place une comptabilité, même simple. Les déclarations fiscales trimestrielles sont relativement faciles à produire et peuvent se faire soi-même via le portail en ligne de l'administration fiscale géorgienne (RS.ge), ou être sous-traitées à un comptable local pour 50 à 80€ par mois. Enfin, si vous êtes une entreprise technologique exportant vos services hors de Géorgie, sollicitez rapidement le statut VFZ (Virtual Free Zone) auprès de l'administration compétente : ce statut vous exonère totalement d'impôt sur les sociétés sur vos revenus d'exportation.</p>
-
-    <div class="info-box">
-      <p>La Géorgie a adopté en 2017 le système d'imposition dit "estonien" : l'impôt sur les sociétés de 15% n'est prélevé que sur les dividendes effectivement distribués aux associés, pas sur les bénéfices réinvestis dans l'activité de l'entreprise. C'est l'une des règles fiscales les plus favorables aux entrepreneurs en phase de croissance au monde, et l'une des principales raisons pour lesquelles la Géorgie attire autant de créateurs d'entreprise étrangers.</p>
-    </div>
-
-    <h2>Les erreurs fréquentes à éviter</h2>
-    <ul>
-      <li><strong>Choisir un objet social trop restrictif</strong> : un objet trop étroit peut limiter vos activités futures et nécessiter une modification statutaire coûteuse en temps. Optez pour une formulation large et inclusive dès le départ.</li>
-      <li><strong>Négliger l'ouverture d'un compte bancaire professionnel</strong> : sans compte professionnel, vous ne pourrez pas recevoir de virement de vos clients ni payer vos fournisseurs locaux. C'est une étape incontournable à planifier dès la création.</li>
-      <li><strong>Oublier de déclarer votre activité en France si vous y conservez une résidence fiscale</strong> : quitter la France d'un point de vue fiscal nécessite des formalités précises (formulaire 2042, exit tax éventuelle, radiation de certains régimes). Ne pas les accomplir correctement peut entraîner un redressement fiscal a posteriori.</li>
-      <li><strong>Ne pas faire appel à un conseil pour vérifier la compatibilité de votre situation personnelle</strong> : chaque situation est unique. Avant de créer votre société géorgienne, assurez-vous que cette structure est bien adaptée à votre activité, à vos clients, à votre situation familiale et à vos obligations fiscales internationales.</li>
-    </ul>
-
-  </div>
-
-  <div class="cta-band">
-    <h3>Prêt à franchir le pas ?</h3>
-    <p>Nos experts BEI Batumi Expat Invest vous accompagnent dans toutes vos démarches en Géorgie.</p>
-    <a href="https://wa.me/33681108147" class="cta-wa" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Nous contacter sur WhatsApp
-    </a>
-  </div>
-
-  <div class="related">
-    <h3>Articles similaires</h3>
-    <div class="related-grid">
-      <a href="entrepreneurs-quittent-france-georgie.html" class="related-card">
-        <div class="num">ARTICLE 04</div>
-        <div class="title">Pourquoi les entrepreneurs quittent la France pour la Géorgie ?</div>
-      </a>
-      <a href="fiscalite-georgie.html" class="related-card">
-        <div class="num">ARTICLE 06</div>
-        <div class="title">Fiscalité Géorgie : ce que personne ne vous explique</div>
-      </a>
-      <a href="compte-bancaire-georgie.html" class="related-card">
-        <div class="num">ARTICLE 18</div>
-        <div class="title">Comment ouvrir un compte bancaire en Géorgie</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="art-faq">
-    <p class="art-sec-eyebrow">FAQ</p>
-    <h2 class="art-sec-h2">Questions fréquentes</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Combien coûte la création d'une société en Géorgie ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Créer une LLC en Géorgie coûte environ <strong>100 à 150€</strong> en frais officiels si vous gérez seul le processus. L'enregistrement standard au NAPR coûte <strong>100 GEL (~30€)</strong> pour une remise sous 24h, ou <strong>200 GEL (~60€)</strong> pour le service express sous 4h. Avec un accompagnement complet (traduction, représentation, compte bancaire), comptez <strong>300 à 500€</strong>.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Quel est le délai pour créer une société en Géorgie ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>La création d'une LLC en Géorgie est garantie en <strong>moins de 24 heures</strong> par l'administration géorgienne. Une procédure express en <strong>4 heures</strong> est également disponible moyennant un léger surcoût (200 GEL vs 100 GEL).</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Quel est le régime fiscal d'une LLC en Géorgie ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>La Géorgie applique depuis 2017 le système d'imposition estonien : l'impôt sur les sociétés de <strong>15%</strong> n'est prélevé que sur les dividendes effectivement distribués, pas sur les bénéfices réinvestis. Le statut Small Business permet une imposition à <strong>1% du CA</strong> pour les revenus inférieurs à <strong>500 000 GEL</strong> (~165 000€) par an.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Qu'est-ce que le statut VFZ en Géorgie ?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a">
-          <p>Le statut <strong>VFZ (Virtual Free Zone)</strong> en Géorgie exonère totalement d'impôt sur les sociétés les revenus d'exportation de services numériques. Il est particulièrement adapté aux entreprises technologiques qui exportent leurs services hors de Géorgie.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="art-services">
-    <p class="art-sec-eyebrow">Nos services</p>
-    <h2 class="art-sec-h2">Votre projet en Géorgie, de A à Z</h2>
-    <div class="art-services-grid">
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">🏠</span>
-        <span class="art-svc-title">Vivre en Géorgie</span>
-        <span class="art-svc-sub">Logement · Banque · Visa</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">📈</span>
-        <span class="art-svc-title">Investir à Batumi</span>
-        <span class="art-svc-sub">Immobilier · Rendement</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">🏢</span>
-        <span class="art-svc-title">Créer votre société</span>
-        <span class="art-svc-sub">LLC · Compte pro · Clé en main</span>
-      </a>
-      <a href="https://wa.me/33681108147" class="art-svc-card" target="_blank" rel="noopener">
-        <span class="art-svc-ico">⚡</span>
-        <span class="art-svc-title">Optimiser la fiscalité</span>
-        <span class="art-svc-sub">Résidence · Structuration</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="art-social">
-    <p class="art-sec-eyebrow">Communauté</p>
-    <h2 class="art-sec-h2">Suivez notre actualité</h2>
-    <p class="art-social-desc">Conseils, témoignages et bons plans sur la vie en Géorgie — chaque semaine.</p>
-    <div class="art-social-row">
-      <a href="https://www.youtube.com/@VivreenG%C3%A9orgie" class="art-social-btn" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        YouTube
-      </a>
-      <a href="https://www.instagram.com/vivreengeorgie/" class="art-social-btn" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        Instagram
-      </a>
-      <a href="https://www.tiktok.com/@vivreengeorgie" class="art-social-btn" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.17 8.17 0 0 0 4.78 1.52V6.82a4.85 4.85 0 0 1-1.01-.13z"/></svg>
-        TikTok
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61590688067104" class="art-social-btn" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebook
-      </a>
-    </div>
-  </div>
-
-</article></main>
-
-<footer>
-  © 2026 Vivre en Géorgie &middot; <a href="../index.html">Retour au site</a> &middot; <a href="../mentions-legales.html">Mentions légales</a>
-</footer>
-
-<script>
+</aside><script>
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('backdrop').classList.add('open');
@@ -555,7 +302,7 @@ function closeDrawer() {
   document.getElementById('backdrop').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); } });
 
 function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
@@ -568,29 +315,6 @@ function toggleFaq(btn) {
     item.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
   }
-}
-function openBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.remove('open');
-  document.body.style.overflow = '';
-  document.querySelectorAll('.brochure-opt.selected').forEach(function(el) { el.classList.remove('selected'); });
-  document.getElementById('brochure-send-btn').disabled = true;
-}
-function toggleBrochureOpt(el) {
-  el.classList.toggle('selected');
-  document.getElementById('brochure-send-btn').disabled = !document.querySelector('.brochure-opt.selected');
-}
-function sendBrochureWA() {
-  var selected = Array.from(document.querySelectorAll('.brochure-opt.selected'));
-  if (!selected.length) return;
-  var labels = selected.map(function(el) { return el.querySelector('.brochure-opt-label').textContent.trim(); });
-  var part = labels.length === 1 ? labels[0] : labels.slice(0,-1).join(', ') + ' et ' + labels[labels.length-1];
-  var msg = encodeURIComponent('Bonjour Axel, je souhaite recevoir votre brochure concernant : ' + part + '.');
-  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
-  closeBrochureModal();
 }
 </script>
 </body>

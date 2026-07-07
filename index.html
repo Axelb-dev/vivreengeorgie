@@ -226,10 +226,6 @@
       opacity: 1 !important; transform: none !important;
       transition: background .15s !important;
     }
-    .drawer-brochure {
-      opacity: 1 !important; transform: none !important;
-      transition: background .15s !important;
-    }
     .drawer-wa::before { animation: none !important; }
   }
   .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
@@ -531,41 +527,8 @@
   .loader-dots span:nth-child(3) { animation-delay: .4s; }
   @keyframes dot-pulse { 0%,80%,100% { transform: scale(.55); opacity: .35; } 40% { transform: scale(1); opacity: 1; } }
 
-  /* ── Brochure button ── */
-  .brochure-btn-wrap { text-align: center; margin-top: 40px; }
-  .btn-brochure { display: inline-flex; align-items: center; gap: 10px; border: 2px solid var(--gold); color: var(--gold); background: rgba(212,175,55,.06); font-family: inherit; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 999px; cursor: pointer; transition: background .2s, transform .2s; }
-  .btn-brochure:hover { background: rgba(212,175,55,.14); transform: scale(1.03); }
-  .btn-brochure-header { display: none; align-items: center; gap: 7px; background: rgba(212,175,55,.1); color: var(--gold); border: 1.5px solid rgba(212,175,55,.45); font-family: inherit; font-weight: 700; font-size: 12.5px; border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background .2s, transform .2s; white-space: nowrap; }
-  .btn-brochure-header:hover { background: rgba(212,175,55,.22); transform: scale(1.04); }
-  @media(min-width:540px){ .btn-brochure-header { display: inline-flex; } }
-  .drawer-brochure { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 32px; border-radius: 999px; background: rgba(212,175,55,.1); color: var(--gold); border: 1.5px solid rgba(212,175,55,.4); font-family: inherit; font-weight: 700; font-size: 14px; margin-top: 20px; cursor: pointer; opacity: 0; transform: translateY(10px); transition: opacity .28s ease .34s, transform .28s ease .34s, background .2s; }
-  .drawer.open .drawer-brochure { opacity: 1; transform: translateY(0); }
-  .drawer-brochure:hover { background: rgba(212,175,55,.2); }
-
-  /* ── Brochure modal ── */
-  .brochure-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(3,29,53,.78); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .28s ease; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .brochure-backdrop.open { opacity: 1; pointer-events: auto; }
-  .brochure-modal { background: linear-gradient(145deg, rgba(6,39,70,.98), rgba(3,29,53,.98)); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 36px 32px; max-width: 460px; width: 100%; transform: scale(.92) translateY(16px); transition: transform .32s cubic-bezier(.22,1,.36,1); }
-  .brochure-backdrop.open .brochure-modal { transform: scale(1) translateY(0); }
-  .brochure-modal-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 16px; }
-  .brochure-modal-head h2 { font-size: 1.25rem; font-weight: 900; }
-  .brochure-close { background: none; border: none; color: rgba(255,255,255,.45); cursor: pointer; font-size: 22px; line-height: 1; padding: 2px 4px; flex-shrink: 0; transition: color .2s; }
-  .brochure-close:hover { color: #fff; }
-  .brochure-modal > p { color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 22px; line-height: 1.6; }
-  .brochure-options { display: grid; gap: 10px; margin-bottom: 26px; }
-  .brochure-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); cursor: pointer; transition: border-color .2s, background .2s; user-select: none; }
-  .brochure-opt:hover { border-color: rgba(212,175,55,.35); background: rgba(212,175,55,.05); }
-  .brochure-opt.selected { border-color: var(--gold); background: rgba(212,175,55,.1); }
-  .brochure-opt-icon { font-size: 20px; flex-shrink: 0; }
-  .brochure-opt-label { font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.82); flex: 1; }
-  .brochure-opt.selected .brochure-opt-label { color: #fff; }
-  .brochure-opt-check { width: 20px; height: 20px; border-radius: 6px; border: 2px solid rgba(255,255,255,.22); background: transparent; transition: border-color .2s, background .2s; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .brochure-opt.selected .brochure-opt-check { border-color: var(--gold); background: var(--gold); }
-  .brochure-opt.selected .brochure-opt-check::after { content: ''; display: block; width: 5px; height: 9px; border-right: 2px solid #031d35; border-bottom: 2px solid #031d35; transform: rotate(45deg) translate(-1px,-2px); }
-  .brochure-send { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; border-radius: 999px; background: #25d366; color: #fff; font-family: inherit; font-weight: 800; font-size: 15px; border: none; cursor: pointer; transition: background .2s, opacity .2s; }
-  .brochure-send:hover:not(:disabled) { background: #1ebe5d; }
-  .brochure-send:disabled { opacity: .38; cursor: default; }
-
+  
+  
   /* ── FAQ ── */
   .faq-section { padding: 80px 24px; background: var(--navy2); }
   .faq-inner { max-width: 800px; margin: 0 auto; }
@@ -633,10 +596,6 @@
       </div>
     </a>
     <div class="header-actions">
-      <button class="btn-brochure-header" onclick="openBrochureModal()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span data-i18n="brochure_btn">Obtenir la brochure</span>
-      </button>
       <a href="https://wa.me/33681108147" class="btn-wa-header" target="_blank" rel="noopener" onclick="return openWA('wa_msg_generic')">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
@@ -692,10 +651,6 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
-  <button class="drawer-brochure" onclick="closeBrochureModal(); openBrochureModal(); closeDrawer()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    <span data-i18n="brochure_btn">Obtenir la brochure</span>
-  </button>
 </aside>
 
 <main id="main-content">
@@ -953,38 +908,6 @@
   </div>
 </section>
 
-<!-- BROCHURE MODAL -->
-<div class="brochure-backdrop" id="brochure-backdrop" onclick="if(event.target===this)closeBrochureModal()">
-  <div class="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-title">
-    <div class="brochure-modal-head">
-      <h2 id="brochure-title" data-i18n="brochure_title">Recevoir notre brochure</h2>
-      <button class="brochure-close" aria-label="Fermer" onclick="closeBrochureModal()">✕</button>
-    </div>
-    <p data-i18n="brochure_desc">Sélectionnez les domaines qui vous intéressent — choix multiple possible.</p>
-    <div class="brochure-options">
-      <div class="brochure-opt" data-key="1" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏠</span>
-        <span class="brochure-opt-label" data-i18n="brochure_opt1">Expatriation</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="2" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">📈</span>
-        <span class="brochure-opt-label" data-i18n="brochure_opt2">Investissement</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-      <div class="brochure-opt" data-key="3" onclick="toggleBrochureOpt(this)">
-        <span class="brochure-opt-icon">🏢</span>
-        <span class="brochure-opt-label" data-i18n="brochure_opt3">Création d'entreprise</span>
-        <span class="brochure-opt-check"></span>
-      </div>
-    </div>
-    <button class="brochure-send" id="brochure-send" onclick="sendBrochureWA()" disabled>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      <span data-i18n="brochure_send">Envoyer via WhatsApp</span>
-    </button>
-  </div>
-</div>
-
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
@@ -1195,14 +1118,6 @@ const i18n = {
     footer_nav_title:'Navigation', footer_social_title:'Réseaux sociaux',
     footer_social_text:'Suivez-nous pour les dernières actualités sur la vie en Géorgie, l\'immobilier à Batumi et les opportunités d\'investissement.',
     footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. Tous droits réservés.', footer_legal:'Mentions légales',
-    brochure_btn:"Obtenir la brochure",
-    brochure_title:"Recevoir notre brochure",
-    brochure_desc:"Sélectionnez les domaines qui vous intéressent — choix multiple possible.",
-    brochure_opt1:"Expatriation", brochure_opt2:"Investissement", brochure_opt3:"Création d'entreprise",
-    brochure_send:"Envoyer via WhatsApp",
-    brochure_wa_intro:"Bonjour, je souhaite recevoir la brochure concernant",
-    brochure_wa_join:"et",
-    brochure_wa1:"l'expatriation", brochure_wa2:"l'investissement immobilier", brochure_wa3:"la création d'entreprise",
     faq_eyebrow:'Questions fr&#233;quentes',
     faq_h2:'Tout ce que vous voulez savoir<br>avant de vous lancer.',
     faq_p:'Des r&#233;ponses directes, bas&#233;es sur notre exp&#233;rience terrain &#224; Batumi depuis 2020.',
@@ -1271,14 +1186,6 @@ const i18n = {
     footer_nav_title:'Navigation', footer_social_title:'Social media',
     footer_social_text:'Follow us for the latest news about life in Georgia, real estate in Batumi and business opportunities.',
     footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. All rights reserved.', footer_legal:'Legal notices',
-    brochure_btn:"Get the brochure",
-    brochure_title:"Receive our brochure",
-    brochure_desc:"Select the areas you are interested in — multiple selection possible.",
-    brochure_opt1:"Relocation", brochure_opt2:"Investment", brochure_opt3:"Company setup",
-    brochure_send:"Send via WhatsApp",
-    brochure_wa_intro:"Hello, I would like to receive the brochure about",
-    brochure_wa_join:"and",
-    brochure_wa1:"relocation", brochure_wa2:"real estate investment", brochure_wa3:"company setup",
     faq_eyebrow:'Frequently asked questions',
     faq_h2:'Everything you want to know<br>before getting started.',
     faq_p:'Direct answers, based on our field experience in Georgia.',
@@ -1347,14 +1254,6 @@ const i18n = {
     footer_nav_title:'Navegación', footer_social_title:'Redes sociales',
     footer_social_text:'Síguenos para las últimas noticias sobre la vida en Georgia, el sector inmobiliario en Batumi y las oportunidades de inversión.',
     footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. Todos los derechos reservados.', footer_legal:'Aviso legal',
-    brochure_btn:"Obtener el folleto",
-    brochure_title:"Recibir nuestro folleto",
-    brochure_desc:"Seleccione los ámbitos que le interesan — selección múltiple posible.",
-    brochure_opt1:"Expatriación", brochure_opt2:"Inversión", brochure_opt3:"Creación de empresa",
-    brochure_send:"Enviar por WhatsApp",
-    brochure_wa_intro:"Hola, me gustaría recibir el folleto sobre",
-    brochure_wa_join:"y",
-    brochure_wa1:"la expatriación", brochure_wa2:"la inversión inmobiliaria", brochure_wa3:"la creación de empresa",
     faq_eyebrow:'Preguntas frecuentes',
     faq_h2:'Todo lo que quieres saber<br>antes de empezar.',
     faq_p:'Respuestas directas, basadas en nuestra experiencia sobre el terreno en Batumi desde 2020.',
@@ -1423,10 +1322,6 @@ const i18n = {
     footer_nav_title:'ნავიგაცია', footer_social_title:'სოციალური ქსელები',
     footer_social_text:'გამოგვყევით საქართველოს ცხოვრების, ბათუმის უძრავი ქონებისა და საინვესტიციო შესაძლებლობების სიახლეებისთვის.',
     footer_bottom:'© 2026 Vivre en Géorgie — BEI Batumi Expat Invest. ყველა უფლება დაცულია.', footer_legal:'სამართლებრივი შენიშვნები',
-    brochure_btn:"ბროშურის მიღება",
-    brochure_title:"მიიღეთ ჩვენი ბროშური",
-    brochure_desc:"აირჩიეთ თქვენთვის საინტერესო სფეროები — მრავლობითი არჩევანი შესაძლებელია.",
-    brochure_opt1:"ემიგრაცია", brochure_opt2:"ინვესტიცია", brochure_opt3:"კომპანიის დაარსება",
     faq_eyebrow:'ხშირად დასმული კითხვები',
     faq_h2:'ყველაფერი, რაც გინდა იცოდე<br>დაწყებამდე.',
     faq_p:'პირდაპირი პასუხები, ჩვენი ადგილობრივი გამოცდილებების საფუძველზე ბათუმსა და თბილისში.',
@@ -1449,10 +1344,6 @@ const i18n = {
     wa_msg_svc1:"გამარჯობა, მინდა გავიგო მეტი ემიგრაციის სერვისის შესახებ.",
     wa_msg_svc2:"გამარჯობა, მინდა გავიგო მეტი ბათუმში უძრავი ქონების ინვესტიციის შესახებ.",
     wa_msg_svc3:"გამარჯობა, მინდა გავიგო მეტი საქართველოში კომპანიის შექმნის შესახებ.",
-    brochure_send:"WhatsApp-ით გაგზავნა",
-    brochure_wa_intro:"გამარჯობა Axel, გთხოვ გამომიგზავნო ბროშური:",
-    brochure_wa_join:"და",
-    brochure_wa1:"ემიგრაციის", brochure_wa2:"უძრავი ქონების ინვესტიციის", brochure_wa3:"კომპანიის დაარსების"
   }
 };
 
@@ -1485,7 +1376,7 @@ function closeDrawer() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeDrawer(); closeBrochureModal(); }
+  if (e.key === 'Escape') { closeDrawer(); }
 });
 
 /* ── FAQ accordion ── */
@@ -1516,38 +1407,6 @@ function openWA(key) {
   const msg = encodeURIComponent(i18n[waLang][key] || i18n[waLang].wa_msg_generic);
   window.open('https://wa.me/33681108147?text=' + msg, '_blank');
   return false;
-}
-
-/* ── Brochure modal ── */
-function openBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBrochureModal() {
-  document.getElementById('brochure-backdrop').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function toggleBrochureOpt(el) {
-  el.classList.toggle('selected');
-  const anySelected = document.querySelectorAll('.brochure-opt.selected').length > 0;
-  document.getElementById('brochure-send').disabled = !anySelected;
-}
-function sendBrochureWA() {
-  const selected = [...document.querySelectorAll('.brochure-opt.selected')];
-  if (!selected.length) return;
-  const lang = localStorage.getItem('lang') || 'fr';
-  const waLang = lang === 'ge' ? 'en' : lang;
-  const t = i18n[waLang];
-  const labels = selected.map(el => t['brochure_wa' + el.dataset.key]);
-  let part;
-  if (labels.length === 1) {
-    part = labels[0];
-  } else {
-    part = labels.slice(0, -1).join(', ') + ' ' + t.brochure_wa_join + ' ' + labels[labels.length - 1];
-  }
-  const msg = encodeURIComponent(t.brochure_wa_intro + ' ' + part + '.');
-  window.open('https://wa.me/33681108147?text=' + msg, '_blank');
-  closeBrochureModal();
 }
 
 /* ── Hero entrance ── */
