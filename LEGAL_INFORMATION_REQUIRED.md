@@ -1,3 +1,9 @@
+## Informations confirmées le 11 novembre 2026
+
+Le propriétaire indique ne pas avoir d’entreprise constituée et confirme une édition en nom propre : **M. Axel BRIARD**. Cette identité est reprise comme éditeur et responsable de publication dans la version locale. Ne pas inventer de société ni d’immatriculation. Restent à préciser : adresse de l’éditeur, cadre professionnel applicable aux prestations proposées, modalités de traitement et conservation des demandes. Le site reste en brouillon local, sans publication.
+
+---
+
 # LEGAL_INFORMATION_REQUIRED.md — Vivre en Géorgie
 *Dernière mise à jour : 2026-07-07*
 

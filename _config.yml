@@ -1,0 +1,9 @@
+# GitHub Pages: keep development and audit files outside the public site.
+exclude:
+  - tests
+  - README.md
+  - SECURITY.md
+  - DESIGN_REVIEW.md
+  - AUDIT_CONTENT.md
+  - AUDIT_TECHNICAL.md
+  - LEGAL_INFORMATION_REQUIRED.md

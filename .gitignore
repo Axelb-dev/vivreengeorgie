@@ -1,0 +1,10 @@
+# Local validation output
+__pycache__/
+*.pyc
+tests/*.png
+tests/*.jpg
+tests/*-report.json
+.env
+.env.*
+!.env.example
+node_modules/
