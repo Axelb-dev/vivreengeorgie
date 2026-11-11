@@ -135,6 +135,7 @@ class FilmSequence {
     this.paint(a);
     if(still&&mix.alpha>0)this.paint(still,mix.alpha,this.stopDefinitions[mix.index].align);
     document.body.classList.add('sequence-ready');
+    this.lastPaintedTime=this.position/24;document.dispatchEvent(new Event('film:painted'));
    }
   }
   if(Math.abs(this.target-this.position)>.015||this.decoding.size)this.wake();
@@ -150,9 +151,16 @@ class FilmSequence {
  const panels=[...document.querySelectorAll('[data-step]')];
  const chapters=[...document.querySelectorAll('[data-chapter]')];
  const positions=[2/25,7/25,14/25,20/25,24/25];
- let timeline=[],targetTime=2;
+ let timeline=[],panelPoints=[],targetTime=2;
  function measureTimeline(){
-  timeline=panels.map((panel,i)=>({y:i===0?0:Math.max(0,panel.getBoundingClientRect().top+window.scrollY-panelOffset()),time:mobileQuery.matches?MOBILE_FILM_STILLS[[2,7,14,20,24].indexOf(Number(panel.dataset.time))].time:Number(panel.dataset.time)}));
+  panelPoints=panels.map((panel,i)=>({y:i===0?0:Math.max(0,panel.getBoundingClientRect().top+window.scrollY-panelOffset()),time:mobileQuery.matches?MOBILE_FILM_STILLS[[2,7,14,20,24].indexOf(Number(panel.dataset.time))].time:Number(panel.dataset.time)}));
+  timeline=[];
+  panelPoints.forEach((point,i)=>{
+   timeline.push(point);
+   const readingEnd=Math.min(scrollRange(),panels[i].getBoundingClientRect().bottom+scrollY-innerHeight);
+   const next=panelPoints[i+1]?.y??scrollRange();
+   if(readingEnd>point.y+2&&readingEnd<next)timeline.push({y:readingEnd,time:point.time});
+  });
   timeline.push({y:scrollRange(),time:mobileQuery.matches?MOBILE_FILM_STILLS[4].time:24});
  }
 
@@ -160,6 +168,20 @@ class FilmSequence {
  const mobileQuery=matchMedia('(max-width:760px)');
  let sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);
  mobileQuery.addEventListener('change',()=>{sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
+ document.body.classList.add('content-reveal-enabled');
+ let visiblePanel=-1;
+ function syncContent(){
+  if(!panelPoints.length)return;
+  let active=0;panelPoints.forEach((p,i)=>{if(scrollY>=p.y-2)active=i;});
+  const stop=panelPoints[active].time;
+  const arrived=!travel&&sequence.assetsReady&&Math.abs(targetTime-stop)<1/48&&Math.abs((sequence.lastPaintedTime??-1)-stop)<1/48;
+  const next=arrived?active:-1;
+  if(next===visiblePanel)return;
+  visiblePanel=next;
+  panels.forEach((panel,i)=>{const show=i===next;panel.classList.toggle('content-visible',show);panel.inert=!show;panel.setAttribute('aria-hidden',String(!show));});
+ }
+ panels.forEach(panel=>{panel.inert=true;panel.setAttribute('aria-hidden','true');});
+ document.addEventListener('film:painted',syncContent);
  function updateMotionText(){}
  function applyMotion(){
   document.body.classList.toggle('reduced',reduced);updateMotionText();
@@ -181,7 +203,7 @@ class FilmSequence {
   document.body.style.setProperty('--film-progress',progress);
   let index=0;positions.forEach((p,i)=>{if(progress>=p)index=i;});showScene(index);
   document.body.classList.toggle('past-film',box.bottom<=90);
-  seek();
+  seek();syncContent();
  }
  function schedule(){if(!frame)frame=requestAnimationFrame(draw);}
  window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',()=>{timeline=[];sequence.resize();schedule();});
@@ -219,9 +241,9 @@ class FilmSequence {
   function step(now){
    const t=Math.min(1,(now-began)/duration),ease=t*t*(3-2*t);
    window.scrollTo({top:start+distance*ease,behavior:'instant'});
-   if(t<1)travel=requestAnimationFrame(step);else{travel=0;sequence.releaseTransition();}
+   if(t<1)travel=requestAnimationFrame(step);else{travel=0;sequence.releaseTransition();schedule();}
   }
-  travel=requestAnimationFrame(step);
+  travel=requestAnimationFrame(step);syncContent();
  }
  let endBounce=null,lastBounce=-Infinity;
  function bounceAtEnd(){

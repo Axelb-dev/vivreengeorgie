@@ -99,3 +99,6 @@ SEO and security test suites pass; HTTPS enforcement checked true through GitHub
 
 ## Mobile bottom alignment — release36
 All nine mobile chapters use flex-end with a consistent safe-area bottom inset. Removed effective top placement for detail cards, bank and network by a final mobile-only rule. Chapters grow naturally when content is taller than the viewport; contact remains scrollable in document flow. Verified bottom content/padding geometry at320x568,390x844,430x932 and expanded conditions. Screenshot mobile-bottom-detail.png inspected. Desktop unaffected; CSP JSON-LD hash test passes.
+
+## Stop-triggered content reveal — release37
+Only the active chapter is visible/interactable after its precise film stop has been painted and scroll travel has completed. Incoming copy/cards/form fade with opacity1s ease-in; outgoing content hides immediately during travel. inactive panels retain layout but are inert/aria-hidden. Added hold points for the reading portion of long chapters so text does not disappear while reading. Same-image detail panels reveal only at arrival, not while sliding into place. Verified mobile390 and desktop1440: hidden mid-travel, exactly one visible chapter, computed1s/ease-in transition, detail and contact reveal. Bank-construction buffer test remains zero missing frames both directions; static SEO/security tests pass.
