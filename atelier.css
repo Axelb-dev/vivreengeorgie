@@ -290,3 +290,22 @@ html,body{overscroll-behavior-y:none}
  .film-copy[data-scene="2"]{padding-top:40svh}
  .film-copy[data-scene="4"]{padding-top:48svh}
 }
+/* Anchor each mobile chapter to the lower edge, leaving the film visible above. */
+@media(max-width:760px){
+ .film-copy[data-step]{
+  min-height:100svh;
+  padding-top:24px;
+  padding-bottom:calc(var(--chapter-head) + max(24px,env(safe-area-inset-bottom)));
+  justify-content:flex-end;
+ }
+ .film-copy[data-scene="0"]{
+  min-height:calc(100svh - var(--chapter-head));
+  padding-top:24px;
+  padding-bottom:max(24px,env(safe-area-inset-bottom));
+ }
+ #contact.final-contact{
+  min-height:calc(100svh - var(--chapter-head));
+  padding:24px 0 max(24px,env(safe-area-inset-bottom));
+  justify-content:flex-end;
+ }
+}
