@@ -301,13 +301,13 @@ class FilmSequence {
  let touchStartY=null,touchStartX=0,touchOrigin=0,touchTarget=null,touchDestination=null;
  window.addEventListener('touchstart',event=>{touchStartY=event.touches.length===1?event.touches[0].clientY:null;touchStartX=event.touches[0]?.clientX||0;touchOrigin=scrollY;touchTarget=event.target;touchDestination=null;},{passive:true});
  window.addEventListener('touchmove',event=>{
-  if(!mobileQuery.matches||touchStartY===null||event.touches.length!==1||touchTarget.closest('input,textarea,select,button,a,summary,.value-metrics,.value-features,#contact'))return;
+  if(!mobileQuery.matches||touchStartY===null||event.touches.length!==1||touchTarget.closest('input,textarea,select,button,a,summary,#contact'))return;
   const dy=touchStartY-event.touches[0].clientY,dx=touchStartX-event.touches[0].clientX;
-  if(Math.abs(dy)<12||Math.abs(dx)>=Math.abs(dy))return;
+  if(Math.abs(dy)<4||Math.abs(dx)>=Math.abs(dy))return;
   if(!timeline.length)measureTimeline();
   const destination=nextScrollStop(touchOrigin,Math.sign(dy),stops());
-  if(Math.abs(filmTimelineTime(destination,timeline)-filmTimelineTime(touchOrigin,timeline))<1/48&&Math.abs(destination-touchOrigin)>8){
-   // Same-image reading steps use one controller, never native momentum plus an animation.
+  if(Math.abs(destination-touchOrigin)>8){
+   // Capture every vertical chapter gesture before native inertia starts.
    event.preventDefault();touchDestination=destination;
   }
  },{passive:false});
@@ -317,7 +317,7 @@ class FilmSequence {
   const contact=document.querySelector('#contact');
   if(distance>35&&scrollY>=scrollRange()-3&&contact.scrollTop+contact.clientHeight>=contact.scrollHeight-3){bounceAtEnd();return;}
   if(touchDestination!==null&&Math.abs(distance)>35){goToStop(touchDestination);touchDestination=null;return;}
-  // Moving-film gestures keep native momentum; no competing scroll animation.
+  // A captured gesture has one destination, regardless of finger distance or speed.
  },{passive:true});
  window.addEventListener('touchcancel',()=>{touchStartY=null;touchDestination=null;},{passive:true});
  // A new gesture interrupts a transition.
