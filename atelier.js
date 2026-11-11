@@ -52,12 +52,13 @@ class FilmSequence {
  destroy(){this.disposed=true;this.controller.abort();cancelAnimationFrame(this.raf);this.frames.forEach(b=>b.close());this.stills.forEach(b=>b.close());}
  resize(){
   const box=this.canvas.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2);
-  this.canvas.width=Math.min(Math.round(box.width*ratio),1600);
-  this.canvas.height=Math.round(this.canvas.width*box.height/Math.max(1,box.width));
+  const width=Math.min(Math.round(box.width*ratio),1600),height=Math.round(width*box.height/Math.max(1,box.width));
+  if(this.canvas.width===width&&this.canvas.height===height)return;
+  this.canvas.width=width;this.canvas.height=height;
   this.wake();
  }
  setTime(seconds,paused){
-  this.target=Math.max(0,Math.min(600,seconds*24));this.paused=paused;
+  const next=Math.max(0,Math.min(600,seconds*24));this.direction=Math.sign(next-this.target)||this.direction||1;this.target=next;this.paused=paused;
   this.pump();this.wake();
  }
  wake(){if(!this.disposed&&!this.raf)this.raf=requestAnimationFrame(t=>this.render(t));}
@@ -89,13 +90,14 @@ class FilmSequence {
  releaseTransition(){this.transitionFrames=null;const keys=[...this.frames.keys()].sort((a,b)=>Math.abs(a-this.target)-Math.abs(b-this.target));for(const key of keys.slice(36)){this.frames.get(key).close();this.frames.delete(key);}this.prepare();}
  frameAt(index){
   if(this.frames.has(index))return this.frames.get(index);
-  if(this.transitionFrames)for(let d=1;d<=this.transitionStride;d++){if(this.frames.has(index+d))return this.frames.get(index+d);if(this.frames.has(index-d))return this.frames.get(index-d);}
+  for(let d=1;d<=(this.transitionFrames?this.transitionStride:4);d++){if(this.frames.has(index+d))return this.frames.get(index+d);if(this.frames.has(index-d))return this.frames.get(index-d);}
   return null;
  }
  prepare(){
   const center=Math.round(this.position),target=Math.round(this.target);
   const wanted=new Set();
   for(const base of [target,center])for(const d of [0,1,-1,2,-2,3,-3,4,-4,5,-5,6,-6])if(base+d>=0&&base+d<=600)wanted.add(base+d);
+  for(let d=3;d<=24;d+=3){const i=target+d*(this.direction||1);if(i>=0&&i<=600)wanted.add(i);}
   for(const index of wanted){
    if(this.frames.has(index)||this.decoding.has(index)||!this.blobs.has(index)||this.decoding.size>=4)continue;
    this.decoding.add(index);
@@ -169,16 +171,17 @@ class FilmSequence {
  let sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);
  mobileQuery.addEventListener('change',()=>{sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
  document.body.classList.add('content-reveal-enabled');
- let visiblePanel=-1;
+ const revealedPanels=new Set();
  function syncContent(){
   if(!panelPoints.length)return;
   let active=0;panelPoints.forEach((p,i)=>{if(scrollY>=p.y-2)active=i;});
   const stop=panelPoints[active].time;
-  const arrived=!travel&&sequence.assetsReady&&Math.abs(targetTime-stop)<1/48&&Math.abs((sequence.lastPaintedTime??-1)-stop)<1/48;
-  const next=arrived?active:-1;
-  if(next===visiblePanel)return;
-  visiblePanel=next;
-  panels.forEach((panel,i)=>{const show=i===next;panel.classList.toggle('content-visible',show);panel.inert=!show;panel.setAttribute('aria-hidden',String(!show));});
+  const atStop=sequence.stopDefinitions.some(p=>Math.abs(targetTime-p.time)<1/48);
+  document.body.classList.toggle('film-moving',!atStop);
+  const arrived=sequence.assetsReady&&Math.abs(targetTime-stop)<1/48&&Math.abs((sequence.lastPaintedTime??-1)-stop)<1/48;
+  if(arrived&&!revealedPanels.has(active)){
+   revealedPanels.add(active);const panel=panels[active];panel.classList.add('content-visible');panel.inert=false;panel.removeAttribute('aria-hidden');
+  }
  }
  panels.forEach(panel=>{panel.inert=true;panel.setAttribute('aria-hidden','true');});
  document.addEventListener('film:painted',syncContent);
@@ -295,17 +298,29 @@ class FilmSequence {
   if(direction){event.preventDefault();if(direction>0&&scrollY>=scrollRange()-3){bounceAtEnd();return;}if(!travel)goToStop(nextScrollStop(scrollY,direction,stops()));}
   if(event.key==='Escape'){cancelAnimationFrame(travel);travel=0;}
  });
- let touchStartY=null,touchStartX=0,touchOrigin=0,touchTarget=null;
- window.addEventListener('touchstart',event=>{touchStartY=event.touches.length===1?event.touches[0].clientY:null;touchStartX=event.touches[0]?.clientX||0;touchOrigin=scrollY;touchTarget=event.target;},{passive:true});
+ let touchStartY=null,touchStartX=0,touchOrigin=0,touchTarget=null,touchDestination=null;
+ window.addEventListener('touchstart',event=>{touchStartY=event.touches.length===1?event.touches[0].clientY:null;touchStartX=event.touches[0]?.clientX||0;touchOrigin=scrollY;touchTarget=event.target;touchDestination=null;},{passive:true});
+ window.addEventListener('touchmove',event=>{
+  if(!mobileQuery.matches||touchStartY===null||event.touches.length!==1||touchTarget.closest('input,textarea,select,button,a,summary,.value-metrics,.value-features,#contact'))return;
+  const dy=touchStartY-event.touches[0].clientY,dx=touchStartX-event.touches[0].clientX;
+  if(Math.abs(dy)<12||Math.abs(dx)>=Math.abs(dy))return;
+  if(!timeline.length)measureTimeline();
+  const destination=nextScrollStop(touchOrigin,Math.sign(dy),stops());
+  if(Math.abs(filmTimelineTime(destination,timeline)-filmTimelineTime(touchOrigin,timeline))<1/48&&Math.abs(destination-touchOrigin)>8){
+   // Same-image reading steps use one controller, never native momentum plus an animation.
+   event.preventDefault();touchDestination=destination;
+  }
+ },{passive:false});
  window.addEventListener('touchend',event=>{
   if(touchStartY===null||!event.changedTouches.length)return;
   const distance=touchStartY-event.changedTouches[0].clientY;touchStartY=null;
   const contact=document.querySelector('#contact');
   if(distance>35&&scrollY>=scrollRange()-3&&contact.scrollTop+contact.clientHeight>=contact.scrollHeight-3){bounceAtEnd();return;}
-  if(!mobileQuery.matches||Math.abs(distance)<40||Math.abs(event.changedTouches[0].clientX-touchStartX)>Math.abs(distance)||touchTarget.closest('input,textarea,select,button,a,summary,.value-metrics,.value-features,#contact'))return;
-  goToStop(nextScrollStop(touchOrigin,Math.sign(distance),stops()));
+  if(touchDestination!==null&&Math.abs(distance)>35){goToStop(touchDestination);touchDestination=null;return;}
+  // Moving-film gestures keep native momentum; no competing scroll animation.
  },{passive:true});
- // Touch and scrollbar dragging stay native and can interrupt a transition.
+ window.addEventListener('touchcancel',()=>{touchStartY=null;touchDestination=null;},{passive:true});
+ // A new gesture interrupts a transition.
  window.addEventListener('pointerdown',()=>{journeyRequest++;cancelAnimationFrame(travel);travel=0;sequence.releaseTransition();},{passive:true});
 
  chapters.forEach((button,i)=>button.addEventListener('click',()=>{
