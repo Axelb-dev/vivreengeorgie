@@ -90,3 +90,9 @@ Reproduced missing decoded frames during the fast transition: 26/53 render attem
 
 ## Opening image — mobile33
 Found a faithful early reference match at frame6 (0.25s), 276 SIFT inliers. Mobile opening now uses the original detailed country PNG registered to that early frame, replacing the sharpened480p workaround. Mobile opening time moves from2s to0.25s; desktop remains2s. Responsive poster uses the original portrait asset. Inspected screenshot tests/mobile-first-debug.png. Layout checks pass on rerun; an earlier run timed out waiting for first-ready, a fresh diagnostic and repeat succeeded. Bank/construction audit remains zero missing images forward and reverse.
+
+## Publication and discoverability — release35
+User authorized GitHub publication and cleanup. Retired files archived outside repository; root Pages excludes tests and internal documents. Security CSP/no-referrer and constrained translation markup tested. Legacy remote history preserved via ours merge because the approved redesign replaces the complete old tree; no forced push.
+robots.txt preserved with explicit search/user AI agents and existing training allowances. Sitemap contains canonical indexable homepage only; legal draft remains noindex. Static JSON-LD WebSite/WebPage/Organization and three Service entities match visible content, with CSP hash. No invented address, reviews, ratings, verified profiles or pricing schema. Improved titles and social metadata. llms.txt/full supplement the visible HTML; no ranking guarantee or invented AI directive.
+Official references: https://developers.google.com/search/docs/appearance/ai-features ; https://developers.openai.com/api/docs/bots ; https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler .
+SEO and security test suites pass; HTTPS enforcement checked true through GitHub Pages API. Legal editor address and data handling details remain missing as documented.

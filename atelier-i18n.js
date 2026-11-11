@@ -174,7 +174,8 @@ const translations = {
     "budget100to200": "100 000 à moins de 200 000 €",
     "budget200plus": "200 000 € et plus",
     "budgetUndecided": "À définir ensemble",
-    "contactNav": "Contactez-nous"
+    "contactNav": "Contactez-nous",
+    "seoTitle": "Création d’entreprise et investissement | Vivre en Géorgie"
   },
   "en": {
     "skip": "Skip to services",
@@ -351,7 +352,8 @@ const translations = {
     "budget100to200": "€100,000 to under €200,000",
     "budget200plus": "€200,000 or more",
     "budgetUndecided": "To discuss together",
-    "contactNav": "Contact us"
+    "contactNav": "Contact us",
+    "seoTitle": "Company formation and investment | Vivre en Géorgie"
   },
   "es": {
     "skip": "Ir a los servicios",
@@ -528,7 +530,8 @@ const translations = {
     "budget100to200": "100.000 a menos de 200.000 €",
     "budget200plus": "200.000 € o más",
     "budgetUndecided": "Por definir juntos",
-    "contactNav": "Contáctanos"
+    "contactNav": "Contáctanos",
+    "seoTitle": "Creación de empresas e inversión | Vivre en Géorgie"
   },
   "ka": {
     "skip": "მომსახურებაზე გადასვლა",
@@ -705,7 +708,8 @@ const translations = {
     "budget100to200": "100 000 €-დან 200 000 €-მდე",
     "budget200plus": "200 000 € და მეტი",
     "budgetUndecided": "ერთად განვსაზღვროთ",
-    "contactNav": "კონტაქტი"
+    "contactNav": "კონტაქტი",
+    "seoTitle": "კომპანიის შექმნა და ინვესტიცია | Vivre en Géorgie"
   }
 };
 (() => {
@@ -736,7 +740,7 @@ const translations = {
   document.querySelectorAll('[data-language]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.language===language)));
   document.querySelectorAll('[data-project]').forEach(b=>b.setAttribute('aria-label',plain('projectLabel')+' : '+plain(b.dataset.project)));
 
-  document.title='Vivre en Géorgie — '+plain('footer');
+  document.title=plain('seoTitle');
   document.querySelector('meta[name="description"]').content=plain('introNote');
   document.querySelector('meta[property="og:title"]').content=document.title;
   document.querySelector('meta[property="og:description"]').content=plain('introNote');

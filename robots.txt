@@ -1,46 +1,32 @@
+# Vivre en Géorgie — https://vivreengeorgie.com/
+# Public content and rendering assets are crawlable.
+# robots.txt controls crawling, not authentication or ranking.
 User-agent: *
 Allow: /
 
-# Crawlers IA – accès explicitement autorisé
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
+# Search engines and AI search / user retrieval.
+User-agent: Googlebot
+User-agent: Bingbot
 User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: PerplexityBot
+User-agent: Applebot
 Allow: /
 
+# Preserve the site's existing permission for other AI crawlers.
+# Training access is distinct from inclusion in AI search results.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
 User-agent: Google-Extended
-Allow: /
-
 User-agent: Bytespider
-Allow: /
-
 User-agent: CCBot
-Allow: /
-
 User-agent: cohere-ai
-Allow: /
-
 User-agent: YouBot
-Allow: /
-
 User-agent: Diffbot
-Allow: /
-
 User-agent: Meta-ExternalAgent
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
