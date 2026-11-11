@@ -314,4 +314,10 @@ html,body{overscroll-behavior-y:none}
 .content-reveal-enabled [data-step].content-visible{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 1s ease-in}
 
 /* Previously revealed copy remains readable while the film travels. */
-.content-reveal-enabled.film-moving [data-step].content-visible:not(:first-child):not(#contact){opacity:.4;transition:opacity .22s ease-out}
+.content-reveal-enabled.film-moving [data-step].content-visible:not(:first-child):not(#contact){opacity:.25;transition:opacity .22s ease-out}
+
+.rewind-film{position:fixed;right:max(20px,env(safe-area-inset-right));top:44svh;z-index:45;width:44px;height:44px;border-radius:50%;border:1px solid #e4b18b88;background:#102637dc;color:#e4b18b;display:grid;place-items:center;box-shadow:0 5px 20px #0003;cursor:pointer}
+.rewind-film svg{width:22px;height:22px}.rewind-film:hover{background:#234258}.rewind-film:disabled{opacity:.5;cursor:wait}
+.content-reveal-enabled.rewinding [data-step].content-visible{opacity:0;visibility:hidden;pointer-events:none;transition:none}
+.rewinding .header-cta{pointer-events:none}
+.rewinding .landscape-name{opacity:0}

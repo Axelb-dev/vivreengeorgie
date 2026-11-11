@@ -108,3 +108,6 @@ Once a chapter has appeared at its first stop, it stays visible/interactable. Du
 
 ## One mobile gesture, one stop — release39
 User clarified that inertia was advancing several blocks. All vertical chapter gestures now take control in touchmove before native momentum can start, then perform one bounded transition on touchend. Horizontal carousel gestures and form controls retain native interaction. The existing detail holds/opacity behavior stays unchanged. Touch browser test verifies first chapter landing and no second movement700ms later; fixed-image detail gesture and persistent-opacity tests pass. This supersedes release38's native moving-film scrolling.
+
+## Opacity and rewind control — release40
+Moving-film middle content opacity lowered to25%. Added44px circular copper/navy rewind button at right, positioned above active chapter copy and hidden at opening. Accessible label localized in4languages. One click buffers a bounded reverse sequence, hides all chapter content and the landscape inscription, drives the film clock continuously back to its opening, then scrolls to0 and restores content only after the exact opening frame is painted. Input is guarded during rewind; no competing touch/wheel scroll. Verified390px and1440px: hidden throughout rewind, opening restored, no page errors;25% opacity and one-swipe navigation tests pass. No regeneration.

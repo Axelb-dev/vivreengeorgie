@@ -79,8 +79,8 @@ class FilmSequence {
   const request=fetch(`${this.framePath}frame-${String(index).padStart(4,'0')}.jpg`,{signal:this.controller.signal}).then(r=>{if(!r.ok)throw Error(r.status);return r.blob();}).then(blob=>{this.blobs.set(index,blob);return blob;}).finally(()=>this.requests.delete(index));
   this.requests.set(index,request);return request;
  }
- async bufferTransition(from,to){
-  if(!this.mobile)return;
+ async bufferTransition(from,to,force=false){
+  if(!this.mobile&&!force)return;
   const first=Math.round(from*24),last=Math.round(to*24),lo=Math.min(first,last),hi=Math.max(first,last);
   this.transitionStride=Math.max(3,Math.ceil((hi-lo)/72));
   const wanted=new Set([first,last]);for(let i=lo;i<=hi;i+=this.transitionStride)wanted.add(i);
@@ -153,7 +153,7 @@ class FilmSequence {
  const panels=[...document.querySelectorAll('[data-step]')];
  const chapters=[...document.querySelectorAll('[data-chapter]')];
  const positions=[2/25,7/25,14/25,20/25,24/25];
- let timeline=[],panelPoints=[],targetTime=2;
+ let timeline=[],panelPoints=[],targetTime=2,rewinding=false,rewindTime=2;
  function measureTimeline(){
   panelPoints=panels.map((panel,i)=>({y:i===0?0:Math.max(0,panel.getBoundingClientRect().top+window.scrollY-panelOffset()),time:mobileQuery.matches?MOBILE_FILM_STILLS[[2,7,14,20,24].indexOf(Number(panel.dataset.time))].time:Number(panel.dataset.time)}));
   timeline=[];
@@ -170,11 +170,17 @@ class FilmSequence {
  const mobileQuery=matchMedia('(max-width:760px)');
  let sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);
  mobileQuery.addEventListener('change',()=>{sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
+ const rewindButton=document.querySelector('#rewind-film');
+ function labelRewind(){const labels={fr:'Revenir au début du film',en:'Rewind to the beginning',es:'Volver al inicio del vídeo',ka:'ვიდეოს დასაწყისში დაბრუნება'};rewindButton.setAttribute('aria-label',labels[i18n.language]||labels.fr);rewindButton.title=labels[i18n.language]||labels.fr;}
+ labelRewind();window.addEventListener('atelier:language',labelRewind);
  document.body.classList.add('content-reveal-enabled');
  const revealedPanels=new Set();
  function syncContent(){
   if(!panelPoints.length)return;
   let active=0;panelPoints.forEach((p,i)=>{if(scrollY>=p.y-2)active=i;});
+  rewindButton.hidden=scrollY<40&&!rewinding;
+  if(!rewinding){const top=panels[active].firstElementChild.getBoundingClientRect().top;rewindButton.style.top=Math.max(panelOffset()+8,Math.min(innerHeight*.44,top-56))+'px';}
+  if(rewinding)return;
   const stop=panelPoints[active].time;
   const atStop=sequence.stopDefinitions.some(p=>Math.abs(targetTime-p.time)<1/48);
   document.body.classList.toggle('film-moving',!atStop);
@@ -199,7 +205,7 @@ class FilmSequence {
  function draw(){
   frame=0;const box=film.getBoundingClientRect();
   if(!timeline.length)measureTimeline();
-  targetTime=reduced?2:filmTimelineTime(window.scrollY,timeline);
+  targetTime=rewinding?rewindTime:(reduced?2:filmTimelineTime(window.scrollY,timeline));
   progress=targetTime/25;
   document.body.style.setProperty('--landscape-label-opacity',Math.max(0,Math.min(1,(3.2-targetTime)/1.2)));
   document.body.style.setProperty('--landscape-label-shift',(Math.max(0,targetTime-2)*-18)+'px');
@@ -259,6 +265,32 @@ class FilmSequence {
    {transform:'translateY(0)'}
   ],{duration:430,easing:'cubic-bezier(.22,.68,.3,1)'});
  }
+ rewindButton.addEventListener('click',async()=>{
+  if(rewinding)return;
+  ++journeyRequest;cancelAnimationFrame(travel);travel=0;
+  rewinding=true;rewindTime=targetTime;rewindButton.disabled=true;
+  document.body.classList.add('rewinding');
+  panels.forEach(p=>{p.inert=true;p.setAttribute('aria-hidden','true');});
+  const from=targetTime,to=sequence.stopDefinitions[0].time;
+  await sequence.bufferTransition(from,to,true);
+  const began=performance.now(),duration=Math.max(900,Math.min(3600,(from-to)*160));
+  function rewindStep(now){
+   const t=Math.min(1,(now-began)/duration),ease=t*t*(3-2*t);
+   rewindTime=from+(to-from)*ease;schedule();
+   if(t<1){travel=requestAnimationFrame(rewindStep);return;}
+   // Keep copy hidden until the opening frame has really reached the canvas.
+   sequence.setTime(to,false);travel=0;
+   function finish(){
+    if(Math.abs((sequence.lastPaintedTime??-1)-to)>1/48){requestAnimationFrame(finish);return;}
+    window.scrollTo({top:0,behavior:'instant'});rewinding=false;
+    document.body.classList.remove('rewinding');rewindButton.disabled=false;
+    revealedPanels.forEach(i=>{panels[i].inert=false;panels[i].removeAttribute('aria-hidden');});
+    gestureLocked=false;wheelSum=0;lastWheel=0;sequence.releaseTransition();schedule();
+   }
+   requestAnimationFrame(finish);
+  }
+  travel=requestAnimationFrame(rewindStep);
+ });
  document.querySelector('.header-cta').addEventListener('click',event=>{
   event.preventDefault();
   const contact=document.querySelector('#contact');contact.scrollTop=0;
@@ -267,6 +299,7 @@ class FilmSequence {
   goToStop(destination);
  });
  window.addEventListener('wheel',event=>{
+  if(rewinding){event.preventDefault();return;}
   if(event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;
   const contact=event.target.closest('#contact');
   const editor=event.target.closest('textarea,[contenteditable]');
@@ -293,6 +326,7 @@ class FilmSequence {
   goToStop(nextScrollStop(scrollY,Math.sign(wheelSum),stops()));
  },{passive:false});
  window.addEventListener('keydown',event=>{
+  if(rewinding&&['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)){event.preventDefault();return;}
   if(event.target.closest('input,textarea,select,button,a,summary,[contenteditable]')||event.ctrlKey||event.metaKey||event.altKey)return;
   const direction=event.key==='PageDown'?1:event.key==='PageUp'?-1:0;
   if(direction){event.preventDefault();if(direction>0&&scrollY>=scrollRange()-3){bounceAtEnd();return;}if(!travel)goToStop(nextScrollStop(scrollY,direction,stops()));}
@@ -301,6 +335,7 @@ class FilmSequence {
  let touchStartY=null,touchStartX=0,touchOrigin=0,touchTarget=null,touchDestination=null;
  window.addEventListener('touchstart',event=>{touchStartY=event.touches.length===1?event.touches[0].clientY:null;touchStartX=event.touches[0]?.clientX||0;touchOrigin=scrollY;touchTarget=event.target;touchDestination=null;},{passive:true});
  window.addEventListener('touchmove',event=>{
+  if(rewinding){event.preventDefault();return;}
   if(!mobileQuery.matches||touchStartY===null||event.touches.length!==1||touchTarget.closest('input,textarea,select,button,a,summary,#contact'))return;
   const dy=touchStartY-event.touches[0].clientY,dx=touchStartX-event.touches[0].clientX;
   if(Math.abs(dy)<4||Math.abs(dx)>=Math.abs(dy))return;
@@ -321,7 +356,7 @@ class FilmSequence {
  },{passive:true});
  window.addEventListener('touchcancel',()=>{touchStartY=null;touchDestination=null;},{passive:true});
  // A new gesture interrupts a transition.
- window.addEventListener('pointerdown',()=>{journeyRequest++;cancelAnimationFrame(travel);travel=0;sequence.releaseTransition();},{passive:true});
+ window.addEventListener('pointerdown',()=>{if(rewinding)return;journeyRequest++;cancelAnimationFrame(travel);travel=0;sequence.releaseTransition();},{passive:true});
 
  chapters.forEach((button,i)=>button.addEventListener('click',()=>{
   if(!timeline.length)measureTimeline();goToStop(timeline[i===0?0:2*i-1]?.y||0);
