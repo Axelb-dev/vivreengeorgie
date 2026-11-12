@@ -117,3 +117,6 @@ Replaced rewind icon with upward arrow. Hide synchronously on navigation/scroll;
 
 ## Centered contact — release42 (2026-11-12)
 Centered the form horizontally and vertically in the final chapter on desktop and mobile, replacing bottom/right placement. Symmetric mobile padding; safe centering preserves access for oversized forms. Rewind timing tests pass at390px and1440px; mobile screenshot inspected.
+
+## Desktop contact copy restored — release43 (2026-11-12)
+Clarified scope: form-only and centered layout applies to mobile only. Restored translated desktop introduction and two-column contact layout. Shared reveal/opacity/rewind animation logic remains identical across breakpoints; button positions above the form even when mobile introduction is hidden. Visibility tests verify desktop text visible and mobile text hidden.

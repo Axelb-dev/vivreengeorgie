@@ -182,7 +182,7 @@ class FilmSequence {
    rewindVisibilityTimer=setTimeout(()=>{
     rewindPending=false;
     if(token!==rewindVisibilityToken||rewinding||travel||scrollY<40)return;
-    const top=panels[active].firstElementChild.getBoundingClientRect().top;
+    const top=(panels[active].id==='contact'?panels[active].querySelector('.whatsapp-form'):panels[active].firstElementChild).getBoundingClientRect().top;
     rewindButton.style.top=Math.max(panelOffset()+8,Math.min(innerHeight*.44,top-56))+'px';
     rewindButton.hidden=false;
    },1000);
