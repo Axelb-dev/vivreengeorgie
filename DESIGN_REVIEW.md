@@ -114,3 +114,6 @@ Moving-film middle content opacity lowered to25%. Added44px circular copper/navy
 
 ## Rewind visibility and final form — release41 (2026-11-12)
 Replaced rewind icon with upward arrow. Hide synchronously on navigation/scroll; wait until content reaches full opacity then another1000ms before positioning and showing control. Final contact contains only form, right aligned on desktop and bottom aligned/full width on mobile. Verified390px and1440px visibility timing, immediate scroll hiding and complete rewind. Mobile screenshot inspected.
+
+## Centered contact — release42 (2026-11-12)
+Centered the form horizontally and vertically in the final chapter on desktop and mobile, replacing bottom/right placement. Symmetric mobile padding; safe centering preserves access for oversized forms. Rewind timing tests pass at390px and1440px; mobile screenshot inspected.

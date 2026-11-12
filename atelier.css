@@ -322,6 +322,6 @@ html,body{overscroll-behavior-y:none}
 .rewinding .header-cta{pointer-events:none}
 .rewinding .landscape-name{opacity:0}
 /* Final chapter contains only the message preparation form. */
-#contact.final-contact{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:0}
+#contact.final-contact{display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:0}
 #contact .whatsapp-form{width:min(100%,610px)}
-@media(max-width:760px){#contact.final-contact{align-items:stretch;justify-content:flex-end;padding-top:76px}#contact .whatsapp-form{width:100%}}
+@media(max-width:760px){#contact.final-contact{align-items:center;justify-content:safe center;padding:24px 0 max(24px,env(safe-area-inset-bottom))}#contact .whatsapp-form{width:100%}}
