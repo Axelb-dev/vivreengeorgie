@@ -111,3 +111,6 @@ User clarified that inertia was advancing several blocks. All vertical chapter g
 
 ## Opacity and rewind control — release40
 Moving-film middle content opacity lowered to25%. Added44px circular copper/navy rewind button at right, positioned above active chapter copy and hidden at opening. Accessible label localized in4languages. One click buffers a bounded reverse sequence, hides all chapter content and the landscape inscription, drives the film clock continuously back to its opening, then scrolls to0 and restores content only after the exact opening frame is painted. Input is guarded during rewind; no competing touch/wheel scroll. Verified390px and1440px: hidden throughout rewind, opening restored, no page errors;25% opacity and one-swipe navigation tests pass. No regeneration.
+
+## Rewind visibility and final form — release41 (2026-11-12)
+Replaced rewind icon with upward arrow. Hide synchronously on navigation/scroll; wait until content reaches full opacity then another1000ms before positioning and showing control. Final contact contains only form, right aligned on desktop and bottom aligned/full width on mobile. Verified390px and1440px visibility timing, immediate scroll hiding and complete rewind. Mobile screenshot inspected.

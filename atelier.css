@@ -321,3 +321,7 @@ html,body{overscroll-behavior-y:none}
 .content-reveal-enabled.rewinding [data-step].content-visible{opacity:0;visibility:hidden;pointer-events:none;transition:none}
 .rewinding .header-cta{pointer-events:none}
 .rewinding .landscape-name{opacity:0}
+/* Final chapter contains only the message preparation form. */
+#contact.final-contact{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:0}
+#contact .whatsapp-form{width:min(100%,610px)}
+@media(max-width:760px){#contact.final-contact{align-items:stretch;justify-content:flex-end;padding-top:76px}#contact .whatsapp-form{width:100%}}

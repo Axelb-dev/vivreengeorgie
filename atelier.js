@@ -171,6 +171,24 @@ class FilmSequence {
  let sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);
  mobileQuery.addEventListener('change',()=>{sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
  const rewindButton=document.querySelector('#rewind-film');
+ let rewindVisibilityTimer=0,rewindVisibilityToken=0,rewindPending=false;
+ function hideRewind(){rewindButton.hidden=true;clearTimeout(rewindVisibilityTimer);rewindVisibilityToken++;rewindPending=false;}
+ function queueRewind(active){
+  if(rewindPending||!rewindButton.hidden||scrollY<40||rewinding||travel)return;
+  rewindPending=true;const token=rewindVisibilityToken;
+  function waitForContent(){
+   if(token!==rewindVisibilityToken)return;
+   if(+getComputedStyle(panels[active]).opacity<.999){rewindVisibilityTimer=setTimeout(waitForContent,40);return;}
+   rewindVisibilityTimer=setTimeout(()=>{
+    rewindPending=false;
+    if(token!==rewindVisibilityToken||rewinding||travel||scrollY<40)return;
+    const top=panels[active].firstElementChild.getBoundingClientRect().top;
+    rewindButton.style.top=Math.max(panelOffset()+8,Math.min(innerHeight*.44,top-56))+'px';
+    rewindButton.hidden=false;
+   },1000);
+  }
+  waitForContent();
+ }
  function labelRewind(){const labels={fr:'Revenir au début du film',en:'Rewind to the beginning',es:'Volver al inicio del vídeo',ka:'ვიდეოს დასაწყისში დაბრუნება'};rewindButton.setAttribute('aria-label',labels[i18n.language]||labels.fr);rewindButton.title=labels[i18n.language]||labels.fr;}
  labelRewind();window.addEventListener('atelier:language',labelRewind);
  document.body.classList.add('content-reveal-enabled');
@@ -178,16 +196,16 @@ class FilmSequence {
  function syncContent(){
   if(!panelPoints.length)return;
   let active=0;panelPoints.forEach((p,i)=>{if(scrollY>=p.y-2)active=i;});
-  rewindButton.hidden=scrollY<40&&!rewinding;
-  if(!rewinding){const top=panels[active].firstElementChild.getBoundingClientRect().top;rewindButton.style.top=Math.max(panelOffset()+8,Math.min(innerHeight*.44,top-56))+'px';}
   if(rewinding)return;
   const stop=panelPoints[active].time;
   const atStop=sequence.stopDefinitions.some(p=>Math.abs(targetTime-p.time)<1/48);
   document.body.classList.toggle('film-moving',!atStop);
   const arrived=sequence.assetsReady&&Math.abs(targetTime-stop)<1/48&&Math.abs((sequence.lastPaintedTime??-1)-stop)<1/48;
+  if(!arrived){hideRewind();}
   if(arrived&&!revealedPanels.has(active)){
    revealedPanels.add(active);const panel=panels[active];panel.classList.add('content-visible');panel.inert=false;panel.removeAttribute('aria-hidden');
   }
+  if(arrived)queueRewind(active);
  }
  panels.forEach(panel=>{panel.inert=true;panel.setAttribute('aria-hidden','true');});
  document.addEventListener('film:painted',syncContent);
@@ -215,7 +233,7 @@ class FilmSequence {
   seek();syncContent();
  }
  function schedule(){if(!frame)frame=requestAnimationFrame(draw);}
- window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',()=>{timeline=[];sequence.resize();schedule();});
+ window.addEventListener('scroll',()=>{hideRewind();schedule();},{passive:true});window.addEventListener('resize',()=>{timeline=[];sequence.resize();schedule();});
  new ResizeObserver(()=>{timeline=[];schedule();}).observe(document.body);
  // A wheel gesture advances one stop. Trackpad momentum cannot skip several sections.
  let travel=0,lastWheel=0,gestureLocked=false,wheelSum=0,journeyRequest=0;
@@ -235,6 +253,7 @@ class FilmSequence {
   return points.sort((a,b)=>a-b).filter((p,i,a)=>!i||p-a[i-1]>8);
  }
  async function goToStop(destination){
+  hideRewind();
   const request=++journeyRequest;
   if(!sequence.assetsReady){sequence.ready.then(()=>{if(request===journeyRequest)goToStop(destination);});return;}
   cancelAnimationFrame(travel);
@@ -267,6 +286,7 @@ class FilmSequence {
  }
  rewindButton.addEventListener('click',async()=>{
   if(rewinding)return;
+  hideRewind();
   ++journeyRequest;cancelAnimationFrame(travel);travel=0;
   rewinding=true;rewindTime=targetTime;rewindButton.disabled=true;
   document.body.classList.add('rewinding');
@@ -299,6 +319,7 @@ class FilmSequence {
   goToStop(destination);
  });
  window.addEventListener('wheel',event=>{
+  hideRewind();
   if(rewinding){event.preventDefault();return;}
   if(event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;
   const contact=event.target.closest('#contact');
@@ -335,6 +356,7 @@ class FilmSequence {
  let touchStartY=null,touchStartX=0,touchOrigin=0,touchTarget=null,touchDestination=null;
  window.addEventListener('touchstart',event=>{touchStartY=event.touches.length===1?event.touches[0].clientY:null;touchStartX=event.touches[0]?.clientX||0;touchOrigin=scrollY;touchTarget=event.target;touchDestination=null;},{passive:true});
  window.addEventListener('touchmove',event=>{
+  hideRewind();
   if(rewinding){event.preventDefault();return;}
   if(!mobileQuery.matches||touchStartY===null||event.touches.length!==1||touchTarget.closest('input,textarea,select,button,a,summary,#contact'))return;
   const dy=touchStartY-event.touches[0].clientY,dx=touchStartX-event.touches[0].clientX;
