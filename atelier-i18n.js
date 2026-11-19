@@ -29,7 +29,7 @@ const translations = {
     "introTag": "UN PROJET. LES BONNES PERSONNES.",
     "introTitle": "Changer de cadre.<br/><em>Garder le cap.</em>",
     "introBody": "Un projet à l’étranger commence souvent par beaucoup de questions. Notre rôle : vous aider à les poser dans le bon ordre, et à trouver les personnes qui peuvent y répondre.",
-    "introNote": "Une équipe francophone et des professionnels locaux pour votre entreprise, vos démarches bancaires et votre projet immobilier en Géorgie.",
+    "introNote": "Créez votre entreprise, préparez vos démarches bancaires et investissez en Géorgie. Accompagnement en français et en espagnol, sur place ou à distance.",
     "assurance1": "Un échange en français",
     "assurance2": "Des interlocuteurs sur place",
     "assurance3": "Des honoraires annoncés",
@@ -175,7 +175,7 @@ const translations = {
     "budget200plus": "200 000 € et plus",
     "budgetUndecided": "À définir ensemble",
     "contactNav": "Contactez-nous",
-    "seoTitle": "Création d’entreprise et investissement | Vivre en Géorgie",
+    "seoTitle": "Vivre en Géorgie | Entreprise, banque et immobilier",
     "enterpriseGuide": "Créer une entreprise en Géorgie : les étapes",
     "bankGuide": "Ouvrir un compte en Géorgie : préparer son dossier",
     "propertyGuide": "Investir en Géorgie : méthode et points à vérifier",
@@ -772,6 +772,8 @@ const translations = {
   document.querySelector('meta[name="description"]').content=plain('introNote');
   document.querySelector('meta[property="og:title"]').content=document.title;
   document.querySelector('meta[property="og:description"]').content=plain('introNote');
+  document.querySelector('meta[name="twitter:title"]').content=document.title;
+  document.querySelector('meta[name="twitter:description"]').content=plain('introNote');
   try{localStorage.setItem('veg-language',language);}catch{}
   window.dispatchEvent(new CustomEvent('atelier:language'));
  }

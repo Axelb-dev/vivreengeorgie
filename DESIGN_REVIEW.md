@@ -135,3 +135,6 @@ Removed the explanatory full-film loading sentence and its four translations at 
 
 ## Text ready behind loader — release48 (2026-11-19)
 Loader now also waits for document fonts, prepares translated text layout and commits active chapter opacity before its fade-out. Suppresses the initial reveal transition behind loader only; subsequent scroll reveals remain550ms. Mobile390 and desktop1440 tests using Spanish confirm text opacity1 and fonts loaded at start of loader exit.
+
+## Search identity and mobile preview card — release49 (2026-11-19)
+Current Georgian monogram exported to stable SVG,96px PNG,multi-size ICO,180px touch icon and512px organization logo. All root pages use the current favicon. Created1200x630 branded card with actual mobile homepage capture, navy/copper design; OG/Twitter metadata and WebPage image point to it. Home title and description clarify services; runtime language metadata stays consistent. Loader excluded from snippets. CSP hashes recalculated and tests pass. Google determines result layout and recrawl timing; no rich-result guarantee.
