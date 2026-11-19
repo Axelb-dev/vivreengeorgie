@@ -18,5 +18,15 @@ class Discoverability(unittest.TestCase):
   self.assertNotIn('noindex',soup.select_one('meta[name=robots]')['content'])
  def test_sitemap(self):
   urls=[x.text for x in ET.parse(ROOT/'sitemap.xml').findall('.//{*}loc')]
-  self.assertEqual(urls,['https://vivreengeorgie.com/'])
+  self.assertEqual(len(urls),4)
+  for url in urls:
+   name=url.removeprefix('https://vivreengeorgie.com/') or 'index.html'
+   page=BeautifulSoup((ROOT/name).read_text(encoding='utf-8'),'html.parser')
+   self.assertEqual(page.select_one('link[rel=canonical]')['href'],url)
+   self.assertEqual(len(page.select('h1')),1)
+   self.assertNotIn('noindex',page.select_one('meta[name=robots]')['content'])
+   schema=page.select_one('script[type="application/ld+json"]')
+   json.loads(schema.string)
+   digest=base64.b64encode(hashlib.sha256(schema.string.encode()).digest()).decode()
+   self.assertIn('sha256-'+digest,page.select_one('meta[http-equiv="Content-Security-Policy"]')['content'])
 if __name__=='__main__':unittest.main()

@@ -120,3 +120,6 @@ Centered the form horizontally and vertically in the final chapter on desktop an
 
 ## Desktop contact copy restored — release43 (2026-11-12)
 Clarified scope: form-only and centered layout applies to mobile only. Restored translated desktop introduction and two-column contact layout. Shared reveal/opacity/rewind animation logic remains identical across breakpoints; button positions above the form even when mobile introduction is hidden. Visibility tests verify desktop text visible and mobile text hidden.
+
+## SEO/GEO acquisition pages — release44 (2026-11-19)
+Added three French service pages with crawlable chapter links, cross-links, source references, unique metadata and schema. Sitemap and llms references updated. Lossless WebP stops (-27.4% bytes, identical RGB pixels); initial frame prefetch bounded until journey begins. Full audit and outstanding Search Console verification in AUDIT_SEO_GEO.md.

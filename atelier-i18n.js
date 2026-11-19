@@ -175,7 +175,10 @@ const translations = {
     "budget200plus": "200 000 € et plus",
     "budgetUndecided": "À définir ensemble",
     "contactNav": "Contactez-nous",
-    "seoTitle": "Création d’entreprise et investissement | Vivre en Géorgie"
+    "seoTitle": "Création d’entreprise et investissement | Vivre en Géorgie",
+    "enterpriseGuide": "Créer une entreprise en Géorgie : les étapes",
+    "bankGuide": "Ouvrir un compte en Géorgie : préparer son dossier",
+    "propertyGuide": "Investir en Géorgie : méthode et points à vérifier"
   },
   "en": {
     "skip": "Skip to services",
@@ -353,7 +356,10 @@ const translations = {
     "budget200plus": "€200,000 or more",
     "budgetUndecided": "To discuss together",
     "contactNav": "Contact us",
-    "seoTitle": "Company formation and investment | Vivre en Géorgie"
+    "seoTitle": "Company formation and investment | Vivre en Géorgie",
+    "enterpriseGuide": "Company formation in Georgia: detailed guide (French)",
+    "bankGuide": "Bank account in Georgia: preparation guide (French)",
+    "propertyGuide": "Property investment in Georgia: practical guide (French)"
   },
   "es": {
     "skip": "Ir a los servicios",
@@ -531,7 +537,10 @@ const translations = {
     "budget200plus": "200.000 € o más",
     "budgetUndecided": "Por definir juntos",
     "contactNav": "Contáctanos",
-    "seoTitle": "Creación de empresas e inversión | Vivre en Géorgie"
+    "seoTitle": "Creación de empresas e inversión | Vivre en Géorgie",
+    "enterpriseGuide": "Crear una empresa en Georgia: guía (en francés)",
+    "bankGuide": "Cuenta bancaria en Georgia: guía (en francés)",
+    "propertyGuide": "Invertir en Georgia: guía inmobiliaria (en francés)"
   },
   "ka": {
     "skip": "მომსახურებაზე გადასვლა",
@@ -709,7 +718,10 @@ const translations = {
     "budget200plus": "200 000 € და მეტი",
     "budgetUndecided": "ერთად განვსაზღვროთ",
     "contactNav": "კონტაქტი",
-    "seoTitle": "კომპანიის შექმნა და ინვესტიცია | Vivre en Géorgie"
+    "seoTitle": "კომპანიის შექმნა და ინვესტიცია | Vivre en Géorgie",
+    "enterpriseGuide": "კომპანიის რეგისტრაცია საქართველოში — გზამკვლევი ფრანგულად",
+    "bankGuide": "საბანკო ანგარიში საქართველოში — გზამკვლევი ფრანგულად",
+    "propertyGuide": "უძრავი ქონება საქართველოში — გზამკვლევი ფრანგულად"
   }
 };
 (() => {

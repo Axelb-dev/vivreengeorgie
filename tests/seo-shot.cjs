@@ -1,0 +1,2 @@
+const {chromium}=require('C:/Users/Axel/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const b=await chromium.launch({headless:true,channel:'msedge'});const p=await b.newPage({viewport:{width:1440,height:900}});await p.goto('http://127.0.0.1:4175/creation-entreprise-georgie.html');await p.screenshot({path:'tests/seo-service-top.png'});await b.close()})()

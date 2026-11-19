@@ -1,7 +1,7 @@
-const MOBILE_FILM_STILLS=[{"time": 0.25, "url": "assets/storyboard-mobile-v1/01-georgie.png", "align": [0.97056554628226, 0.00013724627433186866, -0.0007105393096638072, 0.9905705646514377, -1.042911961122788, -3.236555231458556]}, {"time": 7.166666666666667, "url": "assets/storyboard-mobile-v1/02-entreprise.png", "align": [0.9678934331491489, 6.710404933347012e-05, -0.00018708676977369023, 0.9877243359689352, -0.193104250137671, -2.16018929347946]}, {"time": 12.916666666666666, "url": "assets/storyboard-mobile-v1/03-banque.png", "align": [0.9938804109030197, 5.0566563912690445e-05, 0.000567134050151781, 0.9603572321329629, -6.091778940539456, -6.846853090348008]}, {"time": 21.5, "url": "assets/storyboard-mobile-v1/04-chantier.png", "align": [0.9680494884297244, -0.00018100240892483937, -0.00047747070229276606, 0.9873558396938802, 0.05955354479371026, -1.953540391958135]}, {"time": 24.083333333333332, "url": "assets/storyboard-mobile-v1/05-reseau.png", "align": [0.9678949686424847, 0.0002572547102972534, -0.00017600028206873715, 0.9871810779679535, -0.07006579732893564, -1.9785010650735875]}];
+const MOBILE_FILM_STILLS=[{"time": 0.25, "url": "assets/storyboard-mobile-v1/01-georgie.webp", "align": [0.97056554628226, 0.00013724627433186866, -0.0007105393096638072, 0.9905705646514377, -1.042911961122788, -3.236555231458556]}, {"time": 7.166666666666667, "url": "assets/storyboard-mobile-v1/02-entreprise.webp", "align": [0.9678934331491489, 6.710404933347012e-05, -0.00018708676977369023, 0.9877243359689352, -0.193104250137671, -2.16018929347946]}, {"time": 12.916666666666666, "url": "assets/storyboard-mobile-v1/03-banque.webp", "align": [0.9938804109030197, 5.0566563912690445e-05, 0.000567134050151781, 0.9603572321329629, -6.091778940539456, -6.846853090348008]}, {"time": 21.5, "url": "assets/storyboard-mobile-v1/04-chantier.webp", "align": [0.9680494884297244, -0.00018100240892483937, -0.00047747070229276606, 0.9873558396938802, 0.05955354479371026, -1.953540391958135]}, {"time": 24.083333333333332, "url": "assets/storyboard-mobile-v1/05-reseau.webp", "align": [0.9678949686424847, 0.0002572547102972534, -0.00017600028206873715, 0.9871810779679535, -0.07006579732893564, -1.9785010650735875]}];
 const FILM_STILLS=[
- {time:2,file:'01-georgie.png',align:[1.0075075248151957, 0.001971079802160204, -0.013618166218368113, 0.9690989315030367, -12.682450121009749, -1.4278423911148286]}, {time:7,file:'02-entreprise.png',align:[0.9871846960978151, -0.0001352935424505218, -0.00039042592097122513, 0.9667969938752025, -2.0109291285337676, 0.15727572649089916]},
- {time:14,file:'03-banque-v2.png',align:[0.9869720129630977, 5.4055499719928974e-05, 0.00043314512577999657, 0.9674101683509956, -2.1445808408970732, -0.02850580014869102]}, {time:20,file:'04-chantier.png',align:[0.9879609993667975, 0.00013479840064056125, 0.0015003117046759494, 0.9666039192069935, -3.092204588831619, 4.4233097305290805]}, {time:24,file:'05-reseau.png',align:[0.984765920777752, 0.0001256724222221162, 0.00025146920132802217, 0.965306454695048, -0.9352494317485816, 0.7442883670025615]}
+ {time:2,file:'01-georgie.webp',align:[1.0075075248151957, 0.001971079802160204, -0.013618166218368113, 0.9690989315030367, -12.682450121009749, -1.4278423911148286]}, {time:7,file:'02-entreprise.webp',align:[0.9871846960978151, -0.0001352935424505218, -0.00039042592097122513, 0.9667969938752025, -2.0109291285337676, 0.15727572649089916]},
+ {time:14,file:'03-banque-v2.webp',align:[0.9869720129630977, 5.4055499719928974e-05, 0.00043314512577999657, 0.9674101683509956, -2.1445808408970732, -0.02850580014869102]}, {time:20,file:'04-chantier.webp',align:[0.9879609993667975, 0.00013479840064056125, 0.0015003117046759494, 0.9666039192069935, -3.092204588831619, 4.4233097305290805]}, {time:24,file:'05-reseau.webp',align:[0.984765920777752, 0.0001256724222221162, 0.00025146920132802217, 0.965306454695048, -0.9352494317485816, 0.7442883670025615]}
 ];
 function filmStillMix(seconds,stills=FILM_STILLS,radius=.8,full=.15){
  const index=stills.findIndex(still=>Math.abs(seconds-still.time)<radius);
@@ -35,7 +35,7 @@ function buildContactMessage(t,project,timeline,note='',budget=''){
 }
 class FilmSequence {
  constructor(canvas,mobile=false){
-  this.mobile=mobile;this.disposed=false;this.controller=new AbortController();
+  this.preloadAll=false;this.mobile=mobile;this.disposed=false;this.controller=new AbortController();
   this.stopDefinitions=mobile?MOBILE_FILM_STILLS:FILM_STILLS;
   this.framePath=mobile?'assets/film/frames-mobile/':'assets/film/frames/';
   this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});
@@ -58,7 +58,7 @@ class FilmSequence {
   this.wake();
  }
  setTime(seconds,paused){
-  const next=Math.max(0,Math.min(600,seconds*24));this.direction=Math.sign(next-this.target)||this.direction||1;this.target=next;this.paused=paused;
+  const next=Math.max(0,Math.min(600,seconds*24));if(Math.abs(next-this.target)>1)this.preloadAll=true;this.direction=Math.sign(next-this.target)||this.direction||1;this.target=next;this.paused=paused;
   this.pump();this.wake();
  }
  wake(){if(!this.disposed&&!this.raf)this.raf=requestAnimationFrame(t=>this.render(t));}
@@ -66,7 +66,7 @@ class FilmSequence {
   if(this.disposed)return;
   const center=Math.round(this.target);
   // Prioritize the requested frame, then its neighbors; retain compressed frames for reverse scrolling.
-  for(let distance=0;distance<=600&&this.loading.size<6;distance++)for(const index of distance?[center+distance,center-distance]:[center]){
+  for(let distance=0;distance<=(this.preloadAll?600:12)&&this.loading.size<6;distance++)for(const index of distance?[center+distance,center-distance]:[center]){
    if(index<0||index>600||this.blobs.has(index)||this.loading.has(index)||this.failed.has(index)||this.loading.size>=6)continue;
    this.loading.add(index);
    this.loadFrame(index).then(()=>this.prepare()).catch(()=>this.failed.add(index)).finally(()=>{this.loading.delete(index);this.pump();});
