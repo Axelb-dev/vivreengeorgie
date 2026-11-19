@@ -195,7 +195,7 @@ class FilmSequence {
  let reduced=false,progress=0,currentScene=-1,frame=0;
  const mobileQuery=matchMedia('(max-width:760px)');
  const loader=document.querySelector('#site-loader');
- let loaderTimer=0;
+ let loaderTimer=0,textReady=false;
  function beginLoading(){
   clearTimeout(loaderTimer);loader.hidden=false;loader.classList.remove('is-complete');
   document.querySelector('#load-progress').value=0;document.querySelector('#load-percent').textContent='0 %';
@@ -205,9 +205,16 @@ class FilmSequence {
  beginLoading();
  let sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);
  mobileQuery.addEventListener('change',()=>{beginLoading();sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
+ Promise.resolve(document.fonts?.ready).then(()=>{
+  panels.forEach(panel=>panel.getBoundingClientRect());textReady=true;sequence.wake();
+ });
  document.querySelector('#load-retry').addEventListener('click',()=>sequence.retryLoading());
  document.addEventListener('film:painted',()=>{
-  if(!document.body.classList.contains('site-loading')||!sequence.assetsReady)return;
+  if(!document.body.classList.contains('site-loading')||!sequence.assetsReady||!textReady)return;
+  // Commit translated text layout and its visible state behind the opaque loader.
+  if(!panelPoints.length)measureTimeline();
+  syncContent();
+  panels.forEach(panel=>{if(panel.classList.contains('content-visible'))getComputedStyle(panel).opacity;});
   document.querySelector('#load-progress').value=100;document.querySelector('#load-percent').textContent='100 %';
   document.body.classList.remove('site-loading');document.querySelector('main').inert=false;document.querySelector('.masthead').inert=false;
   loader.classList.add('is-complete');loaderTimer=setTimeout(()=>{loader.hidden=true;},350);

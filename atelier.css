@@ -335,3 +335,5 @@ body.site-loading{overflow:hidden;overscroll-behavior:none}
 
 html.boot-pending{overflow:hidden}.boot-pending main,.boot-pending .masthead,.boot-pending .page-film{visibility:hidden}.boot-pending .site-loader[hidden]{display:grid}
 .loader-services{display:block;width:fit-content;margin:24px auto 0}
+
+.site-loading.content-reveal-enabled [data-step].content-visible{transition:none!important}

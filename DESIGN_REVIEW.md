@@ -132,3 +132,6 @@ Scroll transition shortened from450–1050ms to320–720ms, preserving smoothste
 
 ## Loader copy simplified — release47 (2026-11-19)
 Removed the explanatory full-film loading sentence and its four translations at user request. Progress and loading behavior unchanged. Translation and structure checks pass.
+
+## Text ready behind loader — release48 (2026-11-19)
+Loader now also waits for document fonts, prepares translated text layout and commits active chapter opacity before its fade-out. Suppresses the initial reveal transition behind loader only; subsequent scroll reveals remain550ms. Mobile390 and desktop1440 tests using Spanish confirm text opacity1 and fonts loaded at start of loader exit.
