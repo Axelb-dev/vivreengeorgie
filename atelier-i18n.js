@@ -180,7 +180,6 @@ const translations = {
     "bankGuide": "Ouvrir un compte en Géorgie : préparer son dossier",
     "propertyGuide": "Investir en Géorgie : méthode et points à vérifier",
     "loadingFilm": "Préparation de votre voyage",
-    "loadingNote": "Le film se charge entièrement pour une visite fluide.",
     "loadingError": "Le chargement a été interrompu. Vérifiez votre connexion puis réessayez.",
     "loadingRetry": "Réessayer",
     "loadingServices": "Consulter nos services"
@@ -366,7 +365,6 @@ const translations = {
     "bankGuide": "Bank account in Georgia: preparation guide (French)",
     "propertyGuide": "Property investment in Georgia: practical guide (French)",
     "loadingFilm": "Preparing your journey",
-    "loadingNote": "Loading the full film for a smooth visit.",
     "loadingError": "Loading was interrupted. Check your connection and try again.",
     "loadingRetry": "Try again",
     "loadingServices": "Explore our services (French)"
@@ -552,7 +550,6 @@ const translations = {
     "bankGuide": "Cuenta bancaria en Georgia: guía (en francés)",
     "propertyGuide": "Invertir en Georgia: guía inmobiliaria (en francés)",
     "loadingFilm": "Preparando su viaje",
-    "loadingNote": "Cargando la película completa para una visita fluida.",
     "loadingError": "La carga se ha interrumpido. Compruebe su conexión e inténtelo de nuevo.",
     "loadingRetry": "Reintentar",
     "loadingServices": "Ver nuestros servicios (francés)"
@@ -738,7 +735,6 @@ const translations = {
     "bankGuide": "საბანკო ანგარიში საქართველოში — გზამკვლევი ფრანგულად",
     "propertyGuide": "უძრავი ქონება საქართველოში — გზამკვლევი ფრანგულად",
     "loadingFilm": "თქვენი მოგზაურობის მომზადება",
-    "loadingNote": "ვიდეო სრულად იტვირთება შეუფერხებელი დათვალიერებისთვის.",
     "loadingError": "ჩატვირთვა შეწყდა. შეამოწმეთ კავშირი და სცადეთ ხელახლა.",
     "loadingRetry": "ხელახლა ცდა",
     "loadingServices": "ჩვენი მომსახურება (ფრანგულად)"

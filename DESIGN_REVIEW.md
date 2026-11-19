@@ -129,3 +129,6 @@ User requests full preload rather than progressive startup. Show branded localiz
 
 ## More responsive chapter rhythm — release46 (2026-11-19)
 Scroll transition shortened from450–1050ms to320–720ms, preserving smoothstep easing and one-gesture inertia guard. Content reveal shortened from1s ease-in to550ms ease-out; text becomes readable sooner after exact stop paint. Kept25% travel opacity and rewind control's1s delay after full content visibility. Mobile touch, content persistence and mobile/desktop rewind visibility tests pass.
+
+## Loader copy simplified — release47 (2026-11-19)
+Removed the explanatory full-film loading sentence and its four translations at user request. Progress and loading behavior unchanged. Translation and structure checks pass.
