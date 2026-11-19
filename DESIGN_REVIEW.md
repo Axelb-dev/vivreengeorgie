@@ -126,3 +126,6 @@ Added three French service pages with crawlable chapter links, cross-links, sour
 
 ## Full-film loading gate — release45 (2026-11-19)
 User requests full preload rather than progressive startup. Show branded localized loader before first paint; cache all601 active-format frames and decode5 lossless stops before revealing site. Loader ends after actual canvas paint. Block scroll/main/header during load. Retry failed assets without redownloading completed ones; service links available and no-JS CSS keeps content readable. Tested mobile/desktop failure-retry, resource counts, no post-reveal frame fetches; forward/reverse transition audit no missing frames.
+
+## More responsive chapter rhythm — release46 (2026-11-19)
+Scroll transition shortened from450–1050ms to320–720ms, preserving smoothstep easing and one-gesture inertia guard. Content reveal shortened from1s ease-in to550ms ease-out; text becomes readable sooner after exact stop paint. Kept25% travel opacity and rewind control's1s delay after full content visibility. Mobile touch, content persistence and mobile/desktop rewind visibility tests pass.

@@ -308,7 +308,7 @@ class FilmSequence {
   }
   if(reduced){window.scrollTo({top:destination,behavior:'instant'});travel=0;return;}
   const start=scrollY,distance=destination-start,began=performance.now();
-  const duration=Math.max(450,Math.min(1050,Math.abs(distance)*1.05));
+  const duration=Math.max(320,Math.min(720,Math.abs(distance)*.72));
   function step(now){
    const t=Math.min(1,(now-began)/duration),ease=t*t*(3-2*t);
    window.scrollTo({top:start+distance*ease,behavior:'instant'});
