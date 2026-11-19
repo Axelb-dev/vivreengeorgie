@@ -178,7 +178,12 @@ const translations = {
     "seoTitle": "Création d’entreprise et investissement | Vivre en Géorgie",
     "enterpriseGuide": "Créer une entreprise en Géorgie : les étapes",
     "bankGuide": "Ouvrir un compte en Géorgie : préparer son dossier",
-    "propertyGuide": "Investir en Géorgie : méthode et points à vérifier"
+    "propertyGuide": "Investir en Géorgie : méthode et points à vérifier",
+    "loadingFilm": "Préparation de votre voyage",
+    "loadingNote": "Le film se charge entièrement pour une visite fluide.",
+    "loadingError": "Le chargement a été interrompu. Vérifiez votre connexion puis réessayez.",
+    "loadingRetry": "Réessayer",
+    "loadingServices": "Consulter nos services"
   },
   "en": {
     "skip": "Skip to services",
@@ -359,7 +364,12 @@ const translations = {
     "seoTitle": "Company formation and investment | Vivre en Géorgie",
     "enterpriseGuide": "Company formation in Georgia: detailed guide (French)",
     "bankGuide": "Bank account in Georgia: preparation guide (French)",
-    "propertyGuide": "Property investment in Georgia: practical guide (French)"
+    "propertyGuide": "Property investment in Georgia: practical guide (French)",
+    "loadingFilm": "Preparing your journey",
+    "loadingNote": "Loading the full film for a smooth visit.",
+    "loadingError": "Loading was interrupted. Check your connection and try again.",
+    "loadingRetry": "Try again",
+    "loadingServices": "Explore our services (French)"
   },
   "es": {
     "skip": "Ir a los servicios",
@@ -540,7 +550,12 @@ const translations = {
     "seoTitle": "Creación de empresas e inversión | Vivre en Géorgie",
     "enterpriseGuide": "Crear una empresa en Georgia: guía (en francés)",
     "bankGuide": "Cuenta bancaria en Georgia: guía (en francés)",
-    "propertyGuide": "Invertir en Georgia: guía inmobiliaria (en francés)"
+    "propertyGuide": "Invertir en Georgia: guía inmobiliaria (en francés)",
+    "loadingFilm": "Preparando su viaje",
+    "loadingNote": "Cargando la película completa para una visita fluida.",
+    "loadingError": "La carga se ha interrumpido. Compruebe su conexión e inténtelo de nuevo.",
+    "loadingRetry": "Reintentar",
+    "loadingServices": "Ver nuestros servicios (francés)"
   },
   "ka": {
     "skip": "მომსახურებაზე გადასვლა",
@@ -721,7 +736,12 @@ const translations = {
     "seoTitle": "კომპანიის შექმნა და ინვესტიცია | Vivre en Géorgie",
     "enterpriseGuide": "კომპანიის რეგისტრაცია საქართველოში — გზამკვლევი ფრანგულად",
     "bankGuide": "საბანკო ანგარიში საქართველოში — გზამკვლევი ფრანგულად",
-    "propertyGuide": "უძრავი ქონება საქართველოში — გზამკვლევი ფრანგულად"
+    "propertyGuide": "უძრავი ქონება საქართველოში — გზამკვლევი ფრანგულად",
+    "loadingFilm": "თქვენი მოგზაურობის მომზადება",
+    "loadingNote": "ვიდეო სრულად იტვირთება შეუფერხებელი დათვალიერებისთვის.",
+    "loadingError": "ჩატვირთვა შეწყდა. შეამოწმეთ კავშირი და სცადეთ ხელახლა.",
+    "loadingRetry": "ხელახლა ცდა",
+    "loadingServices": "ჩვენი მომსახურება (ფრანგულად)"
   }
 };
 (() => {
@@ -741,7 +761,7 @@ const translations = {
  }
  function set(value){
   language=Object.hasOwn(translations,value)?value:'fr';
-  document.documentElement.lang=language;document.querySelector('#language').value=language;
+  document.documentElement.lang=language;document.querySelector('#load-progress')?.setAttribute('aria-label',t('loadingFilm'));document.querySelector('#language').value=language;
   document.querySelectorAll('[data-t]').forEach(node=>renderTranslation(node,t(node.dataset.t)));
   const nav={fr:'Navigation',en:'Navigation',es:'Navegación',ka:'ნავიგაცია'};
   const languages={fr:'Langue',en:'Language',es:'Idioma',ka:'ენა'};

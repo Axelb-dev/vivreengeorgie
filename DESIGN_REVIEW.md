@@ -123,3 +123,6 @@ Clarified scope: form-only and centered layout applies to mobile only. Restored 
 
 ## SEO/GEO acquisition pages — release44 (2026-11-19)
 Added three French service pages with crawlable chapter links, cross-links, source references, unique metadata and schema. Sitemap and llms references updated. Lossless WebP stops (-27.4% bytes, identical RGB pixels); initial frame prefetch bounded until journey begins. Full audit and outstanding Search Console verification in AUDIT_SEO_GEO.md.
+
+## Full-film loading gate — release45 (2026-11-19)
+User requests full preload rather than progressive startup. Show branded localized loader before first paint; cache all601 active-format frames and decode5 lossless stops before revealing site. Loader ends after actual canvas paint. Block scroll/main/header during load. Retry failed assets without redownloading completed ones; service links available and no-JS CSS keeps content readable. Tested mobile/desktop failure-retry, resource counts, no post-reveal frame fetches; forward/reverse transition audit no missing frames.

@@ -35,19 +35,45 @@ function buildContactMessage(t,project,timeline,note='',budget=''){
 }
 class FilmSequence {
  constructor(canvas,mobile=false){
-  this.preloadAll=false;this.mobile=mobile;this.disposed=false;this.controller=new AbortController();
+  this.mobile=mobile;this.disposed=false;this.controller=new AbortController();
   this.stopDefinitions=mobile?MOBILE_FILM_STILLS:FILM_STILLS;
   this.framePath=mobile?'assets/film/frames-mobile/':'assets/film/frames/';
   this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});
   this.requests=new Map();this.transitionFrames=null;this.blobs=new Map();this.frames=new Map();this.loading=new Set();this.decoding=new Set();this.failed=new Set();
   this.stills=new Map();this.assetsReady=false;
-  this.ready=Promise.allSettled(this.stopDefinitions.map(async(still,index)=>{
-   const response=await fetch(still.url||'assets/storyboard-v1/'+still.file,{signal:this.controller.signal});
-   if(!response.ok)throw Error(response.status);
-   this.stills.set(index,await createImageBitmap(await response.blob()));
-  })).then(()=>{this.assetsReady=true;this.wake();});
+  this.ready=new Promise(resolve=>{this.resolveReady=resolve;});
+  this.stillsSettled=false;this.loadStills();
   this.target=this.stopDefinitions[0].time*24;this.position=this.target;this.raf=0;this.last=0;this.paused=false;
   this.resize();this.pump();this.wake();
+ }
+ async loadStills(){
+  this.stillsSettled=false;
+  await Promise.allSettled(this.stopDefinitions.map(async(still,index)=>{
+   if(this.stills.has(index))return;
+   const response=await fetch(still.url||'assets/storyboard-v1/'+still.file,{signal:this.controller.signal});
+   if(!response.ok)throw Error(response.status);
+   const bitmap=await createImageBitmap(await response.blob());
+   if(this.disposed){bitmap.close();return;}
+   this.stills.set(index,bitmap);this.checkLoaded();
+  }));
+  this.stillsSettled=true;this.checkLoaded();
+ }
+ checkLoaded(){
+  if(this.disposed)return;
+  const percent=Math.min(99,Math.floor((this.blobs.size+this.stills.size)/606*100));
+  const progress=document.querySelector('#load-progress'),value=document.querySelector('#load-percent');
+  if(progress)progress.value=percent;if(value)value.textContent=percent+' %';
+  if(this.blobs.size===601&&this.stills.size===5&&!this.assetsReady){
+   this.assetsReady=true;this.resolveReady();this.prepare();this.wake();
+  }
+  if(this.stillsSettled&&!this.loading.size&&(this.failed.size||this.stills.size<5)){
+   document.querySelector('#load-error')?.removeAttribute('hidden');
+   document.querySelector('#load-retry')?.removeAttribute('hidden');
+  }
+ }
+ retryLoading(){
+  this.failed.clear();document.querySelector('#load-error').hidden=true;document.querySelector('#load-retry').hidden=true;
+  this.loadStills();this.pump();
  }
  destroy(){this.disposed=true;this.controller.abort();cancelAnimationFrame(this.raf);this.frames.forEach(b=>b.close());this.stills.forEach(b=>b.close());}
  resize(){
@@ -58,7 +84,7 @@ class FilmSequence {
   this.wake();
  }
  setTime(seconds,paused){
-  const next=Math.max(0,Math.min(600,seconds*24));if(Math.abs(next-this.target)>1)this.preloadAll=true;this.direction=Math.sign(next-this.target)||this.direction||1;this.target=next;this.paused=paused;
+  const next=Math.max(0,Math.min(600,seconds*24));this.direction=Math.sign(next-this.target)||this.direction||1;this.target=next;this.paused=paused;
   this.pump();this.wake();
  }
  wake(){if(!this.disposed&&!this.raf)this.raf=requestAnimationFrame(t=>this.render(t));}
@@ -66,10 +92,10 @@ class FilmSequence {
   if(this.disposed)return;
   const center=Math.round(this.target);
   // Prioritize the requested frame, then its neighbors; retain compressed frames for reverse scrolling.
-  for(let distance=0;distance<=(this.preloadAll?600:12)&&this.loading.size<6;distance++)for(const index of distance?[center+distance,center-distance]:[center]){
+  for(let distance=0;distance<=600&&this.loading.size<6;distance++)for(const index of distance?[center+distance,center-distance]:[center]){
    if(index<0||index>600||this.blobs.has(index)||this.loading.has(index)||this.failed.has(index)||this.loading.size>=6)continue;
    this.loading.add(index);
-   this.loadFrame(index).then(()=>this.prepare()).catch(()=>this.failed.add(index)).finally(()=>{this.loading.delete(index);this.pump();});
+   this.loadFrame(index).then(()=>this.prepare()).catch(()=>this.failed.add(index)).finally(()=>{this.loading.delete(index);this.pump();this.checkLoaded();});
   }
   this.prepare();
  }
@@ -168,8 +194,25 @@ class FilmSequence {
 
  let reduced=false,progress=0,currentScene=-1,frame=0;
  const mobileQuery=matchMedia('(max-width:760px)');
+ const loader=document.querySelector('#site-loader');
+ let loaderTimer=0;
+ function beginLoading(){
+  clearTimeout(loaderTimer);loader.hidden=false;loader.classList.remove('is-complete');
+  document.querySelector('#load-progress').value=0;document.querySelector('#load-percent').textContent='0 %';
+  document.querySelector('#load-error').hidden=true;document.querySelector('#load-retry').hidden=true;
+  document.body.classList.add('site-loading');document.documentElement.classList.remove('boot-pending');document.querySelector('main').inert=true;document.querySelector('.masthead').inert=true;
+ }
+ beginLoading();
  let sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);
- mobileQuery.addEventListener('change',()=>{sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
+ mobileQuery.addEventListener('change',()=>{beginLoading();sequence.destroy();document.body.classList.remove('sequence-ready');sequence=new FilmSequence(document.querySelector('#film-canvas'),mobileQuery.matches);timeline=[];schedule();});
+ document.querySelector('#load-retry').addEventListener('click',()=>sequence.retryLoading());
+ document.addEventListener('film:painted',()=>{
+  if(!document.body.classList.contains('site-loading')||!sequence.assetsReady)return;
+  document.querySelector('#load-progress').value=100;document.querySelector('#load-percent').textContent='100 %';
+  document.body.classList.remove('site-loading');document.querySelector('main').inert=false;document.querySelector('.masthead').inert=false;
+  loader.classList.add('is-complete');loaderTimer=setTimeout(()=>{loader.hidden=true;},350);
+  timeline=[];schedule();
+ });
  const rewindButton=document.querySelector('#rewind-film');
  let rewindVisibilityTimer=0,rewindVisibilityToken=0,rewindPending=false;
  function hideRewind(){rewindButton.hidden=true;clearTimeout(rewindVisibilityTimer);rewindVisibilityToken++;rewindPending=false;}
@@ -319,6 +362,7 @@ class FilmSequence {
   goToStop(destination);
  });
  window.addEventListener('wheel',event=>{
+  if(document.body.classList.contains('site-loading')){event.preventDefault();return;}
   hideRewind();
   if(rewinding){event.preventDefault();return;}
   if(event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;
@@ -347,6 +391,7 @@ class FilmSequence {
   goToStop(nextScrollStop(scrollY,Math.sign(wheelSum),stops()));
  },{passive:false});
  window.addEventListener('keydown',event=>{
+  if(document.body.classList.contains('site-loading')&&['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)){event.preventDefault();return;}
   if(rewinding&&['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)){event.preventDefault();return;}
   if(event.target.closest('input,textarea,select,button,a,summary,[contenteditable]')||event.ctrlKey||event.metaKey||event.altKey)return;
   const direction=event.key==='PageDown'?1:event.key==='PageUp'?-1:0;
@@ -356,6 +401,7 @@ class FilmSequence {
  let touchStartY=null,touchStartX=0,touchOrigin=0,touchTarget=null,touchDestination=null;
  window.addEventListener('touchstart',event=>{touchStartY=event.touches.length===1?event.touches[0].clientY:null;touchStartX=event.touches[0]?.clientX||0;touchOrigin=scrollY;touchTarget=event.target;touchDestination=null;},{passive:true});
  window.addEventListener('touchmove',event=>{
+  if(document.body.classList.contains('site-loading')){event.preventDefault();return;}
   hideRewind();
   if(rewinding){event.preventDefault();return;}
   if(!mobileQuery.matches||touchStartY===null||event.touches.length!==1||touchTarget.closest('input,textarea,select,button,a,summary,#contact'))return;

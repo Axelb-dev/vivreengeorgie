@@ -46,3 +46,7 @@ Tests structure, traductions, robots, sitemap, CSP/hash JSON-LD ; trois pages au
 - https://matsne.gov.ge/en/document/view/1043717 : Code fiscal géorgien, notamment88–92 ; sources fiscales déjà liées depuis l'accueil.
 - https://www.napr.gov.ge/en : registre public géorgien.
 - https://vivregeorgie.com/ : couverture thématique constatée, sans accès à ses statistiques.
+
+## Préchargement complet demandé ensuite — release45
+Le préchargement borné décrit plus haut a été remplacé à la demande du propriétaire par un loader : les601 images du film du format actif et les5 arrêts sont chargés avant d'afficher le site. La réduction WebP sans perte demeure ; le volume complet est désormais transféré avant l'entrée sur l'accueil. Compromis assumé : attente initiale plus longue pour éviter les téléchargements pendant le scroll. Les pages de services restent légères et sans loader. Un fallback sans JavaScript conserve les textes accessibles ; les liens vers les services restent disponibles dans le loader. Progression réelle par nombre de ressources, nouvelle tentative en cas d'échec. Tests390/1440, panne simulée/récupération, scroll bloqué pendant chargement, zéro téléchargement de frame après ouverture dans le test.
+Publication des quatre pages vérifiée en HTTP200. Notification IndexNow reçue avec HTTP202 (clé en cours de validation) : aucune indexation garantie ou constatée par cette réponse.
